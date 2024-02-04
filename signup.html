@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-content">
+            <div class="form-content">
+                <h1>Get started with your free account</h1>
+                <div class="nav">
+                    <a href="login.html">SIGN IN</a>
+                    <a href="signup.html" class="active">SIGN UP</a>
+                </div>
+                <form id="signupForm">
+                    <div class="forms">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required placeholder="Enter your full name...">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address...">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Create Your password:</label>
+                            <input type="password" id="password" name="password" required placeholder="Choose a Secure password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Your password:</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm Your Password">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label class="checkbox-label" for="agree">I agree to the <a href="#">terms and conditions</a></label>
+                        </div>
+                    </div>
+                    <button type="submit">Signup</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+            <div class="image-content">
+                <img src="/img/emt.jpg" alt="med">
+            </div>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
