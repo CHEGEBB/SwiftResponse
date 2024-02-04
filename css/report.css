@@ -147,7 +147,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./img/report/university.jpg"); /* Background image */
+  background-image: url("../img/report/university.jpg"); /* Background image */
   background-size: cover;
   background-position: center;
   filter: blur(5px); /* Adjust the blur intensity */
@@ -210,7 +210,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./img/140217-F-GP610-340.jpg"); /* Background image */
+  background-image: url("../img/140217-F-GP610-340.jpg"); /* Background image */
   background-size: cover;
   background-position: center;
   filter: blur(5px); /* Adjust the blur intensity */
@@ -238,7 +238,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../img/report/pwd.jpg'); /* Background image */
+  background-image: url("../img/report/pwd.jpg"); /* Background image */
   background-size: cover;
   background-position: center;
   filter: blur(5px); /* Adjust the blur intensity */
