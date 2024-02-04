@@ -58,7 +58,7 @@ font-weight: 700;
 }
 
 .container1{
-  background: url("/img/firecrew.jpg");
+  background: url("img/firecrew.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
