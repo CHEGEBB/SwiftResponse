@@ -756,7 +756,7 @@ font-weight: 700;
 /* footer */
 .footer {
   position: relative;
-  background-image: url('./img/medical.jpg');
+  background-image: url("../img/medical.jpg");
   background-size: cover;
   background-position: center;
   overflow: hidden;

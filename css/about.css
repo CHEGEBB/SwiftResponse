@@ -98,7 +98,7 @@ p{
 /* Header Styles */
 .header {
     position: relative;
-    background-image: url('/img/about/eme.jpg');
+    background-image: url("../img/about/eme.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
