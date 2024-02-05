@@ -462,12 +462,12 @@ button {
 .about3 img {
     width: 400px;
     height: 300px;
-    border-radius: 15px;
+    border-top-left-radius: 200px;
+    border-bottom-right-radius: 200px;
 }
 .vision{
     color: #fff;
     height: 200px;
-    border-radius: 12px;
     width: 600px;
     justify-content: center;
     align-items: center;
