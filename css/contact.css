@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    background-image: url('/img/medical.jpg');
+    background-image: url("./img/medical.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
