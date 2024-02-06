@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Emergency Response System</title>
+    <link rel="stylesheet" href="/css/medical.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+  <!-- Navigation Section -->
+  <nav class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item"><a href="/index.html">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="/pages/alerts/general.html">General Alerts</a></li>
+          <li><a href="#">Weather Alerts</a></li>
+          <li><a href="#">Security Alerts</a></li>
+          <li><a href="#">Medical Alerts</a></li>
+          <li><a href="#">Accident Alerts</a></li>
+          <li><a href="#">Fire Alerts</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Fire Emergencies</a></li>
+          <li><a href="#">Medical Emergencies</a></li>
+          <li><a href="#">Accident Emergencies</a></li>
+          <li><a href="#">Security Emergencies</a></li>
+          <li><a href="#">Report Emergency</a></li>
+          <li><a href="#">Search and Rescue</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="/report.html">Report</a></li>
+      <li class="nav-item"><a href="/about.html">About</a></li>
+      <li class="nav-item"><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <header class="header" style="background-image: url('/img/med/pic1.jpg');">
+    <div class="header-overlay"></div>
+    <div class="container">
+        <h1>SwiftResponse Medical Emergency Response</h1>
+        <p>SwiftResponse: Your Partner in Emergency Medical Care</p>
+        <p>Access swift and efficient medical assistance during emergencies with our state-of-the-art coordination system.</p>
+        <div class="buttons">
+            <button class="primary-btn">Call Ambulance</button>
+            <button class="secondary-btn">Find Nearest Hospital</button>
+        </div>
+    </div>
+</header>
+
+<!-- Seek for immediate medical care -->
+<div class="seek-medical-care">
+    <div class="content1">
+        <div class="rectangle"></div>
+        <h2>Seek Immediate Medical Care</h2>
+        <p>For any medical emergency, seek immediate medical care by calling an ambulance or visiting the nearest hospital.
+            SwiftResponse provides quick access to medical assistance during emergencies. Call an ambulance or find the nearest hospital for immediate care through our system.
+        </p>
+        
+        
+    </div>
+    <div class="help">
+    <div class="ambulance">
+        <div class="access">
+        <p>Access our 24/7 ambulance services.SwiftResponse collaborates with various ambulance services to ensure instant response to medical emergencies</p>
+        </div>
+        <button class="quick-access-btn">Call Ambulance</button>
+    </div>
+
+    <div class="hospital">
+        <div class="locate">
+        <p>Locate the nearest hospital for immediate medical care. SwiftResponse provides real-time information on hospital locations,with realtime and geo-positioning hospitals near your location
+             will be accessible  and availability of medical services topnotch.</p>
+             <button class="quick-access-btn">Find Nearest Hospital</button>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="hospitals-near-me">
+    <div class="content2">
+        <h1>Hospitals Near Me</h1>
+        <p>Immediate Access to Critical Care Facilities. Our Real-time Location Services Seamlessly Pinpoint Nearby Hospitals, Ensuring Swift Responses to Emergencies for Various Medical Situations.</p>
+        <!-- Search bar -->
+        <form class="hospital-search-form">
+            <input type="text" id="hospital-search-input" placeholder="Enter hospital name">
+            <button type="submit" id="hospital-search-button">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="hospitals">
+    <div class="hospital-list-container">
+        <!-- Hospital cards -->
+        <div class="group1">
+        <div class="hospital-card">
+            <h3>The Aga Khan Hospital</h3>
+            <img src="/img/med/agakhan.jpg" alt="Aga Khan Hospital">
+            <h4>Location</h4>
+            <p>3rd Parklands Avenue, Nairobi, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 2 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
+                
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Nairobi Hospital</h3>
+            <img src="/img/med/nh.jpg" alt="Nairobi Hospital">
+            <h4>Location</h4>
+            <p>Argwings Kodhek Road, Nairobi, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 1.5 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
+                
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Kenyatta National Hospital</h3>
+            <img src="/img/med/knh.jpg" alt="Kenyatta National Hospital">
+            <h4>Location</h4>
+            <p>Hospital Road, Nairobi, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 3 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>
+              
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>M.P. Shah Hospital</h3>
+            <img src="/img/med/MP-Shah-Hospital-1024x768.jpg" alt="M.P. Shah Hospital">
+            <h4>Location</h4>
+            <p>Shivachi Road, Nairobi, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 2.5 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
+            </p>
+        </div>
+        <div class="hospital-card">
+            <h3>Kenyatta University Hospital</h3>
+            <img src="/img/med/ku.jpg" alt="Kenyatta University Hospital">
+            <h4>Location</h4>
+            <p>Thika Road, Nairobi, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 5 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.2/5</span>
+            </p>
+        </div>
+        </div>
+        <div class="group2">
+            <div class="hospital-card">
+                <h3>The Karen Hospital</h3>
+                <img src="/img/med/The-Karen-Hospital-Nairobi-Kenya.jpg" alt="The Karen Hospital">
+                <h4>Location</h4>
+                <p>Langata Road, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 4 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.6/5</span></p>
+            </div>
+            
+        <div class="hospital-card">
+            <h3>Moi teaching and Referral Hospital</h3>
+            <img src="/img/med/moi.jpg" alt="Eldoret Hospital">
+            <h4>Location</h4>
+            <p>Jomo Kenyatta Street, Eldoret, Kenya</p>
+            <h4>Distance</h4>  
+            <p>Distance: 150 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
+                
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Kitale County Referral Hospital</h3>
+            <img src="/img/med/TRANS-NZOIA-TEACHING-AND-REFERRAL-HOSPITAL.jpg" alt="Kitale County Referral Hospital">
+            <h4>Location</h4>
+            <p>Milimani Road, Kitale, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 200 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span>    
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Kisumu County Hospital</h3>
+            <img src="/img/med/kisumu.jpg" alt="Kisumu County Hospital">
+            <h4>Location</h4>
+            <p>Obote Road, Kisumu, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 300 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.0/5</span>
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Nakuru County Hospital</h3>
+            <img src="/img/med/nakuru-hos.jpg" alt="Nakuru County Hospital">
+            <h4>Location</h4>
+            <p>Geoffrey Kamau Way, Nakuru, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 150 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>  
+            </p>
+        </div>
+        </div>
+
+        <div class="group3">
+
+        <div class="hospital-card">
+            <h3>Embu County Hospital</h3>
+            <img src="/img/med/embu-level-five-hospital.jpg" alt="Embu County Hospital">
+            <h4>Location</h4>
+            <p>Embu-Meru Highway, Embu, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 100 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
+                
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Meru County Hospital</h3>
+            <img src="/img/med/MERU.jpg" alt="Meru County Hospital">
+            <h4>Location</h4>
+            <p>Meru-Maua Road, Meru, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 150 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.8/5</span>
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Nyeri County Hospital</h3>
+            <img src="/img/med/nyeri.jpg" alt="Nyeri County Hospital">
+            <h4>Location</h4>
+            <p>Ring Road, Nyeri, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 100 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
+            </p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Thika County Hospital</h3>
+            <img src="/img/med/thika.jpg" alt="Thika County Hospital">
+            <h4>Location</h4>
+            <p>General Kago Road, Thika, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 20 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span></p>
+        </div>
+
+        <div class="hospital-card">
+            <h3>Machakos County Hospital</h3>
+            <img src="/img/med/Machakos Level 5 Hospital.jpg" alt="Machakos County Hospital">
+            <p>Machakos-Wote Road, Machakos, Kenya</p>
+            <h4>Distance</h4>
+            <p>Distance: 30 miles</p>
+            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">3.5/5</span>
+                
+            </p>
+        </div>
+        </div>
+
+        <!-- You can add more hospitals here -->
+    <!-- HTML for navigation arrows -->
+<button class="prev-arrow">
+    <img src="/img/med/gg--arrow-left-o.svg" alt="Previous">
+</button>
+
+<button class="next-arrow">
+    <img src="/img/med/gg--arrow-right-o.svg" alt="Next">
+</button>
+
+</div>
+<!-- Ambulance Services -->
+<div class="ambulance-services">
+    <div class="content3">
+        <h2>Ambulance Services</h2>
+        <h1>When every second counts, our ambulance services ensure swift response to emergencies, providing critical care en route to the nearest medical facility.</h1>
+        <div class="services">
+            <div class="part1">
+                <div class="ambulance-service1">
+                    <img src="/img/med/alpha.jpg" alt="Ambulance">
+                    <h3>Alpha Ambulance</h3>
+                    <p>Dial 0711475475 for immediate assistance. Alpha Ambulance  operates 24/7 across major cities and rural areas, equipped with advanced life-support systems.</p>
+                    <button class="call-button" onclick="callNumber('0800-123-456')">Call 0711475475</button>
+                </div>
+
+                <div class="ambulance-service2">
+                    <img src="/img/med/amb1.jpg" alt="Ambulance">
+                    <h3>RedCross Emergency Medical Services</h3>
+                    <p>Contact the Kenyan Red Cross Society at 1199 for emergency medical transportation. Their fleet of ambulances is stationed nationwide to respond promptly to emergencies.</p>
+                    <button class="call-button" onclick="callNumber('1199')">Call 1199</button>
+                </div>
+
+                <div class="ambulance-service3">
+                    <img src="/img/med/national.jpg" alt="Ambulance">
+                    <h3>National Hospital Ambulance Services</h3>
+                    <p>Leading hospitals like Aga Khan Hospital (Call: +254 20 3662000) and Nairobi Hospital (Call: +254 20 2845000) provide ambulance services for inter-hospital transfers and emergency response.</p>
+                    <button class="call-button" onclick="callNumber('+254203662000')">Call +254 20 3662000</button>
+                    <button class="call-button" onclick="callNumber('+254202845000')">Call +254 20 2845000</button>
+                </div>
+
+                <div class="ambulance-service4">
+                    <img src="/img/med/medicross.jpg" alt="Ambulance">
+                    <h3>MediCross Ambulance Services</h3>
+                    <p>Call 0722-123-456 for emergency medical assistance. MediCross operates a network of ambulances equipped with advanced medical equipment and staffed by experienced paramedics.</p>
+                    <button class="call-button" onclick="callNumber('0722-123-456')">Call 0722-123-456</button>
+                </div>
+            </div>
+        
+            <div class="part2">
+                <div class="ambulance-service5">
+                    <img src="/img/med/john.jpg" alt="Ambulance">
+                    <h3>St. John Ambulance</h3>
+                    <p>Contact St. John Ambulance at 0721-123-456 for emergency medical services. They provide pre-hospital care, first aid training, and ambulance services across Kenya.</p>
+                    <button class="call-button" onclick="callNumber('0721-123-456')">Call 0721-123-456</button>
+                </div>
+
+                <div class="ambulance-service6">
+                    <img src="/img/med/mediceast.jpg" alt="Ambulance">
+                    <h3>MedicEast Ambulance</h3>
+                    <p>For emergency medical assistance, call MedicEast Ambulance at 0733-123-456. They offer rapid response and transportation to medical facilities with trained paramedics onboard.</p>
+                    <button class="call-button" onclick="callNumber('0733-123-456')">Call 0733-123-456</button>
+                </div>
+
+                <div class="ambulance-service7">
+                    <img src="/img/med/amb2.jpg" alt="Ambulance">
+                    <h3>Paramedics Plus</h3>
+                    <p>Paramedics Plus operates a fleet of ambulances equipped with advanced medical equipment. Call 0710-123-456 for emergency medical assistance and transportation to hospitals.</p>
+                    <button class="call-button" onclick="callNumber('0710-123-456')">Call 0710-123-456</button>
+                </div>
+
+                <div class="ambulance-service8">
+                    <img src="/img/med/lifecare.jpg" alt="Ambulance">
+                    <h3>LifeCare Ambulance Services</h3>
+                    <p>LifeCare Ambulance Services can be reached at 0708-123-456. They provide emergency medical response and transportation to medical facilities with trained medical professionals.</p>
+                    <button class="call-button" onclick="callNumber('0708-123-456')">Call 0708-123-456</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kenyan University Ambulance Services for Students -->
+<div class="university-ambulance-services">
+    <div class="content4">
+        <h2>Kenyan University Ambulance Services for Students</h2>
+        <p>Select your university to access ambulance services:</p>
+        <div class="university-dropdown">
+            <label for="university-dropdown">Select University:</label>
+            <select id="university-dropdown">
+                <option value="" disabled selected>Select University</option>
+                <option value="Dedan Kimathi University">Dedan Kimathi University</option>
+                <option value="University of Nairobi">University of Nairobi</option>
+                <option value="Kenyatta University">Kenyatta University</option>
+                <option value="Strathmore University">Strathmore University</option>
+                <option value="Jomo Kenyatta University of Agriculture and Technology">Jomo Kenyatta University of Agriculture and Technology</option>
+                <option value="Egerton University">Egerton University</option>
+                <option value="Moi University">Moi University</option>
+                <option value="Maseno University">Maseno University</option>
+                <option value="Masinde Muliro University of Science and Technology">Masinde Muliro University of Science and Technology</option>
+                <option value="Kisii University">Kisii University</option>
+                <option value="Mount Kenya University">Mount Kenya University</option>
+                <option value="Technical University of Kenya">Technical University of Kenya</option>
+                <option value="Co-operative University of Kenya">Co-operative University of Kenya</option>
+                <option value="Pwani University">Pwani University</option>
+                <option value="South Eastern Kenya University">South Eastern Kenya University</option>
+                <option value="Karatina University">Karatina University</option>
+                <option value="Chuka University">Chuka University</option>
+                <option value="Meru University of Science and Technology">Meru University of Science and Technology</option>
+                <option value="Laikipia University">Laikipia University</option>
+                <option value="Rongo University">Rongo University</option>
+            </select>
+        </div>
+</div>
+</div>
+        <button class="uni-button">Call University Ambulance</button>
+    </div>
+</div>
+
+
+      <!-- Intelligent Symptom Checker -->
+      <div class="intelligent-symptom-checker">
+        <div class="content">
+            <h2>Intelligent Symptom Checker</h2>
+            <p>Get preliminary diagnoses based on symptoms entered by the user.</p>
+            <!-- Add symptom checker form or input field here -->
+        </div>
+    </div>
+
+
+     <!-- Virtual Pharmacy -->
+     <div class="virtual-pharmacy">
+        <div class="content">
+            <h2>Virtual Pharmacy</h2>
+            <p>Access online pharmacy services for medication needs.</p>
+            <button class="quick-access-btn">Access Pharmacy</button>
+        </div>
+    </div>
+
+        <!-- Emergency Numbers -->
+        <div class="emergency-numbers">
+            <div class="content">
+                <h2>Emergency Contact Numbers</h2>
+                <p>Save these important contact numbers for immediate assistance:</p>
+                <div class="emergency-contact">
+                    <span class="contact-label">Emergency Services:</span>
+                    <span class="contact-info">911</span>
+                </div>
+                <div class="emergency-contact">
+                    <span class="contact-label">Poison Control Center:</span>
+                    <span class="contact-info">1-800-222-1222</span>
+                </div>
+                <div class="emergency-contact">
+                    <span class="contact-label">Local Hospital:</span>
+                    <span class="contact-info">[Insert Local Hospital Number]</span>
+                </div>
+                <div class="emergency-contact">
+                    <span class="contact-label">Local Police Station:</span>
+                    <span class="contact-info">[Insert Local Police Number]</span>
+                </div>
+                <div class="emergency-contact">
+                    <span class="contact-label">Fire Department:</span>
+                    <span class="contact-info">[Insert Fire Department Number]</span>
+                </div>
+                <!-- Add more relevant emergency contact numbers -->
+            </div>
+        </div>
+
+       
+
+       
+
+     
+
+        <!-- Share Live Location -->
+        <div class="live-location">
+            <div class="content">
+                <h2>Share Live Location</h2>
+                <p>Share your live location with emergency services for faster response.</p>
+                <button class="share-location-btn">Share Location</button>
+            </div>
+        </div>
+
+      
+        <!-- Personalized Emergency Plans -->
+        <div class="personalized-emergency-plans">
+            <div class="content">
+                <h2>Personalized Emergency Plans</h2>
+                <p>Create personalized emergency plans based on health conditions and medical history.</p>
+                <!-- Add emergency plan creation form or input fields here -->
+            </div>
+        </div>
+
+        <!-- Interactive Maps -->
+        <div class="interactive-maps">
+            <div class="content">
+                <h2>Interactive Maps with Hospital Ratings</h2>
+                <p>View hospital locations, ratings, and reviews from other users.</p>
+                <!-- Add interactive maps component here -->
+            </div>
+        </div>
+
+        <!-- AI-powered Chatbot -->
+        <div class="ai-powered-chatbot">
+            <div class="content">
+                <h2>AI-powered Chatbot</h2>
+                <p>Get immediate assistance, medical advice, and emergency guidance.</p>
+                <!-- Add chatbot interface or input field here -->
+            </div>
+        </div>
+
+        <!-- Multi-language Support -->
+        <div class="multi-language-support">
+            <div class="content">
+                <h2>Multi-language Support</h2>
+                <p>Access the system in different languages to cater to diverse users.</p>
+                <!-- Add language selection options here -->
+            </div>
+        </div>
+
+        <!-- Community Forums -->
+        <div class="community-forums">
+            <div class="content">
+                <h2>Community Forums and Support Groups</h2>
+                <p>Join forums and support groups to share experiences and seek advice.</p>
+                <!-- Add forum interface or discussion board here -->
+            </div>
+        </div>
+
+        <!-- Emergency Preparedness Guides -->
+        <div class="emergency-preparedness-guides">
+            <div class="content">
+                <h2>Emergency Preparedness Guides</h2>
+                <p>Learn how to prepare for emergencies and disasters.</p>
+                <!-- Add emergency preparedness guides and resources here -->
+            </div>
+        </div>
+
+        <!-- Telemedicine Services -->
+        <div class="telemedicine-services">
+            <div class="content">
+                <h2>Telemedicine Services</h2>
+                <p>Access remote medical consultations and follow-ups.</p>
+                <!-- Add telemedicine interface or appointment booking system here -->
+            </div>
+        </div>
+
+        <!-- Health Profile -->
+        <div class="health-profile">
+            <div class="content">
+                <h2>My Health Profile</h2>
+                <p>Create or update your health profile for better medical assistance.</p>
+                <form id="health-profile-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+                    <label for="blood-type">Blood Type:</label>
+                    <select id="blood-type" name="blood-type" required>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select><br><br>
+                    <label for="allergies">Allergies:</label><br>
+                    <textarea id="allergies" name="allergies"></textarea><br><br>
+                    <label for="medications">Current Medications:</label><br>
+                    <textarea id="medications" name="medications"></textarea><br><br>
+                    <input type="submit" value="Save">
+                </form>
+            </div>
+        </div>
+
+<!-- Life-Saving Ideas -->
+<div class="life-saving-ideas">
+    <div class="content">
+        <h2>Life-Saving Ideas</h2>
+        <div class="idea">
+            <h3>Real-time Emergency Alerts</h3>
+            <p>Receive real-time alerts during emergencies.</p>
+        </div>
+        <div class="idea">
+            <h3>Interactive Disaster Preparedness Guides</h3>
+            <p>Access interactive guides for disaster preparedness.</p>
+        </div>
+        <div class="idea">
+            <h3>Advanced AI for Diagnosis and Treatment Suggestions</h3>
+            <p>Utilize AI technology for preliminary diagnosis and treatment suggestions.</p>
+        </div>
+        <div class="idea">
+            <h3>Community-based First Aid Training Programs</h3>
+            <p>Participate in community-based first aid training programs.</p>
+        </div>
+        <div class="idea">
+            <h3>Integration with Wearable Health Devices for Remote Monitoring</h3>
+            <p>Integrate with wearable health devices for remote monitoring of health conditions.</p>
+        </div>
+    </div>
+</div>
+
+        <!-- Community Support -->
+        <div class="community-support">
+            <div class="content">
+                <h2>Community Support</h2>
+                <p>Connect with local support groups and volunteers for emergency assistance.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Medical Emergency Response System</p>
+    </footer>
+
+    <script src="/js/medical.js"></script>
+    <!-- Add any additional JavaScript or libraries here -->
+</body>
+</html>
