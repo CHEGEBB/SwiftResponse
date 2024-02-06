@@ -407,10 +407,12 @@
 
 
 <div class="intelligent-symptom-checker">
-    <div class="content">
+    <div class="content5">
         <h2>Intelligent Symptom Checker</h2>
         <p>Get preliminary diagnoses based on symptoms entered by the user.</p>
+        <p>Select the symptoms you are experiencing and click "Check Symptoms" to get a preliminary diagnosis:</p>
         <form id="symptomCheckerForm">
+            <div class="symptoms">
             <label for="symptoms">Select Symptoms:</label><br>
             <input type="checkbox" id="fever" name="symptoms" value="fever">
             <label for="fever">Fever</label><br>
@@ -444,11 +446,15 @@
             <label for="chills">Chills</label><br>
             <input type="checkbox" id="dizziness" name="symptoms" value="dizziness">
             <label for="dizziness">Dizziness</label><br>
+            </div>
             <!-- Add more symptoms here -->
+            <div class="type">
             <button type="button" onclick="checkSymptoms()">Check Symptoms</button>
+            </div>
         </form>
         <div id="diagnosisResults">
             <!-- Diagnosis results will be displayed here -->
+            
         </div>
     </div>
 </div>
