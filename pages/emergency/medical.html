@@ -6,6 +6,9 @@
     <title>Medical Emergency Response System</title>
     <link rel="stylesheet" href="/css/medical.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </head>
 <body>
     
@@ -48,7 +51,7 @@
   <header class="header" style="background-image: url('/img/med/pic1.jpg');">
     <div class="header-overlay"></div>
     <div class="container">
-        <h1>SwiftResponse Medical Emergency Response</h1>
+        <h1>SwiftResponse Medical Emergency System</h1>
         <p>SwiftResponse: Your Partner in Emergency Medical Care</p>
         <p>Access swift and efficient medical assistance during emergencies with our state-of-the-art coordination system.</p>
         <div class="buttons">
@@ -289,7 +292,6 @@
         </div>
         </div>
 
-        <!-- You can add more hospitals here -->
     <!-- HTML for navigation arrows -->
 <button class="prev-arrow">
     <img src="/img/med/gg--arrow-left-o.svg" alt="Previous">
@@ -478,106 +480,68 @@
 
 
 
-
-        <!-- Emergency Numbers -->
-        <div class="emergency-numbers">
-            <div class="content">
-                <h2>Emergency Contact Numbers</h2>
-                <p>Save these important contact numbers for immediate assistance:</p>
-                <div class="emergency-contact">
-                    <span class="contact-label">Emergency Services:</span>
-                    <span class="contact-info">911</span>
-                </div>
-                <div class="emergency-contact">
-                    <span class="contact-label">Poison Control Center:</span>
-                    <span class="contact-info">1-800-222-1222</span>
-                </div>
-                <div class="emergency-contact">
-                    <span class="contact-label">Local Hospital:</span>
-                    <span class="contact-info">[Insert Local Hospital Number]</span>
-                </div>
-                <div class="emergency-contact">
-                    <span class="contact-label">Local Police Station:</span>
-                    <span class="contact-info">[Insert Local Police Number]</span>
-                </div>
-                <div class="emergency-contact">
-                    <span class="contact-label">Fire Department:</span>
-                    <span class="contact-info">[Insert Fire Department Number]</span>
-                </div>
-                <!-- Add more relevant emergency contact numbers -->
-            </div>
+    <!-- Emergency Contact Numbers -->
+    <div class="emergency-numbers">
+        <div class="content">
+            <div class="rectangle"></div>
+            <h1>Access a wide array of emergency numbers including all university ambulance services</h1>
+            <h2>Emergency Contact Numbers (Kenya)</h2>
+            <p>SwiftResponse brings you a centralized platform to access all ambulance and medical emrgency services,
+                including university ambulance services for students.<span style="color: blue;font-size: 700;text-decoration: underline;">Click the button below to display the selected emergency contact number.</span>
+            </p>
+            <p style="color: red;">Save these important contact numbers for immediate assistance:</p>
+            <p>For university students kindly scroll to see your university name </p>
+            <select id="emergency-select">
+                <option value="">Select an emergency contact</option>
+                <option value="0724721258">Dedan Kimathi Ambulance Services</option>
+                <option value="999">Medical Emergency Services</option>
+                <option value="1199">Kenya Red Cross Ambulance Services</option>
+                <option value="112">Police Emergency Line</option>
+                <option value="116">Childline Kenya</option>
+                <option value="0703050313">Flying Doctors Society of Africa</option>
+                <option value="0700395395">Nairobi Poison Control Center</option>
+                <option value="0700474747">National Spinal Injury Hospital</option>
+                <option value="0706 799 000">Kenya Medical Training College (KMTC) Ambulance</option>
+                <option value="0202726848">Kenya Medical Association (KMA) Ambulance</option>
+                <option value="0800721055">Kenya Association of Private Hospitals (KAPH) Ambulance</option>
+                <option value="0707375375">Amref Flying Doctors</option>
+                <option value="0709841000">Aga Khan University Hospital Ambulance</option>
+                <option value="0730644000">Gertrude’s Children’s Hospital Ambulance</option>
+                <option value="0723963782">Kenyatta National Hospital Ambulance</option>
+                <option value="0713127910">University of Nairobi Emergency Services</option>
+                <option value="0701668193">Strathmore University Emergency Line</option>
+                <option value="0202503838">Kenyatta University Medical Center</option>
+                <option value="0713884128">Jomo Kenyatta University Hospital</option>
+                <option value="2540512217891">Egerton University Health Services</option>
+                <option value="0202878000">Mount Kenya University Emergency</option>
+                <option value="0722203411">Maseno University Medical Center</option>
+                <option value="254532033238 ">Moi University Health Services</option>
+                <option value="254746490082">University of Eldoret Emergency Line</option>
+                <option value="254748177829 ">Kisii University Medical Center</option>
+                <option value="0705555400">Pwani University Health Services</option>
+                <option value="254702597360">Masinde Muliro University Health Center</option>
+                <option value="2542219929">Technical University of Kenya Medical Services</option>
+                <option value="0772894430">Chuka University Emergency Line</option>
+                <option value="0203754386">St. John Ambulance</option>
+                <option value="0700999999">AAR Emergency Services</option>
+                <!-- Add more options for other emergency numbers -->
+            </select>
+            <button id="display-number-btn">Display Number</button>
+            <textarea id="contact-info" rows="4" cols="50" readonly></textarea> <!-- Element to display selected number -->
         </div>
+    </div>
 
-       
 
-       
-
-     
-
-        <!-- Share Live Location -->
-        <div class="live-location">
-            <div class="content">
-                <h2>Share Live Location</h2>
-                <p>Share your live location with emergency services for faster response.</p>
-                <button class="share-location-btn">Share Location</button>
-            </div>
-        </div>
-
-      
-        <!-- Personalized Emergency Plans -->
-        <div class="personalized-emergency-plans">
-            <div class="content">
-                <h2>Personalized Emergency Plans</h2>
-                <p>Create personalized emergency plans based on health conditions and medical history.</p>
-                <!-- Add emergency plan creation form or input fields here -->
-            </div>
-        </div>
-
-        <!-- Interactive Maps -->
-        <div class="interactive-maps">
-            <div class="content">
-                <h2>Interactive Maps with Hospital Ratings</h2>
-                <p>View hospital locations, ratings, and reviews from other users.</p>
-                <!-- Add interactive maps component here -->
-            </div>
-        </div>
-
-    
-        <!-- Multi-language Support -->
-        <div class="multi-language-support">
-            <div class="content">
-                <h2>Multi-language Support</h2>
-                <p>Access the system in different languages to cater to diverse users.</p>
-                <!-- Add language selection options here -->
-            </div>
-        </div>
-
-        <!-- Community Forums -->
-        <div class="community-forums">
-            <div class="content">
-                <h2>Community Forums and Support Groups</h2>
-                <p>Join forums and support groups to share experiences and seek advice.</p>
-                <!-- Add forum interface or discussion board here -->
-            </div>
-        </div>
-
-        <!-- Emergency Preparedness Guides -->
-        <div class="emergency-preparedness-guides">
-            <div class="content">
-                <h2>Emergency Preparedness Guides</h2>
-                <p>Learn how to prepare for emergencies and disasters.</p>
-                <!-- Add emergency preparedness guides and resources here -->
-            </div>
-        </div>
-
-        <!-- Telemedicine Services -->
-        <div class="telemedicine-services">
-            <div class="content">
-                <h2>Telemedicine Services</h2>
-                <p>Access remote medical consultations and follow-ups.</p>
-                <!-- Add telemedicine interface or appointment booking system here -->
-            </div>
-        </div>
+  <!-- Interactive Maps -->
+  <div class="interactive-maps">
+    <div class="content">
+        <h2>Interactive Maps of  hospitals nearby</h2>
+        <p>View hospital locations, ratings, and reviews from other users.</p>
+        <p>Use the map to find hospitals near your location and access real-time information on their services and ratings.</p>
+        <!-- Add interactive maps component here -->
+        <div id="map" style="height: 400px;"></div> <!-- Map container -->
+    </div>
+</div>
 
         <!-- Health Profile -->
         <div class="health-profile">
@@ -609,47 +573,82 @@
             </div>
         </div>
 
-<!-- Life-Saving Ideas -->
-<div class="life-saving-ideas">
+
+       <!-- Community Support -->
+<div class="community-support">
     <div class="content">
-        <h2>Life-Saving Ideas</h2>
-        <div class="idea">
-            <h3>Real-time Emergency Alerts</h3>
-            <p>Receive real-time alerts during emergencies.</p>
+        <h2>Community Support</h2>
+        <p>Connect with local support groups, volunteers, and healthcare professionals for emergency assistance, advice, and resources. Join hands with your community to promote health and well-being.</p>
+        <div class="support-groups">
+            <h3>Support Groups</h3>
+            <p>Find support groups in your area where you can connect with others facing similar health challenges. Share experiences, seek advice, and provide encouragement.</p>
+            <div class="support-group">
+                <img src="/img/med/support1.jpg" alt="Support Group Image">
+                <h4>Chronic Illness Support Group</h4>
+                <p>Join our supportive community of individuals living with chronic illnesses. Together, we navigate the ups and downs, share coping strategies, and offer emotional support.</p>
+            </div>
+            <div class="support-group">
+                <img src="/img/med/support3.jpg" alt="Support Group Image">
+           
+            </div>
         </div>
-        <div class="idea">
-            <h3>Interactive Disaster Preparedness Guides</h3>
-            <p>Access interactive guides for disaster preparedness.</p>
-        </div>
-        <div class="idea">
-            <h3>Advanced AI for Diagnosis and Treatment Suggestions</h3>
-            <p>Utilize AI technology for preliminary diagnosis and treatment suggestions.</p>
-        </div>
-        <div class="idea">
-            <h3>Community-based First Aid Training Programs</h3>
-            <p>Participate in community-based first aid training programs.</p>
-        </div>
-        <div class="idea">
-            <h3>Integration with Wearable Health Devices for Remote Monitoring</h3>
-            <p>Integrate with wearable health devices for remote monitoring of health conditions.</p>
+        <div class="volunteer-opportunities">
+            <h3>Volunteer Opportunities</h3>
+            <p>Make a difference in your community by volunteering your time and skills. Explore various volunteer opportunities ranging from assisting the elderly to participating in health awareness campaigns.</p>
+            <div class="volunteer-opportunity">
+                <img src="/img/med/volunteer1.jpg" alt="Volunteer Opportunity Image">
+                <h4>Senior Companion Program</h4>
+                <p>Join our senior companion program and provide companionship and assistance to elderly individuals in your neighborhood. Your support can brighten someone's day!</p>
+            </div>
+            <div class="volunteer-opportunity">
+                <img src="/img/med/volunteer2.jpg" alt="Volunteer Opportunity Image">
+                <h4>Health Education Campaign</h4>
+                <p>Participate in our health education campaigns aimed at raising awareness about common health issues and promoting preventive measures. Be a health advocate in your community!</p>
+            </div>
         </div>
     </div>
 </div>
 
-        <!-- Community Support -->
-        <div class="community-support">
-            <div class="content">
-                <h2>Community Support</h2>
-                <p>Connect with local support groups and volunteers for emergency assistance.</p>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/about.html">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
             </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>SwiftResponse ERCS</p>
+                <p>123 Main Street, City</p>
+                <p>Email: info@swiftresponse.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Connect With Us</h3>
+                <div class="socials">
+                <a href="#"><img src="/img/socials/facebook-outline.svg" alt="Facebook"></a>
+                <a href="#"><img src="/img/socials/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="/img/socials/instagram (1).svg" alt="Instagram"></a>
+                <a href="#"><img src="/img/socials/bi--linkedin.svg" alt="LinkedIn"></a>
+                </div>
         </div>
+        <div class="copyright">
+        <p>
+            &copy; 2024 SwiftResponse ERCS. All rights reserved.
+        </p>
+        </div>
+        
     </div>
+</footer>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Medical Emergency Response System</p>
-    </footer>
-
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="/js/medical.js"></script>
     <!-- Add any additional JavaScript or libraries here -->
 </body>
