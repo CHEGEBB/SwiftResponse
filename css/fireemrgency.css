@@ -407,35 +407,35 @@ button:hover{
 }
 
 .card:nth-child(1) {
-    background-image: url('/img/fire/card1.jpeg');
+    background-image: url('../img/fire/card1.jpeg');
 }
 
 .card:nth-child(2) {
-    background-image: url('/img/fire/carrd2.jpg');
+    background-image: url('../img/fire/carrd2.jpg');
 }
 
 .card:nth-child(3) {
-    background-image: url('/img/fire/card3.jpeg');
+    background-image: url('../img/fire/card3.jpeg');
 }
 
 .card:nth-child(4) {
-    background-image: url('/img/fire/card4.jpeg');
+    background-image: url('../img/fire/card4.jpeg');
 }
 
 .card:nth-child(5) {
-    background-image: url('/img/fire/card5.jpeg');
+    background-image: url('../img/fire/card5.jpeg');
 }
 
 .card:nth-child(6) {
-    background-image: url('/img/fire/card6.jpeg');
+    background-image: url('../img/fire/card6.jpeg');
 }
 
 .card:nth-child(7) {
-    background-image: url('/img/fire/card7.jpeg');
+    background-image: url('../img/fire/card7.jpeg');
 }
 
 .card:nth-child(8) {
-    background-image: url('/img/fire/card8.jpeg');
+    background-image: url('../img/fire/card8.jpeg');
 }
 .card::before {
     content: "";
