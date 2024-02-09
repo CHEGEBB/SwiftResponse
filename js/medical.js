@@ -180,11 +180,6 @@
                 break;
         }
     }
-
-    // Event listener for the "Display Number" button
-    var displayNumberBtn = document.getElementById("display-number-btn");
-    displayNumberBtn.addEventListener("click", showNumber);
-
     // Interactive Map functionality
     var map = L.map('map').setView([0, 0], 2); // Centered at (0, 0) with zoom level 2
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -193,46 +188,32 @@
 
     // Define hospital locations and names
     var hospitals = [
-        { name: 'The Aga Khan Hospital', location: [1.2921, 36.8219] },
-        { name: 'Nairobi Hospital', location: [-1.2921, 36.8219] },
-        { name: 'Kenyatta National Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Mater Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Gertrude’s Children’s Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Avenue Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Karen Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Coptic Hospital', location: [-1.2921, 36.8219] },
-           { name: 'MP Shah Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Nairobi West Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Nairobi Women’s Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan University Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Kenyatta University Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Moi Teaching and Referral Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Eldoret Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Kisumu County Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Mombasa Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Coast General Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Pandya Memorial Hospital', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Mombasa', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kisumu', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Eldoret', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Nanyuki', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Meru', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Nakuru', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kericho', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kisii', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kakamega', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Bungoma', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kitale', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Busia', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Malindi', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kilifi', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Lamu', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Taita Taveta', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Kwale', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Tana River', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Garissa', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Wajir', location: [-1.2921, 36.8219] },
-           { name: 'Aga Khan Hospital, Mandera', location: [-1.2921, 36.8219] },
+        { name: 'Kenyatta National Hospital', location: [-1.2966, 36.7984] },
+        { name: 'Moi Teaching and Referral Hospital', location: [0.0544, 35.0057] },
+        { name: 'Nairobi Hospital', location: [-1.2857, 36.8219] },
+        { name: 'Mater Hospital', location: [-1.3023, 36.8155] },
+        { name: 'Aga Khan Hospital, Nairobi', location: [-1.2824, 36.7963] },
+        { name: 'Kisumu County Hospital', location: [-0.1077, 34.7668] },
+        { name: 'Coast General Hospital', location: [-4.0607, 39.6742] },
+        { name: 'Eldoret Hospital', location: [0.5167, 35.2698] },
+        { name: 'Kericho County Referral Hospital', location: [-0.3634, 35.2831] },
+        { name: 'Nyeri County Referral Hospital', location: [-0.4214, 36.9474] },
+        { name: 'Karatina Sub-County Hospital', location: [-0.4759, 37.0896] },
+        { name: 'Embu Level 5 Hospital', location: [-0.5368, 37.4517] },
+        { name: 'Kakamega County General Hospital', location: [0.2814, 34.7529] },
+        { name: 'Bungoma County Referral Hospital', location: [0.5653, 34.5689] },
+        { name: 'Nakuru Level 5 Hospital', location: [-0.2795, 36.0717] },
+        { name: 'Machakos Level 5 Hospital', location: [-1.5231, 37.2592] },
+        { name: 'Kajiado County Referral Hospital', location: [-1.7983, 36.7793] },
+        { name: 'Garissa County Referral Hospital', location: [-0.4502, 39.6486] },
+        { name: 'Mandera County Referral Hospital', location: [3.9385, 41.8622] },
+        { name: 'Isiolo County Referral Hospital', location: [0.3517, 37.5828] },
+        { name: 'Marsabit County Referral Hospital', location: [2.3372, 37.9894] },
+        { name: 'Kitui County Referral Hospital', location: [-1.3685, 38.0151] },
+        { name: 'Migori County Referral Hospital', location: [-1.0633, 34.4726] },
+        { name: 'Homabay County Referral Hospital', location: [-0.5372, 34.4575] },
+        { name: 'Siaya County Referral Hospital', location: [0.0626, 34.2884] },
+        { name: 'Vihiga County Referral Hospital', location: [0.0595, 34.7222] },
     ];
 
     // Add markers for each hospital

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accident Response System</title>
+    <link rel="stylesheet" href="/css/accident.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Add any additional CSS or libraries here -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <ul class="nav-list" id="navList">
+            <li class="nav-item"><a href="/index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="#">Weather Alerts</a></li>
+                    <li><a href="#">Security Alerts</a></li>
+                    <li><a href="#">Medical Alerts</a></li>
+                    <li><a href="#">Accident Alerts</a></li>
+                    <li><a href="#">Fire Alerts</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/pages/emergency/fire.html">Fire Emergencies</a></li>
+                    <li><a href="/pages/emergency/medical.html">Medical Emergencies</a></li>
+                    <li><a href="/pages/emergency/accident.html">Accident Emergencies</a></li>
+                    <li><a href="/pages/emergency/security.html">Security Emergencies</a></li>
+                    <li><a href="/report.html">Report Emergency</a></li>
+                    <li><a href="/pages/emergency/search_rescue.html">Search and Rescue</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="/report.html">Report</a></li>
+            <li class="nav-item"><a href="/about.html">About</a></li>
+            <li class="nav-item"><a href="/contact.html">Contact</a></li>
+        </ul>
+        <button class="number">Call Now</button>
+    </nav>
+
+    <header class="header" style="background-image: url('/img/accident/car3.jpg');">
+        <div class="header-overlay"></div>
+        <div class="container">
+            <div class="ficon">
+                <div class="rectangle"></div>
+                <h1>SwiftResponse Accident Response System</h1>
+                <p>SwiftResponse empowers individuals to report incidents swiftly, access crucial information, and collaborate seamlessly with emergency responders and volunteers. From live accident reporting to real-time assistance requests, SwiftResponse ensures rapid and effective aid delivery, enhancing safety and resilience in every community.</p>
+            </div>
+           
+            <div class="buttons">
+                <button class="primary-btn">Request Assistance</button>
+                <button class="secondary-btn">Emergency Contacts</button>
+            </div>
+        </div>
+    </header>
+    
+    
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Live Accident Reporting -->
+            <div class="content-item1">
+                <div class="say">
+                <h2>Live Accident Reporting</h2>
+                <p>Report accidents in real-time to provide crucial information for emergency responders.</p>
+                </div>
+                <div class="rep">
+                <div class="live">
+                    <div class="img1">
+                        <img src="/img/accident/car.jpg" alt="Accident Reporting">
+                    </div>
+                <h2>Live Accident Reporting</h2>
+                <p>Report accidents in real-time to provide crucial information for emergency responders.</p>
+                
+                </div>
+                <div class="why">
+                    <div class="img2">
+                        <img src="/img/accident/car3.jpg" alt="Accident Reporting">
+                    </div>
+                <h3>Why Live Accident Reporting Matters</h3>
+                <p>Accidents can happen at any moment, and the ability to report them in real-time can make a significant difference in how quickly and effectively emergency responders can react. <a href="/report.html" class="primary-btn"><button>Report Accident</button></a></p>
+                </div>
+                <div class="works">
+                    <div class="img3">
+                        <img src="/img/accident/car4.jpg" alt="Accident Reporting">
+                    </div>
+                <h3>How It Works</h3>
+                <p>Our live accident reporting system allows users to quickly and easily submit details about accidents as they occur. The process is simple and intuitive, ensuring that crucial information reaches emergency responders promptly.</p>
+                </div>
+                </div>
+                <div class="offer">
+                    <div class="accident2">
+                        <img src="/img/accident/car2.jpg" alt="Accident Reporting">
+                    </div>
+                <div class="benefits">
+                <h3>Benefits of Live Accident Reporting</h3>
+                <p>Live accident reporting offers numerous benefits, including:</p>
+                <p><strong>Rapid Response:</strong> Emergency responders can be alerted to accidents in real-time, allowing them to mobilize quickly and provide assistance faster.</p>
+                <p><strong>Improved Coordination:</strong> By centralizing accident reports, responders can better coordinate their efforts and allocate resources more effectively.</p>
+                <p><strong>Enhanced Safety:</strong> Prompt reporting of accidents helps to identify potential hazards and prevent further incidents, contributing to overall road safety.</p>
+                <p><strong>Data-driven Decision Making:</strong> The data collected through live accident reporting can be analyzed to identify trends, areas of high risk, and opportunities for intervention, leading to informed decision-making and targeted safety measures.</p>
+                <h3>Get Involved</h3>
+                <p>Join us in our efforts to improve road safety by participating in live accident reporting. Your contribution can make a real difference in how quickly and effectively emergency responders can respond to accidents, ultimately saving lives.<a href="/report.html" class="primary-btn"><button>Report Accident</button></a></p>
+                </div>
+                </div>
+            </div>
+            
+<!-- Interactive Map Section -->
+<div class="content-item2">
+    <div class="rectangle2"></div>
+    <h2>SwiftResponse: Smart Emergency Management System</h2>
+    <div class="section-description">
+        <p>Welcome to SwiftResponse, our smart emergency management system designed to provide real-time assistance during critical situations.</p>
+        <p>With SwiftResponse, we offer a comprehensive interactive map feature that empowers users to efficiently handle emergency scenarios. By seamlessly integrating live data, including accident incidents and medical facilities, into a user-friendly interface, SwiftResponse ensures timely and effective response efforts.</p>
+    </div>
+    
+    <div class="section-features">
+        <h3>Key Features:</h3>
+        <div class="feature1">
+            
+            <div class="con1">
+                <img src="/img/accident/fluent--location-live-24-filled.svg" alt="Live Incident Tracking">
+            </div>
+            <h4>Live Incident Tracking:</h4>
+            <p>SwiftResponse dynamically updates the map with real-time accident incidents, allowing users to stay informed about ongoing emergencies as they unfold.</p>
+        </div>
+        <div class="feature2">
+           
+            <div class="con2">
+                <img src="/img/accident/fa6-solid--house-medical.svg" alt="Nearby Medical Facilities">
+            </div>
+            <h4>Nearby Medical Facilities:</h4>
+            <p>Easily locate nearby medical facilities such as hospitals, clinics, and pharmacies directly on the map, enabling swift access to essential healthcare services.</p>
+        </div>
+        <div class="feature3">
+            <div class="con3">
+                <img src="/img/accident/healthicons--paved-road-negative.svg" alt="Live Incident Tracking">
+            </div>
+            <h4>Optimized Route Planning:</h4>
+            <p>SwiftResponse offers intelligent route planning functionality, enabling emergency responders to chart the most efficient and safest routes to incident locations.</p>
+        </div>
+    </div>
+
+    <div class="section-experience">
+        <h3>Experience the Power:</h3>
+        <p>Explore the live data visualization below to see SwiftResponse's interactive map in action it shows traffic and acccidents along the road:</p>
+    </div>
+
+    <!-- Key Legend -->
+    <div class="key-legend">
+        <h3>Key Legend:</h3>
+        <div class="legend-item">
+            <div class="legend-color heavy"></div>
+            <div class="legend-label">Heavy Traffic</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color moderate"></div>
+            <div class="legend-label">Moderate Traffic</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color light"></div>
+            <div class="legend-label">Light Traffic</div>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color accident"></div>
+            <div class="legend-label">Accident</div>
+        </div>
+    </div>
+
+    <!-- Include interactive map here -->
+    <div id="map" class="map-container">
+        <!-- Map will be rendered here -->
+    </div>
+</div>
+
+</div>
+
+
+          <!-- Emergency Contacts and Crowd-Sourced Assistance Section -->
+<div class="content-item3">
+    <h2>Emergency Assistance</h2>
+    <div class="section-description">
+        <p>Find quick access to emergency contact numbers for local authorities and services. Additionally, offer or request assistance from nearby volunteers or responders through the platform.</p>
+    </div>
+
+    <!-- Emergency Contacts -->
+    <div class="emergency-contacts">
+        <h3>Emergency Contacts</h3>
+        <div class="contact-info">
+            <p>Police: 112</p>
+            <p>Medical Emergency Services: 999</p>
+            <p>Fire Department: 101</p>
+            <p>Ambulance Services: 1199</p>
+            <p>Red Cross: 1199</p>
+
+            <!-- Add more emergency contacts as needed -->
+        </div>
+        <p>For specific medical facilities and hospitals, check the interactive map below.</p>
+    </div>
+
+    <!-- Crowd-Sourced Assistance -->
+    <div class="crowd-assistance">
+        <h3>Crowd-Sourced Assistance</h3>
+        <div class="assistance-info">
+            <p>If you need immediate help or want to assist others, you can:</p>
+            <p>- Request assistance from nearby volunteers or responders.</p>
+            <p>- Offer help to those in need by providing your location and availability.</p>
+        </div>
+        <p>Use the chat feature to communicate with nearby volunteers and responders or access crowd-sourced information.</p>
+    </div>
+<!-- Contact Info for Emergency Services -->
+<div class="emergency-info">
+    <h3>Contact Information</h3>
+    <div class="contact-options">
+        <p>For immediate assistance, call the emergency contact number <span id="emergency-number"></span>.</p>
+        <p>You can also use the chat feature to communicate with nearby volunteers or responders.</p>
+    </div>
+    <div class="select-option">
+        <select id="emergency-select">
+            <option value="112">Police Emergency Line</option>
+            <option value="999">Medical Emergency Services</option>
+            <option value="1199">Kenya Red Cross Ambulance Services</option>
+            <option value="0703050313">Flying Doctors Society of Africa</option>
+            <option value="0707375375">Amref Flying Doctors</option>
+            <option value="0203754386">St. John Ambulance</option>
+            <option value="0700395395">Nairobi Poison Control Center</option>
+            <option value="0700474747">National Spinal Injury Hospital</option>
+            <option value="0709841000">Aga Khan University Hospital Ambulance</option>
+            <option value="0730644000">Gertrude’s Children’s Hospital Ambulance</option>
+            <option value="0700102170">SOS Children's Villages Kenya</option>
+            <option value="0709121000">Kijabe Hospital Ambulance</option>
+            <option value="0733632400">Nairobi West Hospital Ambulance</option>
+            <option value="0706078000">Avenue Group of Hospitals Ambulance</option>
+            <option value="0722566363">PCEA Kikuyu Hospital Ambulance</option>
+            <option value="0730631345">Karen Hospital Ambulance</option>
+            <option value="0790290000">Mater Hospital Ambulance</option>
+            <option value="0710670000">Nairobi Women's Hospital Ambulance</option>
+            <option value="0734740000">M.P. Shah Hospital Ambulance</option>
+            <option value="0703040000">Aga Khan University Hospital - Kisumu Ambulance</option>
+            <option value="0721268000">Eldoret Hospital Ambulance</option>
+            <option value="0720993000">Coast General Hospital Ambulance</option>
+            <option value="0701554114">Nairobi Hospital Ambulance</option>
+            <option value="0703020000">Tenwek Hospital Ambulance</option>
+            <option value="0709178000">Pandya Memorial Hospital Ambulance</option>
+            <option value="0709314000">Coptic Hospital Ambulance</option>
+            <option value="0702117000">Nairobi Metropolitan Services Ambulance</option>
+            <option value="0730641111">The Nairobi Hospital - Outpatient Centre, Kiambu Road Ambulance</option>
+            <option value="0730651000">MP Shah Outpatient Center, Kilimani Ambulance</option>
+            <option value="0729773306">Radiant Group of Hospitals Ambulance</option>
+            <!-- Add more emergency contact options -->
+        </select>
+    </div>
+    <div class="display-button">
+        <button id="display-number-btn">Display Number</button>
+    </div>
+    <div class="number-display">
+        <textarea id="displayed-number" rows="1" cols="30" readonly></textarea>
+        <div class="call">
+        <button id="call-number-btn">Call Number</button>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+          
+
+    
+          <!-- University Safety System -->
+<div class="content-item4">
+    <div class="saf">
+    <h2>University Safety System</h2>
+    <p>Ensure the safety of students and faculty with our comprehensive university safety system.</p>
+    </div>
+
+<div class="feats">
+    <!-- University Accident Reporting -->
+    <div class="feat">
+        <h3>Accident Reporting</h3>
+        <p>Students can promptly report accidents occurring around the university campus, contributing to a safer environment for everyone.</p>
+        <button onclick="window.location.href='/report.html'">Report Accident</button>
+    </div>
+
+    <!-- Notification System -->
+    <div class="feat">
+        <h3>Notification System</h3>
+        <p>Stay informed about nearby accidents, road closures, and emergency situations with our real-time notification system. Receive instant alerts to ensure you're always aware of potential safety hazards.</p>
+    </div>
+
+    <!-- Additional Features -->
+    <div class="feat">
+        <h3>Additional Features</h3>
+        <p>Our university safety system goes beyond accident reporting and notification. It includes features such as emergency alerts, campus safety guidelines, live incident tracking, and community engagement.</p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="feat">
+        <h3>Conclusion</h3>
+        <p>Our university safety system is designed to create a secure and conducive environment for learning and growth. By leveraging advanced technology and community participation, we aim to mitigate risks and promote a culture of safety on campus.</p>
+    </div>
+</div>
+</div>
+
+            
+      
+<div class="items">
+    <div class="pics">
+        <div class="gp1">
+        <div class="pic1">
+            <img src="/img/accident/community.jpg" alt="Accident Reporting">
+        </div>
+        <div class="pic2">
+            <img src="/img/accident/volunteer.jpg" alt="Accident Reporting">
+        </div>
+        </div>
+        <div class="gp2">
+        <div class="pic3">
+            <img src="/img/accident/emr.jpg" alt="Accident Reporting">
+        </div>
+        <div class="pic4">
+            <img src="/img/accident/join.jpg" alt="Accident Reporting">
+        </div>
+        </div>
+    </div>
+            <div class="content">
+<div class="content-item">
+    <h2>Community Forums</h2>
+    <p>Engage with others, share experiences, and exchange information on accident prevention and response.</p>
+</div>
+
+<div class="content-item">
+    <h2>Volunteer Coordination</h2>
+    <p>Coordinate volunteers to assist during emergencies, assigning specific roles or tasks.</p>
+</div>
+
+<div class="content-item">
+    <h2>Additional Information</h2>
+    <p>Access resources for accident prevention and safety training.</p>
+    <p>Learn about local emergency services and contact information.</p>
+    <p>Find tips for creating emergency preparedness plans.</p>
+</div>
+
+<div class="content-item">
+    <h2>Get Involved</h2>
+    <p>Join community safety initiatives and awareness campaigns.</p>
+    <p>Participate in volunteer training programs.</p>
+    <p>Contribute to research on accident prevention and response strategies.</p>
+</div>
+        </div>
+</div>
+    </main>
+
+    
+    <!-- Footer Section -->
+   
+<footer class="footer">
+    <div class="contain">
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/about.html">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>SwiftResponse ERCS</p>
+                <p>123 Main Street, City</p>
+                <p>Email: info@swiftresponse.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="social-media">
+                <h3>Connect With Us</h3>
+                <div class="socials">
+                <a href="#"><img src="/img/socials/facebook-outline.svg" alt="Facebook"></a>
+                <a href="#"><img src="/img/socials/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="/img/socials/instagram (1).svg" alt="Instagram"></a>
+                <a href="#"><img src="/img/socials/bi--linkedin.svg" alt="LinkedIn"></a>
+                </div>
+        </div>
+        <div class="copyright">
+        <p>
+            &copy; 2024 SwiftResponse ERCS. All rights reserved.
+        </p>
+        </div>
+        
+    </div>
+</footer>
+
+    <!-- Add any additional JavaScript or libraries here -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/js/accident.js"></script>
+</body>
+</html>
