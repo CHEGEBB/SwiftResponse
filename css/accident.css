@@ -549,7 +549,7 @@ strong{
 
 /* University Accident Reporting */
 .feat:nth-child(1) {
-    background-image: url('/img/accident/report.jpg'); 
+    background-image: url('..../img/accident/report.jpg'); 
 }
 
 /* Notification System */
