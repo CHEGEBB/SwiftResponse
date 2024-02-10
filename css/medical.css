@@ -220,7 +220,7 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 15px;
-    background-image: url("../../img/med/ambu.jpeg");
+    background-image: url("../img/med/ambu.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
@@ -238,7 +238,7 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 15px;
-    background-image: url("../../img/med/The-Karen-Hospital-Nairobi-Kenya.jpg");
+    background-image: url("../img/med/The-Karen-Hospital-Nairobi-Kenya.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
