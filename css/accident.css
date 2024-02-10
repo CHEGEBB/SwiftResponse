@@ -549,22 +549,22 @@ strong{
 
 /* University Accident Reporting */
 .feat:nth-child(1) {
-    background-image: url('..../img/accident/report.jpg'); 
+    background-image: url('../../img/accident/report.jpg'); 
 }
 
 /* Notification System */
 .feat:nth-child(2) {
-    background-image: url('/img/accident/notification.jpg');
+    background-image: url('../../img/accident/notification.jpg');
 }
 
 /* Additional Features */
 .feat:nth-child(3) {
-    background-image: url('/img/accident/features.jpg');
+    background-image: url('../../img/accident/features.jpg');
 }
 
 /* Conclusion */
 .feat:nth-child(4) {
-    background-image: url('/img/accident/conc.jpg');
+    background-image: url('../../img/accident/conc.jpg');
 }
 
 /* Text styles (to ensure text appears on top of overlay) */
