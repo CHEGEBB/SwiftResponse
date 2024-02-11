@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap');
+  /* font-family: 'Jost', sans-serif;
+  font-family: 'Ropa Sans', sans-serif; */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Ropa Sans', sans-serif;
+    color: crimson;
+}
+p{
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+}
+body{
+    width: 100%;
+overflow-x: hidden;
+}
+
+/* Navigation bar styles */
+.navbar {
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color:  hsla(248, 39%, 42%, 1);
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: hsla(0, 0%, 20%, 0.5);
+    padding: 10px;
+    list-style: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #000;
+    width: 100px;
+    z-index: 2;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li:hover {
+    background-color: hsla(0, 0%, 20%, 1);
+    color: #000;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+/* Header Section */
+.security-header {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    height: 600px;
+}
+
+.rectangle {
+    width: 30px;
+    height: 250px;
+    background-color: hsla(248, 39%, 42%, 1);
+    margin-top: 60px;
+}
+
+.security-header h1 {
+    font-size: 3rem;
+    color: crimson;
+    font-weight: 700;
+    margin-top: -70px;
+    position: relative;
+    z-index: 2;
+}
+
+.security-header p {
+    font-size: 1.2rem;
+    color: #fff;
+    width: 650px;
+    margin-top: -180px;
+    position: relative;
+    z-index: 2;
+    margin-left: 320px;
+}
+
+.header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.sicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 200px; /* Adjust max-width of the logo */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.primary-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.secondary-btn {
+    background-color: #6c757d;
+    color: #fff;
+}
