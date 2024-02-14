@@ -92,6 +92,21 @@ body {
     display: none;
     cursor: pointer;
 }
+.navbar button{
+    background-color: crimson;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+
+}
+
+.navbar button:hover {
+    background-color: blue;
+}
 
 /* Header Section */
 .security-header {
