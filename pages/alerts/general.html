@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Alerts - SwiftResponse ERCS</title>
+    <link rel="stylesheet" href="/css/general.css" />
+    <!-- Add any additional CSS or libraries here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Font Awesome for icons -->
+  </head>
+  <body>
+    <!-- navigation menu -->
+    <div class="navbar">
+      <nav>
+        <ul class="alert-types">
+          <li class="nav-item"><a href="/index.html">Home</a></li>
+          <li>
+            <a href="#fire" onclick="scrollToSection('fire')">Fire Alerts</a>
+          </li>
+          <li>
+            <a href="#medical" onclick="scrollToSection('medical')"
+              >Medical Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#accident" onclick="scrollToSection('accident')"
+              >Accident Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#security" onclick="scrollToSection('security')"
+              >Security Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#earthquake" onclick="scrollToSection('earthquake')"
+              >Earthquake Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#university" onclick="scrollToSection('university')"
+              >University Alerts</a
+            >
+          </li>
+        </ul>
+        <div class="notification-icon">
+          <i class="fas fa-bell"></i>
+          <span class="notification-count">5</span>
+        </div>
+      </nav>
+    </div>
+
+    <header
+      style="
+        height: 600px;
+        background-image: url('/img/general/gfg.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      "
+    >
+      <div
+        class="header-overlay"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+        "
+      ></div>
+      <nav>
+        <!-- Navigation content goes here -->
+      </nav>
+      <div class="header-container" style="position: relative; z-index: 1">
+        <h1>Stay Alert with SwiftResponse ERCS</h1>
+        <p>
+          Welcome to the General Alerts section of SwiftResponse Emergency
+          Response and Communication System (ERCS). SwiftResponse keeps you
+          informed about various emergency situations, ensuring you receive
+          real-time updates to stay safe and prepared.
+        </p>
+        <p>
+          SwiftResponse ERCS is your reliable companion during times of crisis,
+          offering comprehensive information and resources to help you navigate
+          emergency situations with confidence. Whether it's natural disasters,
+          security threats, or public health emergencies, SwiftResponse provides
+          timely alerts and guidance to protect yourself and your loved ones.
+        </p>
+        <div class="button-container">
+          <button class="primary-button">Get Started</button>
+          <button class="secondary-button">Learn More</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="facts">
+      <section id="emergencies-responded" class="alert-section">
+        <h2>Emergencies Responded To</h2>
+        <div id="count1" class="count">0</div>
+      </section>
+
+      <section id="satisfied-clients" class="alert-section">
+        <h2>Satisfied Clients</h2>
+        <div id="count2" class="count">0</div>
+      </section>
+
+      <section id="rated-best" class="alert-section">
+        <h2>Rated Best in Alerts</h2>
+        <div id="count3" class="count">0</div>
+      </section>
+
+      <section id="response-time" class="alert-section">
+        <h2>Response Time(min)</h2>
+        <div id="count4" class="count">0</div>
+      </section>
+
+      <section id="issues-resolved" class="alert-section">
+        <h2>Issues Resolved</h2>
+        <div id="count5" class="count">0</div>
+      </section>
+
+      <section id="community-support" class="alert-section">
+        <h2>Community Support</h2>
+        <div id="count6" class="count">0</div>
+      </section>
+    </div>
+    <!-- main -->
+    <main>
+      <section id="fire" class="alert-section">
+        <div class="firee">
+        <h2>Fire Alerts</h2>
+        <p>
+          Stay informed about the latest fire emergencies and updates. Our
+          comprehensive fire alert system provides real-time information to help
+          you stay safe and prepared.
+        </p>
+        </div>
+        <div id="fire-alerts-container" class="cards-container">
+          <!-- First Row -->
+          <div class="row">
+            <div class="card">
+              <img src="/img/general/mk.jpg" alt="Fire Alert Image 1" />
+              <div class="card-content">
+                <h3>Mount Kenya Forest Fire</h3>
+                <p>
+                  A wildfire has broken out in the Mount Kenya forest region,
+                  posing a threat to nearby wildlife and communities.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/masai.jpg" alt="Fire Alert Image 2" />
+              <div class="card-content">
+                <h3>Maasai Mara Grassland Fire</h3>
+                <p>
+                  A fire has ignited in the Maasai Mara grasslands, endangering
+                  the habitat of various animal species.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/nairobi.jpg" alt="Fire Alert Image 3" />
+              <div class="card-content">
+                <h3>Nairobi Urban Fire</h3>
+                <p>
+                  Authorities are responding to a fire outbreak in urban areas
+                  of Nairobi, urging residents to evacuate safely.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/naks.jpg" alt="Fire Alert Image 4" />
+              <div class="card-content">
+                <h3>Lake Nakuru National Park Fire</h3>
+                <p>
+                  Reports of a fire incident in Lake Nakuru National Park raise
+                  concerns over the safety of wildlife and visitors.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/kaj.jpg" alt="Fire Alert Image 5" />
+              <div class="card-content">
+                <h3>Kajiado Grass Fire</h3>
+                <p>
+                  A grass fire has erupted in the Kajiado region, prompting
+                  emergency response teams to contain the blaze.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/coast.jpg" alt="Fire Alert Image 6" />
+              <div class="card-content">
+                <h3>Coastal Forest Fire</h3>
+                <p>
+                  Firefighters are battling a forest fire along the Kenyan
+                  coast, urging residents to stay indoors.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/western.jpg" alt="Fire Alert Image 7" />
+              <div class="card-content">
+                <h3>Western Kenya Grassland Fire</h3>
+                <p>
+                  Alerts issued as a grassland fire spreads rapidly in western
+                  Kenya, threatening agricultural lands.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/kibera-fire3.jpg" alt="Fire Alert Image 8" />
+              <div class="card-content">
+                <h3>Urban Slum Fire</h3>
+                <p>
+                  A fire outbreak in an urban slum area of Kenya sparks concerns
+                  over shelter
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Second Row -->
+<div class="row">
+    <div class="card">
+        <img src="/img/general/cali.jpeg" alt="Fire Alert Image 9" />
+        <div class="card-content">
+            <h3>California Wildfire</h3>
+            <p>A massive wildfire has erupted in California, threatening several communities. Evacuation orders are in place.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/general/australia.jpg" alt="Fire Alert Image 10" />
+        <div class="card-content">
+            <h3>Bushfire in Australia</h3>
+            <p>Emergency services are battling a bushfire in Australia's bushland. Residents urged to stay vigilant.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/general/amazon.jpg" alt="Fire Alert Image 11" />
+        <div class="card-content">
+            <h3>Amazon Rainforest Fire</h3>
+            <p>A significant fire outbreak has been reported in the Amazon Rainforest, raising concerns for biodiversity.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/general/siberia.jpg" alt="Fire Alert Image 12" />
+        <div class="card-content">
+            <h3>Siberian Forest Fire</h3>
+            <p>Large-scale wildfires have engulfed parts of the Siberian forests, prompting international firefighting efforts.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/general/europe.jpg" alt="Fire Alert Image 13" />
+        <div class="card-content">
+            <h3>European Wildfire</h3>
+            <p>Several European countries are facing wildfires, with firefighters battling to contain the blazes.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/img/general/brazil.jpg" alt="Fire Alert Image 14" />
+        <div class="card-content">
+            <h3>Forest Fire in Brazil</h3>
+            <p>Authorities are combating a forest fire in Brazil's rainforest, urging residents to take necessary precautions.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/sa.jpg" alt="Fire Alert Image 15" />
+              <div class="card-content">
+                <h3>Wildfire in South Africa</h3>
+                <p>
+                    A wildfire has broken out in South Africa, posing a threat to
+                    wildlife and communities.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/img/general/tehran.jpg" alt="Fire Alert Image 16" />
+              <div class="card-content">
+                <h3>Fire engulfs Tehran hospital, no casualties
+                </h3>
+                <p>
+                    A fire broke out at a hospital in Tehran, Iran, with no
+                    casualties reported.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- medical alerts -->
+      <div class="medical">
+
+      <section id="medical" class="alert-section2">
+        <h2>Medical Alerts</h2>
+        <p>
+          Stay informed about the latest medical emergencies and health advisories.
+          Our comprehensive medical alert system provides real-time information to
+          help you stay safe and prepared.
+        </p>
+        <div id="medical-alerts-container" class="cards-container">
+          <!-- First Row -->
+          <div class="row1">
+            <div class="card2">
+              <img src="/img/general/image1.jpg" alt="Medical Alert Image 1" />
+              <div class="card-content">
+                <h3>COVID-19 Outbreak</h3>
+                <p>
+                  A new wave of COVID-19 infections has been reported in the
+                  community, urging people to follow safety guidelines.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/influenza.jpg" alt="Medical Alert Image 2" />
+              <div class="card-content">
+                <h3>Influenza Season</h3>
+                <p>
+                  Cases of influenza are on the rise, reminding individuals to get
+                  vaccinated and practice good hygiene.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/zika.jpg" alt="Medical Alert Image 3" />
+              <div class="card-content">
+                <h3>Zika Virus Alert</h3>
+                <p>
+                  Zika virus cases have been detected in the region, highlighting the
+                  importance of mosquito control measures.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/food.jpg" alt="Medical Alert Image 4" />
+              <div class="card-content">
+                <h3>Foodborne Illnesses</h3>
+                <p>
+                  Several cases of food poisoning have been reported, emphasizing food
+                  safety practices.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="card2">
+              <img src="/img/general/allergy.jpg" alt="Medical Alert Image 5" />
+              <div class="card-content">
+                <h3>Allergy Alert</h3>
+                <p>
+                  High pollen levels are causing allergic reactions in susceptible
+                  individuals, advising them to stay indoors.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/heat.jpg" alt="Medical Alert Image 6" />
+              <div class="card-content">
+                <h3>Heatwave Warning</h3>
+                <p>
+                  Extreme heat conditions are forecasted, urging people to stay hydrated
+                  and avoid direct sun exposure.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/dengue.jpg" alt="Medical Alert Image 7" />
+              <div class="card-content">
+                <h3>Dengue Fever Outbreak</h3>
+                <p>
+                  Dengue fever cases are increasing in the area, reminding residents to
+                  eliminate mosquito breeding sites.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/contamin.jpg" alt="Medical Alert Image 8" />
+              <div class="card-content">
+                <h3>Water Contamination Notice</h3>
+                <p>
+                  Contamination has been detected in the local water supply, advising
+                  residents to use boiled or bottled water.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- Second Row -->
+          <div class="row3">
+            <div class="card2">
+              <img src="/img/general/cholera.jpg" alt="Medical Alert Image 9" />
+              <div class="card-content">
+                <h3>Cholera Outbreak</h3>
+                <p>
+                  Cholera cases have been reported in the region, urging people to
+                  practice proper sanitation and hygiene.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/respiratory.jpg" alt="Medical Alert Image 10" />
+              <div class="card-content">
+                <h3>Respiratory Infections Alert</h3>
+                <p>
+                  Respiratory infections are spreading, advising individuals to avoid
+                  crowded places and wear masks.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/lead.jpg" alt="Medical Alert Image 11" />
+              <div class="card-content">
+                <h3>Lead Poisoning Awareness</h3>
+                <p>
+                  Elevated lead levels have been detected, educating residents about
+                  sources of lead exposure and prevention measures.
+                </p>
+              </div>
+            </div>
+            <div class="card2">
+              <img src="/img/general/rabies.jpg" alt="Medical Alert Image 12" />
+              <div class="card-content">
+                <h3>Rabies Alert</h3>
+                <p>
+                  Rabies cases have been reported in the area, urging pet owners to
+                  vaccinate their pets and avoid contact with wild animals.
+                </p>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+      
+
+      <section id="accident" class="alert-section">
+        <h2>Accident Alerts</h2>
+        <!-- Include real-time accident alerts and updates here -->
+      </section>
+
+      <section id="security" class="alert-section">
+        <h2>Security Alerts</h2>
+        <!-- Include real-time security alerts and updates here -->
+      </section>
+
+      <section id="earthquake" class="alert-section">
+        <h2>Earthquake Alerts</h2>
+        <!-- Include real-time earthquake alerts and updates here -->
+      </section>
+
+      <section id="university" class="alert-section">
+        <h2>University Alerts</h2>
+        <!-- Include real-time university alerts and updates here -->
+      </section>
+
+      <!-- Social media-like features -->
+      <section class="social-media">
+        <h2>Community Engagement</h2>
+        <!-- Include news feed with emergency updates and notifications -->
+      </section>
+
+      <!-- Resources and crowd-sourced knowledge section -->
+      <section class="resources">
+        <h2>Resources</h2>
+        <!-- Include resources and crowd-sourced knowledge sharing features -->
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 SwiftResponse ERCS</p>
+    </footer>
+
+    <script src="/js/general.js"></script>
+    <!-- Add any additional JavaScript or libraries here -->
+  </body>
+</html>
