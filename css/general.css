@@ -624,3 +624,80 @@ header {
   margin-top: 20px;
   justify-content: center;
 }
+
+/* mobile design all*/
+@media (max-width: 768px) {
+  .nav
+  
+  .header-container h1{
+    margin-left: 100px;
+  }
+  .header-container p{
+    margin-left: 100px;
+  }
+  .animated-content {
+    width: 100%;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .primary-button, .secondary-button {
+    width: 100%;
+  }
+  .facts {
+    flex-direction: column;
+    height: auto;
+  }
+  .count {
+    margin: 20px 0;
+  }
+  .firee p{
+    margin-left: 100px;
+  }
+  .card p{
+    margin-left: 0;
+  }
+  .card img{
+    width: 300px;
+    height: 200px;
+  }
+  .card2 img{
+    width: 150px;
+    height: 150px;
+  }
+  .row1, .row2, .row3, .row4 {
+    flex-direction: column;
+  }
+  .row3 img{
+    margin-left: 0;
+  }
+  .card2 p{
+    margin-left: 0;
+  }
+  .aler p{
+    margin-left: 0;
+  }
+  .btn {
+    margin-left: 0;
+  }
+  .social-media, .resources {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quick-links, .contact-info {
+    width: 100%;
+  }
+  .socials{
+    flex-direction: column;
+  }
+  .footer-content{
+    flex-direction: column;
+  }
+}

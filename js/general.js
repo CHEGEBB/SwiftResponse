@@ -44,4 +44,16 @@ function countUp(target, duration, countId) {
     countUp(450, 2000, 'count5');
     countUp(400, 2000, 'count6');
   });
+  document.addEventListener("DOMContentLoaded", function() {
+    var menuToggle = document.getElementById('menu-toggle-btn');
+    var navMenu = document.querySelector('.nav-menu');
+  
+    menuToggle.addEventListener('click', function() {
+      if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+        navMenu.style.display = 'block';
+      } else {
+        navMenu.style.display = 'none';
+      }
+    });
+  });
   

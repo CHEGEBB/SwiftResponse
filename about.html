@@ -10,33 +10,34 @@
 <body>
 
   <!-- Navigation Section -->
-  <nav class="navbar">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fa fa-bars"></i>
-    </div>
-    <ul class="nav-list" id="navList">
-      <li class="nav-item"><a href="./index.html">Home</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
-        <ul class="dropdown-menu">
-          <li><a href="/pages/alerts/general.html">General Alerts</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Fire Emergencies</a></li>
-          <li><a href="#">Medical Emergencies</a></li>
-          <li><a href="#">Accident Emergencies</a></li>
-          <li><a href="#">Security Emergencies</a></li>
-          <li><a href="#">Report Emergency</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="/report.html">Report</a></li>
-      <li class="nav-item"><a href="/about.html">About</a></li>
-      <li class="nav-item"><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <!-- Custom hamburger icon -->
+    <img src="../../img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+  </div>
+  <ul class="nav-list" id="navList">
+    <li class="nav-item"><a href="#">Home</a></li>
+    <li class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+      <ul class="dropdown-menu">
+        <li><a href="./pages/alerts/general.html">General Alerts</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+      <ul class="dropdown-menu">
+        <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
+        <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
+        <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
+        <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
+        <li><a href="#">Report Emergency</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"><a href="./report.html">Report</a></li>
+    <li class="nav-item"><a href="./about.html">About</a></li>
+    <li class="nav-item"><a href="./contact.html">Contact</a></li>
+  </ul>
+</nav>
 
   <header class="header">
     <div class="header-overlay"></div>
@@ -92,6 +93,7 @@
       </div>
       </div>
     </div>
+  </div>
 
     <!-- Unique -->
     <div class="unique">
@@ -172,10 +174,12 @@
     <!-- Team -->
    
     <div class="team">
+      <div class="our">
       <h2>Meet Our Team</h2>
       <p>
         Our dedicated team of professionals brings together expertise in emergency management, software development, data analysis, and community outreach.
       </p>
+      </div>
       <div class="container1">
         <div class="group1">
       
@@ -223,6 +227,7 @@
 
     <!-- Contact -->
     <div class="contact2">
+      <div class="con">
       <h2>Get in Touch</h2>
       <p>
         Ready to learn more? Contact us today to discover how SwiftResponse ERCS can support your emergency preparedness and response efforts.
@@ -230,6 +235,7 @@
           <p>
             Ready to learn more? <a href="./contact.html"><button>Contact Us</button></a>
           </p>
+        </div>
         </div>
         
   </div>
