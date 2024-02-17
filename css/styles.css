@@ -1180,8 +1180,12 @@ h1 {
             overflow-y: auto;
         }
     }
+    .home {
+        margin-top: -20px;
+    }
     .home-content {
         margin-left: 0;
+        margin-top: -340px;
     }
     .home-content h1 {
         font-size: 25px;
@@ -1613,6 +1617,22 @@ h1 {
     position: absolute;
     top: 15px;
     right: 15px;
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
 }
 
 }
