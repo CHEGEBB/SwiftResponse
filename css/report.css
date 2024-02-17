@@ -1,12 +1,9 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap");
 /* font-family: 'Jost', sans-serif;
 font-family: 'Ropa Sans', sans-serif; */
 
 body {
-
-  font-family: 'Ropa Sans', sans-serif;
+  font-family: "Ropa Sans", sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(45deg, crimson, hsla(0, 0%, 25%, 1));
@@ -22,7 +19,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   background-color: hsla(0, 0%, 95%, 0.1);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 700;
 }
 
@@ -40,7 +37,7 @@ body {
 
 .nav-item a {
   color: #fff;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .dropdown-menu {
@@ -68,7 +65,8 @@ body {
 
 .dropdown-menu li:hover {
   background-color: hsla(0, 0%, 20%, 1);
-  color: #000; /* Set text color to black */
+  color: #000;
+  /* Set text color to black */
 }
 
 .menu-toggle {
@@ -119,7 +117,6 @@ main {
 
 /* University Emergency Reporting Section styles */
 
-
 .alarms-community-section {
   width: 100%;
   max-width: 800px;
@@ -129,17 +126,19 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
-.university-emergency-section{
+
+.university-emergency-section {
   width: 100%;
   max-width: 800px;
   padding: 20px;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent red background color */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Semi-transparent red background color */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   position: relative;
-
 }
+
 .university-emergency-section::before {
   content: "";
   position: absolute;
@@ -147,11 +146,14 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/report/university.jpg"); /* Background image */
+  background-image: url("../img/report/university.jpg");
+  /* Background image */
   background-size: cover;
   background-position: center;
-  filter: blur(5px); /* Adjust the blur intensity */
-  opacity: 0.4; /* Adjust the opacity of the background image */
+  filter: blur(5px);
+  /* Adjust the blur intensity */
+  opacity: 0.4;
+  /* Adjust the opacity of the background image */
   z-index: -1;
 }
 
@@ -163,7 +165,7 @@ main {
   margin-bottom: 20px;
   color: crimson;
   font-weight: 700;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .university-emergency-section p,
@@ -172,13 +174,15 @@ main {
 .alarms-community-section p {
   text-align: center;
 }
+
 /* general section */
 .general-user-section {
   width: 100%;
   max-width: 800px;
   padding: 20px;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent red background color */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Semi-transparent red background color */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   position: relative;
@@ -189,7 +193,8 @@ main {
 .general-user-section textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid rgba(0, 0, 0, 0.5); /* Dark border color */
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  /* Dark border color */
   border-radius: 5px;
   margin-top: 8px;
   margin-bottom: 20px;
@@ -210,15 +215,16 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/140217-F-GP610-340.jpg"); /* Background image */
+  background-image: url("../img/140217-F-GP610-340.jpg");
+  /* Background image */
   background-size: cover;
   background-position: center;
-  filter: blur(5px); /* Adjust the blur intensity */
-  opacity: 0.4; /* Adjust the opacity of the background image */
+  filter: blur(5px);
+  /* Adjust the blur intensity */
+  opacity: 0.4;
+  /* Adjust the opacity of the background image */
   z-index: -1;
 }
-
-
 
 /* Special Treatment for PWD Section styles */
 .pwd-section {
@@ -226,11 +232,13 @@ main {
   max-width: 800px;
   padding: 20px;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent red background color */
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Semi-transparent red background color */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   position: relative;
 }
+
 .pwd-section::before {
   content: "";
   position: absolute;
@@ -238,11 +246,14 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/report/pwd.jpg"); /* Background image */
+  background-image: url("../img/report/pwd.jpg");
+  /* Background image */
   background-size: cover;
   background-position: center;
-  filter: blur(5px); /* Adjust the blur intensity */
-  opacity: 0.4; /* Adjust the opacity of the background image */
+  filter: blur(5px);
+  /* Adjust the blur intensity */
+  opacity: 0.4;
+  /* Adjust the opacity of the background image */
   z-index: -1;
 }
 
@@ -251,7 +262,7 @@ main {
   margin-bottom: 20px;
   color: crimson;
   font-weight: 700;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .pwd-options {
@@ -264,7 +275,7 @@ main {
 .high-contrast-font,
 .alternative-input,
 .cognitive-interface {
- width: 300px;
+  width: 300px;
   margin-bottom: 20px;
   padding: 20px;
   background-color: hsla(180, 100%, 20%, 1);
@@ -333,7 +344,6 @@ main {
   }
 }
 
-
 /* Form styles */
 form {
   display: flex;
@@ -381,7 +391,8 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #444;
-  transform: scale(1.05); /* Add scaling animation on hover */
+  transform: scale(1.05);
+  /* Add scaling animation on hover */
 }
 
 /* Animations */
@@ -389,6 +400,7 @@ button[type="submit"]:hover {
   from {
     transform: scale(0.5);
   }
+
   to {
     transform: scale(1);
   }
@@ -398,6 +410,7 @@ button[type="submit"]:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -428,13 +441,14 @@ button[type="submit"]:hover {
 .quick-access-icons img:hover {
   transform: scale(1.1);
 }
-.high-contrast-font{
+
+.high-contrast-font {
   display: flex;
   flex-direction: row;
   gap: 10px;
- 
 }
-.high-contrast-font button{
+
+.high-contrast-font button {
   padding: 10px 20px;
   background-color: darkslategray;
   color: #fff;
@@ -444,12 +458,14 @@ button[type="submit"]:hover {
   transition: background-color 0.3s ease;
   border-radius: 20px;
 }
-.btns{
+
+.btns {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-.alternative-input button{
+
+.alternative-input button {
   padding: 10px 20px;
   background-color: darkslategray;
   color: #fff;
@@ -460,6 +476,7 @@ button[type="submit"]:hover {
   border-radius: 20px;
   width: 110px;
 }
+
 footer {
   text-align: center;
   padding: 20px;
@@ -471,16 +488,19 @@ footer {
   margin-top: 20px;
   box-shadow: #000 0px 0px 10px;
 }
-footer a{
+
+footer a {
   color: white;
   text-decoration: none;
 }
-.footer-links{
+
+.footer-links {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
+
 .scroll-to-top img {
   width: 50px;
   height: 50px;
@@ -497,15 +517,179 @@ footer a{
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: crimson; /* Set background color to crimson */
-  color: #fff; /* Set text color to white */
+  background-color: crimson;
+  /* Set background color to crimson */
+  color: #fff;
+  /* Set text color to white */
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
   text-decoration: none;
-  transition: background-color 0.3s ease; /* Add transition effect */
+  transition: background-color 0.3s ease;
+  /* Add transition effect */
 }
 
 .scroll-to-top a:hover {
-  background-color: #8B0000; /* Darken crimson color on hover */
+  background-color: #8b0000;
+  /* Darken crimson color on hover */
+}
+
+/* mobile design */
+@media (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Ropa Sans", sans-serif;
+    background: linear-gradient(45deg, crimson, hsla(0, 0%, 25%, 1));
+    color: #fff;
+    overflow-x: hidden;
+    width: 375px;
+  }
+
+  header {
+    width: 375px;
+    margin-top: -10px;
+    height: 400px;
+  }
+
+  .container1 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .container2 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .container3 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .container4 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  .footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+  }
+
+  /* CSS for mobile navigation */
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle img {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: 400px;
+    border-radius: 12px;
+    background-color: rgba(22, 136, 212, 0.5);
+    /* Semi-transparent background */
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow */
+  }
+
+  .nav-list.active {
+    display: block;
+  }
+
+  .nav-item {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    /* Display to the right of the parent */
+    width: 120px;
+    background-color: rgba(197, 33, 55, 0.5);
+    /* Semi-transparent background */
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Optional: Add shadow */
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  .dropdown-toggle {
+    display: block;
+  }
+
+  /* Hide hamburger icon on larger screens */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Show hamburger icon only on smaller screens */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 10px;
+
+      left: 10px;
+
+      cursor: pointer;
+    }
+
+    .nav-list {
+      position: fixed;
+      top: 0;
+      left: 0;
+      max-width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  /* Initially hide the navigation */
+  .nav-list {
+    display: none;
+  }
+
+  .navbar:hover .nav-list {
+    display: block;
+  }
+
+  .nav-list {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .navbar:not(:hover) .nav-list {
+    opacity: 0;
+    pointer-events: none;
+  }
 }

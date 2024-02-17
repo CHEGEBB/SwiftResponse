@@ -1121,7 +1121,6 @@ h1 {
         display: none;
         position: absolute;
         top: 60px;
-        /* Adjust as needed */
         left: 0;
         width: 250px;
         background-color: rgba(22, 136, 212, 0.5);
@@ -1144,10 +1143,10 @@ h1 {
         left: 100px;
         /* Display to the right of the parent */
         width: 120px;
-        background-color: rgba(18, 22, 26, 0.9);
+        background-color: rgba(197, 33, 55, 0.5);
         /* Semi-transparent background */
         padding: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         /* Optional: Add shadow */
     }
     .dropdown-menu.active {
@@ -1179,6 +1178,24 @@ h1 {
             overflow-x: hidden;
             overflow-y: auto;
         }
+    }
+    /* Initially hide the navigation */
+.nav-list {
+    display: none;
+}
+.navbar:hover .nav-list {
+    display: block;
+}
+.nav-list {
+    transition: opacity 0.5s ease-in-out;
+}
+.navbar:not(:hover) .nav-list {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+    .container1{
+        height: 700px;
     }
     .home {
         margin-top: -20px;

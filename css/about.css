@@ -584,71 +584,93 @@ footer a:hover{
             width: 375px;
             overflow-x: hidden;
         }
-        
-  .menu-toggle img{
-    width: 40px;
-    height: 40px;
-  }
-  .menu-toggle {
-    display: block; /* Display hamburger icon for mobile devices */
-  }
-  .nav-list {
-    display: none; /* Initially hide the navigation list for mobile */
-  }
-
-  .nav-item {
+         /* CSS for mobile navigation */
+    .navbar {
+        position: relative;
+        z-index: 1;
+    }
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        background-color: rgba(22, 136, 212, 0.5);
+        /* Semi-transparent background */
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        /* Optional: Add shadow */
+    }
+    .nav-list.active {
+        display: block;
+    }
+    .nav-item {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100px;
+        /* Display to the right of the parent */
+        width: 120px;
+        background-color: rgba(197, 33, 55, 0.5);
+        /* Semi-transparent background */
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* Optional: Add shadow */
+    }
+    .dropdown-menu.active {
+        display: block;
+    }
+    .dropdown-toggle {
+        display: block;
+    }
+    /* Hide hamburger icon on larger screens */
+    .menu-toggle {
+        display: none;
+    }
+    .menu-toggle img {
+        width: 30px;
+        height: 30px;
+        margin-top: 20px;
+    }
+    /* Show hamburger icon only on smaller screens */
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            position: absolute;
+            top: 10px;
+            /* Adjust as needed */
+            left: 10px;
+            /* Adjust as needed */
+            cursor: pointer;
+        }
+        .nav-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            max-width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+    /* Initially hide the navigation */
+.nav-list {
+    display: none;
+}
+.navbar:hover .nav-list {
     display: block;
-    margin: 0;
-  }
-  .navbar{
-    background-color: hsla(0, 100%, 27%, 0.5); 
-    width: 100%;
-  }
-
-  /* Dropdown menu */
-/* Dropdown menu */
-.dropdown-menu {
-  position: absolute;
-  background-color: #000;
-  display: flex; 
-  justify-content: flex-end;
-  top: 100%; 
-  right: 0; 
 }
-
-
-  .dropdown-menu li {
-    display: block;
-  }
-  /* Hamburger icon bars */
-.menu-toggle .bar {
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px 0;
-  transition: background-color 0.3s ease;
+.nav-list {
+    transition: opacity 0.5s ease-in-out;
 }
-
-/* Hamburger icon animation for opening */
-.menu-toggle.open .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.navbar:not(:hover) .nav-list {
+    opacity: 0;
+    pointer-events: none; 
 }
-
-.menu-toggle.open .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Media query for mobile devices */
-@media only screen and (min-width: 769px) {
-  .menu-toggle {
-    display: none; /* Hide hamburger icon for non-mobile devices */
-  }
-}
-        .header {
+.header {
         height: 300px;
         display: flex;
         flex-direction: column;

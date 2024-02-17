@@ -27,35 +27,38 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-// Function to toggle the visibility of the navigation menu for mobile devices
-function toggleMenu() {
-  var navList = document.getElementById("navList");
-  if (navList.style.display === "block") {
-      navList.style.display = "none";
-  } else {
-      navList.style.display = "block";
-  }
+// Toggle navigation
+var menuToggle = document.querySelector('.menu-toggle');
+menuToggle.addEventListener('click', toggleNav);
+
+// Automatically hide navigation after a certain time of inactivity
+var timeout;
+function hideNav() {
+    console.log("Hiding navigation...");
+    var navList = document.getElementById("navList");
+    if (navList.classList.contains('active')) {
+        timeout = setTimeout(function() {
+            console.log("Removing active class...");
+            navList.classList.remove('active');
+        }, 1000); // Adjust the time (in milliseconds) as needed
+    }
 }
 
-// Prevent closing the navigation menu if a dropdown item is clicked
-document.querySelectorAll('.dropdown-item').forEach(item => {
-  item.addEventListener('click', (event) => {
-      // Prevent the default behavior of the anchor tag
-      event.preventDefault();
-      // Stop event propagation to prevent the window click event from closing the menu
-      event.stopPropagation();
-      // Optionally, you can add logic here to handle the click event for dropdown items
-      // For example, you might want to navigate to a different page or perform an action
-  });
+// Reset timeout on user interaction
+document.addEventListener('mousemove', function() {
+    console.log("User interaction detected...");
+    clearTimeout(timeout);
+    hideNav();
 });
 
-// Position the dropdown menu relative to its parent item
-document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-  const dropdownMenu = item.querySelector('.dropdown-menu');
-  if (dropdownMenu) {
-      item.addEventListener('click', (event) => {
-          dropdownMenu.style.display = "block";
-          event.stopPropagation();
-      });
-  }
+// Initially hide navigation
+hideNav();
 });
+
+function toggleNav() {
+console.log("Toggling navigation...");
+var navList = document.getElementById("navList");
+navList.classList.toggle("active");
+clearTimeout(timeout); // Clear the timeout whenever the navigation is toggled
+hideNav(); // Restart the hideNav functionality
+}
