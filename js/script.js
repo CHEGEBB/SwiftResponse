@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling
     var scrollLinks = document.querySelectorAll('.scroll-to-top a[href^="#"]');
     for (var i = 0; i < scrollLinks.length; i++) {
@@ -37,52 +37,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var modalImgs = document.querySelectorAll(".modal-img");
     var span = document.getElementsByClassName("close")[0];
 
-    modalImgs.forEach(function (img) {
-        img.onclick = function () {
+    modalImgs.forEach(function(img) {
+        img.onclick = function() {
             modal.style.display = "block";
             modalImg.src = this.src;
         }
     });
 
-    span.onclick = function () {
+    span.onclick = function() {
         modal.style.display = "none";
     }
 
-    window.onclick = function (event) {
+    window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 });
-// Function to toggle the visibility of the navigation menu for mobile devices
-function toggleMenu() {
+
+function toggleNav() {
     var navList = document.getElementById("navList");
-    if (navList.style.display === "block") {
-        navList.style.display = "none";
-    } else {
-        navList.style.display = "block";
-    }
+    navList.classList.toggle("active");
 }
-
-// Prevent closing the navigation menu if a dropdown item is clicked
-document.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', (event) => {
-        // Prevent the default behavior of the anchor tag
-        event.preventDefault();
-        // Stop event propagation to prevent the window click event from closing the menu
-        event.stopPropagation();
-        // Optionally, you can add logic here to handle the click event for dropdown items
-        // For example, you might want to navigate to a different page or perform an action
-    });
-});
-
-// Position the dropdown menu relative to its parent item
-document.querySelectorAll('.nav-item.dropdown').forEach(item => {
-    const dropdownMenu = item.querySelector('.dropdown-menu');
-    if (dropdownMenu) {
-        item.addEventListener('click', (event) => {
-            dropdownMenu.style.display = "block";
-            event.stopPropagation();
-        });
-    }
-});
