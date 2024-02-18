@@ -694,3 +694,152 @@ margin-top: 30px;
     margin-top: 20px;
     justify-content: center;
 }
+
+/* mobile design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    .header p {
+        font-size: 1.5rem;
+    }
+    .header {
+        height: 400px;
+    }
+    .header p {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .rectangle{
+        margin-left: 0;
+    }
+    .buttons{
+        margin-left: 0;
+    }
+    .rep{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .rep img{
+        margin-top: 20px;
+    }
+    .rep,.live,.why,.works{
+        width: 100%;
+        margin-left: 0;
+    }
+    .benefits{
+        width: 100%;
+    }
+    .offer{
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 0;
+    }
+    .accident2 img{
+        width: 100%;
+        height: 300px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .content-item1 button{
+        margin-left: 0;
+    }
+    .content-item1{
+        height: 1500px;
+    }
+    .content-item2{
+        height: 1500px;
+    }
+    .content-item2 h2 {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .content-item2 p {
+        margin-left: 0;
+    }
+    .section-features{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .rectangle2{
+        margin-left: 0;
+    }
+    .map-container {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .key-legend {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333;
+        width: 100%;
+        color: #fff;
+        font-family: 'Ropa Sans', sans-serif;
+    }
+    .content-item3 {
+        height: 1500px;
+    }
+    .content-item4 {
+        height: 1500px;
+    }
+    .feats{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .feat{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .content{
+        margin-top: 20px;
+    }
+    .pics{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .gp1{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .gp2{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pic1 img{
+        width: 100%;
+        height: 300px;
+    }
+    .pic2 img{
+        width: 100%;
+        height: 200px;
+    }
+    .pic3 img{
+        width: 100%;
+        height: 200px; 
+        margin-top: 10px;
+    }
+    .pic4 img{
+        width: 100%;
+        height: 300px;
+        margin-top: -190px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .quick-links, .contact-info {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .socials{
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        justify-content: center;
+    }  
+}
+

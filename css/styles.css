@@ -67,7 +67,7 @@ h1 {
     background: url("../img/firecrew.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 600px;
+    height: 800px;
     max-width: 100%;
 }
 
@@ -153,11 +153,11 @@ h1 {
 
 .home-content {
     width: 400px;
-    margin-top: 100px;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin-left: 500px;
+    margin-top: -300px;
 }
 
 .home-content h1 {
@@ -170,6 +170,7 @@ h1 {
     font-family: 'Ropa Sans', sans-serif;
     font-weight: 700;
     font-size: 30px;
+    margin-top: -100px;
 }
 
 .home-content h2 {
@@ -1196,6 +1197,7 @@ h1 {
 
     .container1{
         height: 700px;
+        
     }
     .home {
         margin-top: -20px;
