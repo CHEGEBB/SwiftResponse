@@ -113,3 +113,39 @@ roadsData.forEach(function(road) {
         marker.bindPopup(`<strong>${road.name}</strong><br>Traffic: ${road.traffic}<br>Accident: No`);
     }
 });
+// Toggle navigation
+var menuToggle = document.querySelector('.menu-toggle');
+menuToggle.addEventListener('click', toggleNav);
+
+// Automatically hide navigation after a certain time of inactivity
+var timeout;
+function hideNav() {
+    console.log("Hiding navigation...");
+    var navList = document.getElementById("navList");
+    if (navList.classList.contains('active')) {
+        timeout = setTimeout(function() {
+            console.log("Removing active class...");
+            navList.classList.remove('active');
+        }, 1000); // Adjust the time (in milliseconds) as needed
+    }
+}
+
+// Reset timeout on user interaction
+document.addEventListener('mousemove', function() {
+    console.log("User interaction detected...");
+    clearTimeout(timeout);
+    hideNav();
+});
+
+// Initially hide navigation
+hideNav();
+
+
+function toggleNav() {
+console.log("Toggling navigation...");
+var navList = document.getElementById("navList");
+navList.classList.toggle("active");
+clearTimeout(timeout); // Clear the timeout whenever the navigation is toggled
+hideNav(); // Restart the hideNav functionality
+}
+

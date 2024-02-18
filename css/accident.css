@@ -697,22 +697,123 @@ margin-top: 30px;
 
 /* mobile design */
 @media (max-width: 768px) {
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 375px;
+    }
+      /* CSS for mobile navigation */
+      .navbar {
+        position: relative;
+        z-index: 1;
+    }
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        background-color: rgba(22, 136, 212, 0.5);
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+    .nav-list.active {
+        display: block;
+    }
+    .nav-item {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100px;
+        /* Display to the right of the parent */
+        width: 120px;
+        background-color: rgba(197, 33, 55, 0.5);
+        /* Semi-transparent background */
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        /* Optional: Add shadow */
+    }
+    .dropdown-menu.active {
+        display: block;
+    }
+    .dropdown-toggle {
+        display: block;
+    }
+    /* Hide hamburger icon on larger screens */
+    .menu-toggle {
+        display: none;
+    }
+    .menu-toggle img{
+        width: 30px;
+        height: 30px;
+        margin-top: 20px;
+    }
+    /* Show hamburger icon only on smaller screens */
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            position: absolute;
+            top: 10px;
+            /* Adjust as needed */
+            left: 10px;
+            /* Adjust as needed */
+            cursor: pointer;
+        }
+        .nav-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            max-width: 100vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+    /* Initially hide the navigation */
+.nav-list {
+    display: none;
+}
+.navbar:hover .nav-list {
+    display: block;
+}
+.nav-list {
+    transition: opacity 0.5s ease-in-out;
+}
+.navbar:not(:hover) .nav-list {
+    opacity: 0;
+    pointer-events: none; 
+}
     .header h1 {
         font-size: 2.5rem;
+        margin-top: -30px;
+        width: 320px;
+        margin-left: 20px;
     }
     .header p {
         font-size: 1.5rem;
     }
     .header {
-        height: 400px;
+        height: 900px;
     }
     .header p {
-        width: 100%;
-        margin-left: 0;
+        width: 320px;
+        margin-left: 20px;
         margin-top: 20px;
     }
+  
     .rectangle{
         margin-left: 0;
+        margin-top: 100px;
+        height: 100px;
+        background-color: rgba(197, 33, 55, 0.3);
+
     }
     .buttons{
         margin-left: 0;
@@ -720,9 +821,24 @@ margin-top: 30px;
     .rep{
         flex-direction: column;
         margin-left: 0;
+       
+    }
+    .rep h2{
+        margin-left: 40px;
+    }
+    .rep p{
+        width: 300px;
+        margin-left: 40px;
+    }
+    .rep h3{
+        margin-left: 40px;
     }
     .rep img{
         margin-top: 20px;
+        width: 300px;
+        margin-left: 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(231, 213, 213, 0.8);
     }
     .rep,.live,.why,.works{
         width: 100%;
@@ -735,32 +851,45 @@ margin-top: 30px;
         flex-direction: column;
         gap: 20px;
         margin-left: 0;
+        height: 600px;
     }
     .accident2 img{
-        width: 100%;
-        height: 300px;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 0px;
+        margin-top: 170px;
+        width: 340px;
+        border-radius: 15px;
+        margin-left: 20px;
+    }
+    .img3 img{
+        margin-top: 130px;
     }
     .content-item1 button{
         margin-left: 0;
     }
     .content-item1{
-        height: 1500px;
+        height: 2700px;
+        width: 375px;
     }
     .content-item2{
-        height: 1500px;
+        height: 2200px;
     }
     .content-item2 h2 {
-        margin-left: 0;
-        margin-top: 0;
+        margin-left: 40px;
+        margin-top: -120px;
     }
     .content-item2 p {
-        margin-left: 0;
+        margin-left: 40px;
+        width: 300px;
     }
     .section-features{
         flex-direction: column;
         gap: 20px;
+       
+    }
+    .feature1,.feature2,.feature3{
+        margin-left: 15px;
+        width: 340px;
+        height: 230px;
+        box-shadow: 0 0 10px rgba(179, 3, 32, 0.8);
     }
     .rectangle2{
         margin-left: 0;
@@ -784,7 +913,16 @@ margin-top: 30px;
         height: 1500px;
     }
     .content-item4 {
-        height: 1500px;
+        height: 2000px;
+    }
+    .select-option select{
+        width: 300px;
+    }
+    .display-button button{
+        width: 300px;
+    }
+    #displayed-number{
+        width: 300px;
     }
     .feats{
         flex-direction: column;
@@ -810,8 +948,8 @@ margin-top: 30px;
         gap: 20px;
     }
     .pic1 img{
-        width: 100%;
-        height: 300px;
+        width: 200px;
+        height: 200px;
     }
     .pic2 img{
         width: 100%;
@@ -820,12 +958,12 @@ margin-top: 30px;
     .pic3 img{
         width: 100%;
         height: 200px; 
-        margin-top: 10px;
+        margin-top: 20px;
     }
     .pic4 img{
         width: 100%;
-        height: 300px;
-        margin-top: -190px;
+        height: 200px;
+        margin-top: 20px;
     }
     .footer-content {
         flex-direction: column;
@@ -836,7 +974,7 @@ margin-top: 30px;
         margin-top: 20px;
     }
     .socials{
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
         margin-top: 20px;
         justify-content: center;
