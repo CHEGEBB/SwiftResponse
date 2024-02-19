@@ -11,34 +11,39 @@
 <body>
     <div class="top-bar"></div>
     <!-- Navigation Section -->
+
     <nav class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <i class="fa fa-bars"></i>
+        <div class="menu-toggle" onclick="toggleNav()">
+            <!-- Custom hamburger icon -->
+            <img src="/img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
         </div>
         <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="../index.html">Home</a></li>
+            <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="/pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="./pages/alerts/general.html">General Alerts</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-                <ul class="dropdown-menu">
-                    <li><a href="../../pages/emergency/fire.html">Fire Emergencies</a></li>
-                    <li><a href="../../pages/emergency/medical.html">Medical Emergencies</a></li>
-                    <li><a href="../../pages/emergency/accident.html">Accident Emergencies</a></li>
-                    <li><a href="../../pages/emergency/security.html">Security Emergencies</a></li>
-                    <li><a href="../../report.html">Report Emergency</a></li>
+                <ul class="dropdown-menu" id="emergencyDropdown">
+                    <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
+                    <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
+                    <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
+                    <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
+                    <li><a href="#">Report Emergency</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="../../report.html">Report</a></li>
-            <li class="nav-item"><a href="../../about.html">About</a></li>
-            <li class="nav-item"><a href="../../contact.html">Contact</a></li>
+            <li class="nav-item"><a href="./report.html">Report</a></li>
+            <li class="nav-item"><a href="./about.html">About</a></li>
+            <li class="nav-item"><a href="./contact.html">Contact</a></li>
         </ul>
-        <button class="number">Call Now</button>
     </nav>
+</div>
+
+
+
 
     <header class="header" style="background-image: url('../../img/fire/fireaction.jpg');">
         <div class="header-overlay"></div>
@@ -138,7 +143,7 @@
 
         <div class="university">
             <h2>For Campus Safety</h2>
-            <p style="width: 600px;margin-left: 400px;">SwiftResponse offers comprehensive fire safety solutions
+            <p>SwiftResponse offers comprehensive fire safety solutions
                 tailored to the unique needs of educational institutions. Our campus fire emergency system includes...
             </p>
         </div>
@@ -380,6 +385,7 @@
                 capabilities. Our social media integration provides...</p>
         </div>
         <div class="content3">
+            <div class="sec1">
             <div class="card2">
                 <div class="card2-content">
                     <div class="con2">
@@ -423,6 +429,8 @@
                         people at the right time.</p>
                 </div>
             </div>
+            </div>
+            <div class="sec2">
             <div class="card2">
                 <div class="card2-content">
                     <div class="con6">
@@ -465,6 +473,7 @@
                         communicate with users across different countries and time zones, enhancing our ability to
                         respond to emergencies on a global scale.</p>
                 </div>
+            </div>
             </div>
         </div>
     </div>
