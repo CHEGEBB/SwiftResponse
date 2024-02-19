@@ -12,34 +12,36 @@
 </head>
 <body>
     
-  <!-- Navigation Section -->
-  <nav class="navbar">
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fa fa-bars"></i>
-    </div>
-    <ul class="nav-list" id="navList">
-      <li class="nav-item"><a href="./index.html">Home</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
-        <ul class="dropdown-menu">
-          <li><a href="/pages/alerts/general.html">General Alerts</a></li>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleNav()">
+            <!-- Custom hamburger icon -->
+            <img src="/img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+        </div>
+        <ul class="nav-list" id="navList">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="./pages/alerts/general.html">General Alerts</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+                <ul class="dropdown-menu" id="emergencyDropdown">
+                    <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
+                    <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
+                    <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
+                    <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
+                    <li><a href="#">Report Emergency</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="./report.html">Report</a></li>
+            <li class="nav-item"><a href="./about.html">About</a></li>
+            <li class="nav-item"><a href="./contact.html">Contact</a></li>
         </ul>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-        <ul class="dropdown-menu">
-          <li><a href="../../pages/emergency/fire.html">Fire Emergencies</a></li>
-          <li><a href="../../pages/emergency/medical.html">Medical Emergencies</a></li>
-          <li><a href="../../pages/emergency/accident.html">Accident Emergencies</a></li>
-          <li><a href="../../pages/emergency/security.html">Security Emergencies</a></li>
-          <li><a href="./report.html">Report Emergency</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="./report.html">Report</a></li>
-      <li class="nav-item"><a href="./about.html">About</a></li>
-      <li class="nav-item"><a href="./contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    </nav>
+</div>
+
 
 
   <header class="header" style="background-image: url('../../img/med/pic1.jpg');">

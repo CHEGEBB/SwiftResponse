@@ -655,10 +655,20 @@ button:hover{
 }
 /* Grid layout for cards */
 .content3 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    display: flex;
+flex-direction: column;
+    gap: 20px;
     margin-top: 50px;
+}
+.sec1{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.sec2{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 /* Card styles */
@@ -727,7 +737,7 @@ button:hover{
     height: 900px;
     width: 100%;
     color: #fff;
-    height: 600px;
+    height: 900px;
     gap: 10px;
 }
 .community-engagement{
@@ -1451,7 +1461,9 @@ button:hover{
         .community-engagement{
             display: flex;
             flex-direction: column;
-            height: 800px;
+            height: 2800px;
+            background-color: #252729;
+            margin-top: -1500px;
         }
         .gp1{
             display: flex;
@@ -1479,20 +1491,28 @@ button:hover{
         .initiate p{
             text-align: center;
             color: #f7f7f7;
-            margin-top: 10px;
             width: 300px;
             margin-left: 40px;
             font-weight: 700;
         }
         .community-engagement h3{
             color: crimson;
+            
         }
-        .footer {
-            background-color: hsla(180, 13%, 18%, 0.9);
-            color: #fff;
-            padding: 40px 0;
-            font-size: 16px;
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
         }
+        .quick-links, .contact-info {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .socials{
+            flex-direction: row;
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+        }  
 
     }
 
