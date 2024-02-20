@@ -1,22 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap');
-/* font-family: 'Jost', sans-serif;
-font-family: 'Ropa Sans', sans-serif; */
-
 
 body {
-    background-color: hsla(210, 45%, 25%, 1);
     margin: 0;
     font-family: 'Ropa Sans', sans-serif;
     font-size: 18px;
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/med/pic1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    overflow-y: scroll;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(189, 70%, 34%, 0.4); /* Adjust alpha value as needed */
+    z-index: 0; /* Ensure the overlay is below other content */
 }
 
 .container {
-    background-color: hsla(0, 0%, 75%, 1);
-    width: 950px;
+    background-color: hsla(0, 0%, 75%, 0.7); 
+    width: 450px;
     margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
     height: 500px;
+    position: relative; /* Ensure stacking context for z-index */
+    z-index: 1; /* Move the form above other content */
 }
 
 .signup-content {
@@ -36,18 +59,17 @@ body {
 }
 
 .image-content img {
-    width: 500px; 
+    max-width: 100%; /* Ensure image fits container */
+    max-height: 100%; /* Ensure image fits container */
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    height: 540px;
-    margin-right: -20px;
-    margin-top: -20px;
-
 }
 
 .nav {
     margin-bottom: 20px;
     margin-left: 20px;
+    position: relative; /* Ensure stacking context for z-index */
+    z-index: 2; /* Move the navigation above other content */
 }
 
 .nav a {
@@ -115,11 +137,54 @@ p {
 }
 .nav a.active {
     border-bottom-color: hsla(348, 83%, 47%, 1);
+}
+/* mobile design */
+@media (max-width: 768px) {
+    .container {
+        width: 320px;
+        margin: 0;
+        border-radius: 15px;
+        height: 500px;
+        margin-left: 5px;
+    }
+    .signup-content {
+        flex-direction: column;
+    }
+    .form-content {
+        padding-right: 0;
+    }
+    .image-content {
+        display: none;
+    }
+    .nav {
+        margin-bottom: 0;
+    }
+    .forms {
+        margin-left: 0;
+    }
     
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    outline: none;
 }
-.image-content img:hover {
-    filter: brightness(80%); /* Decrease brightness on hover */
+
+button[type="submit"] {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsla(348, 83%, 47%, 1);
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
 }
-.image-content img:hover {
-    filter: contrast(150%); /* Increase contrast on hover */
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
 }

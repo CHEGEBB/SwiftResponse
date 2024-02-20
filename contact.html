@@ -4,49 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="../../css/contact.css">
 </head>
 <body>
     <!-- Navigation Section -->
-    <nav class="navbar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="./index.html">Home</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/pages/alerts/general.html">General Alerts</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Fire Emergencies</a></li>
-                    <li><a href="#">Medical Emergencies</a></li>
-                    <li><a href="#">Accident Emergencies</a></li>
-                    <li><a href="#">Security Emergencies</a></li>
-                    <li><a href="#">Report Emergency</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="#">About</a></li>
+<nav class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <!-- Custom hamburger icon -->
+      <img src="../../img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+    </div>
+    <ul class="nav-list" id="navList">
+      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="../../pages/alerts/general.html">General Alerts</a></li>
         </ul>
-    </nav>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+        <ul class="dropdown-menu">
+          <li><a href="../../pages/emergency/fire.html">Fire Emergencies</a></li>
+          <li><a href="../../pages/emergency/medical.html">Medical Emergencies</a></li>
+          <li><a href="../../pages/emergency/accident.html">Accident Emergencies</a></li>
+          <li><a href="../../pages/emergency/security.html">Security Emergencies</a></li>
+          <li><a href="#">Report Emergency</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="./report.html">Report</a></li>
+      <li class="nav-item"><a href="./about.html">About</a></li>
+      <li class="nav-item"><a href="./contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
 
-    <div class="container">
-        <h1>Contact Us</h1>
-        <div class="contact-form">
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="6" placeholder="Write your message here" required></textarea>
-                <button type="submit">Send</button>
+    <div class="video-container">
+        <div class="overlay"></div>
+        <video autoplay muted loop id="video-bg">
+            <source src="../../img/contact/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </div>
+    <script src="../../js/contact.js"></script>
 </body>
 </html>
