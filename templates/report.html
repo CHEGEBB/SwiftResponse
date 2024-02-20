@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emergency Reporting System</title>
-  <link rel="stylesheet" href="./css/report.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
   <!-- Add any additional CSS or libraries here -->
   <style>
     /* Add custom styles here */
@@ -17,29 +17,29 @@
     <nav class="navbar">
         <div class="menu-toggle" onclick="toggleNav()">
             <!-- Custom hamburger icon -->
-            <img src="/img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+            <img src="{{ url_for('static', filename='img/general/mdi--hamburger-open.svg') }}" alt="Menu" class="hamburger-icon">
         </div>
         <ul class="nav-list" id="navList">
             <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="./pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="{{ url_for('static', filename='pages/alerts/general.html') }}">General Alerts</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
                 <ul class="dropdown-menu" id="emergencyDropdown">
-                    <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
-                    <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
-                    <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
-                    <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
+                    <li><a href="{{ url_for('static', filename='pages/emergency/fire.html') }}">Fire Emergencies</a></li>
+                    <li><a href="{{ url_for('static', filename='pages/emergency/medical.html') }}">Medical Emergencies</a></li>
+                    <li><a href="{{ url_for('static', filename='pages/emergency/accident.html') }}">Accident Emergencies</a></li>
+                    <li><a href="{{ url_for('static', filename='pages/emergency/security.html') }}">Security Emergencies</a></li>
                     <li><a href="#">Report Emergency</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="./report.html">Report</a></li>
-            <li class="nav-item"><a href="./about.html">About</a></li>
-            <li class="nav-item"><a href="./contact.html">Contact</a></li>
+            <li class="nav-item"><a href="{{ url_for('university_report') }}">Report</a></li>
+            <li class="nav-item"><a href="{{ url_for('static', filename='about.html') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('static', filename='contact.html') }}">Contact</a></li>
         </ul>
     </nav>
 </div>
@@ -48,7 +48,7 @@
   <!-- Header Section -->
   <header>
     <div class="logo">
-      <img src="./img/logo.jpg" alt="Logo">
+      <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo">
     </div>
     <h1>SwiftResponse Emergency Reporting System</h1>
     <p>Report emergencies and seek assistance in a fast and efficient manner.
@@ -66,7 +66,10 @@
           <!-- Add images of the university here -->
         </div>
         <p>If you're experiencing an emergency, please fill out the form below:</p>
-        <form id="university-report-form" action="/submit_university_report" method="POST">
+        <form name="university-report-form" id="university-report-form" action="/report" method="POST">
+          {% if message %}
+            <p style="color: green;">{{ message }}</p>
+          {% endif %}
           <!-- Location Input -->
           <div class="form-group">
             <label for="university-location">Location:</label>
@@ -202,9 +205,9 @@
         <!-- Include options for activating alarms and seeking community assistance -->
         <!-- Quick Access Icons -->
         <div class="quick-access-icons">
-          <a href="/help"><img src="./img/report/noto--sos-button.svg" alt="Help Icon"></a>
-          <a href="/report"><img src="./img/report/octicon--report-16.svg" alt="Report Icon"></a>
-          <a href="/emergency"><img src="./img/report/fluent--alert-on-16-filled.svg" alt="Alert Icon"></a>
+          <a href="/help"><img src="{{ url_for('static', filename='img/report/noto--sos-button.svg') }}" alt="Help Icon"></a>
+          <a href="/report"><img src="{{ url_for('static', filename='img/report/octicon--report-16.svg') }}" alt="Report Icon"></a>
+          <a href="/emergency"><img src="{{ url_for('static', filename='img/report/fluent--alert-on-16-filled.svg') }}" alt="Alert Icon"></a>
         </div>
       </section>
     </div>
@@ -215,17 +218,17 @@
     <p>&copy; 2024 Emergency Reporting System</p>
 
     <div class="footer-links">
-      <a href="./index.html">Home</a>
-      <a href="/pages/alerts/general.html">Alerts</a>
-      <a href="./report.html">Report</a>
-      <a href="./about.html">About</a>
-      <a href="./contact.html">Contact</a>
+      <a href="{{ url_for('static', filename='index.html') }}">Home</a>
+      <a href="{{ url_for('static', filename='pages/alerts/general.html') }}">Alerts</a>
+      <a href="{{ url_for('static', filename='report.html') }}">Report</a>
+      <a href="{{ url_for('static', filename='about.html') }}">About</a>
+      <a href="{{ url_for('static', filename='contact.html') }}">Contact</a>
   </footer>
    <!-- Scroll to top button -->
    <div class="scroll-to-top">
-    <a href="#top"><img src="./img/back-to-top-icon-png-7.jpg" alt="Scroll to Top"></a>
+    <a href="#top"><img src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}" alt="Scroll to Top"></a>
   </div>
 
-  <script src="../js/report.js"></script>
+  <script src="{{ url_for('static', filename='js/report.js') }}"></script>
 </body>
 </html>

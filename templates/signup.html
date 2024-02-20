@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Signup</title>
-    <link rel="stylesheet" href="../../css/signup.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
 </head>
 <body>
     <div class="background-image">
@@ -14,10 +14,10 @@
             <div class="form-content">
                 <h1>Get started with your free account</h1>
                 <div class="nav">
-                    <a href="../login.html">SIGN IN</a>
-                    <a href="../signup.html" class="active">SIGN UP</a>
+                    <a href="{{ url_for('login') }}">SIGN IN</a>
+                    <a href="{{ url_for('signup') }}" class="active">SIGN UP</a>
                 </div>
-                <form id="signupForm">
+                <form id="signupForm" method="post" action="{{ url_for('signup') }}">
                     <div class="forms">
                         <div class="form-group">
                             <label for="username">Username:</label>
@@ -42,12 +42,12 @@
                     </div>
                     <button type="submit">Signup</button>
                 </form>
-                <p>Already have an account? <a href="../login.html">Login</a></p>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
             </div>
         </div>
     </div>
     </div>
 
-    <script src="../../js/signup.js"></script>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
 </body>
 </html>
