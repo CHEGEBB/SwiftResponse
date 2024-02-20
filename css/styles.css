@@ -1159,6 +1159,7 @@ h1 {
     /* Hide hamburger icon on larger screens */
     .menu-toggle {
         display: none;
+        display: none;
     }
     /* Show hamburger icon only on smaller screens */
     @media screen and (max-width: 768px) {
