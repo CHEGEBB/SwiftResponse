@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Emergency Response System</title>
-    <link rel="stylesheet" href="../../css/security.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/security.css') }}">
 
      <!-- Navigation Section -->
      <nav class="navbar">
@@ -12,32 +12,32 @@
             <i class="fa fa-bars"></i>
         </div>
         <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="../index.html">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="../../pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="{{ url_for('general') }}">General Alerts</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="../../pages/emergency/fire.html">Fire Emergencies</a></li>
-                    <li><a href="../../pages/emergency/medical.html">Medical Emergencies</a></li>
-                    <li><a href="../../pages/emergency/accident.html">Accident Emergencies</a></li>
-                    <li><a href="../../pages/emergency/security.html">Security Emergencies</a></li>
-                    <li><a href="../../report.html">Report Emergency</a></li>
+                    <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
+                    <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
+                    <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
+                    <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
+                    <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="../../report.html">Report</a></li>
-            <li class="nav-item"><a href="../../about.html">About</a></li>
-            <li class="nav-item"><a href="../../contact.html">Contact</a></li>
+            <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <button class="number">Call Now</button>
     </nav>
     <header class="security-header">
         <video autoplay muted loop class="header-video">
-            <source src="../../img/security/production ID-4623605.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='img/security/production ID-4623605.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="header-overlay"></div>
@@ -60,27 +60,27 @@
         <p>Quickly access security emergencies by clicking the icons below:</p>
         <div class="icon-container">
             <div class="icon1">
-            <img src="../../img/security/ic--baseline-sos.svg" alt="Panic Button Icon" onclick="activatePanicButton()">
+            <img src="{{ url_for('static', filename='img/security/ic--baseline-sos.svg') }}" alt="Panic Button Icon" onclick="activatePanicButton()">
             <h3>Panic Button</h3>
             </div>
             <div class="icon2">
-            <img src="../../img/security/medical-icon--emergency.svg" alt="Emergency Call Icon" onclick="activateEmergencyCall()">
+            <img src="{{ url_for('static', filename='img/security/medical-icon--emergency.svg') }}" alt="Emergency Call Icon" onclick="activateEmergencyCall()">
             <h3>Emergency Call</h3>
             </div>
             <div class="icon3">
-            <img src="../../img/security/fa6-solid--kit-medical.svg" alt="Medical Emergency Icon" onclick="activateMedicalEmergency()">
+            <img src="{{ url_for('static', filename='img/security/fa6-solid--kit-medical.svg') }}" alt="Medical Emergency Icon" onclick="activateMedicalEmergency()">
             <h3>Medical Emergency</h3>
             </div>
             <div class="icon4">
-            <img src="../../img/security/fa6-solid--fire.svg" alt="Fire Emergency Icon" onclick="activateFireEmergency()">
+            <img src="{{ url_for('static', filename='img/security/fa6-solid--fire.svg') }}" alt="Fire Emergency Icon" onclick="activateFireEmergency()">
             <h3>Fire Emergency</h3>
             </div>
             <div class="icon5">
-            <img src="../../img/security/subway--hurt-3.svg" alt="Assault Icon" onclick="activateAssaultEmergency()">
+            <img src="{{ url_for('static', filename='img/security/subway--hurt-3.svg') }}" alt="Assault Icon" onclick="activateAssaultEmergency()">
             <h3>Assault</h3>
             </div>
             <div class="icon6">
-            <img src="../../img/security/carbon--intrusion-prevention.svg" alt="Intrusion Icon" onclick="activateIntrusionEmergency()">
+            <img src="{{ url_for('static', filename='img/security/carbon--intrusion-prevention.svg') }}" alt="Intrusion Icon" onclick="activateIntrusionEmergency()">
             <h3>Intrusion</h3>
             </div>
         </div>
@@ -95,109 +95,114 @@
     <div class="group1">
         <div class="feature1">
             <div class="mg1">
-                <img src="../../img/security/cctv.jpg" alt="CCTV Surveillance Icon">
+                <img src="{{ url_for('static', filename='img/security/cctv.jpg') }}" alt="CCTV Surveillance Icon">
             </div>
             <h3>CCTV Surveillance</h3>
             <p>Monitor your surroundings with CCTV cameras, providing real-time video feeds and alerts for suspicious activities.</p>
         </div>
-    
+
         <div class="feature2">
             <div class="mg2">
-                <img src="../../img/security/motion.jpg" alt="Motion Sensor Icon">
+                <img src="{{ url_for('static', filename='img/security/motion.jpg') }}" alt="Motion Sensor Icon">
             </div>
             <h3>Smart Motion Sensors</h3>
             <p>Install motion sensors that detect movement and trigger alerts, enhancing security by notifying you of potential intruders.</p>
         </div>
-    
+        
         <div class="feature3">
             <div class="mg3">
-                <img src="../../img/security/biometric2.jpg" alt="Biometric Access Control Icon">
+                <img src="{{ url_for('static', filename='img/security/biometric2.jpg') }}" alt="Biometric Access Control Icon">
             </div>
             <h3>Biometric Access Control</h3>
             <p>Utilize biometric technology for access control, allowing only authorized individuals to enter secured areas.</p>
         </div>
-    
+        
         <div class="feature4">
             <div class="mg4">
-                <img src="../../img/security/doorbell2.jpg" alt="Smart Doorbell Icon">
+                <img src="{{ url_for('static', filename='img/security/doorbell2.jpg') }}" alt="Smart Doorbell Icon">
             </div>
             <h3>Smart Doorbell</h3>
             <p>Enhance doorstep security with a smart doorbell that provides live video streaming and two-way communication with visitors.</p>
         </div>
-    </div>
-    <div class="group2">
+        
+        </div>
+        <div class="group2">
         <div class="feature5">
             <div class="mg5">
-                <img src="../../img/security/lock.jpeg" alt="Remote Locking System Icon">
+                <img src="{{ url_for('static', filename='img/security/lock.jpeg') }}" alt="Remote Locking System Icon">
             </div>
             <h3>Remote Locking System</h3>
             <p>Control door locks remotely via a mobile app, enabling you to secure or unlock doors from anywhere.</p>
         </div>
-    
+        
         <div class="feature6">
             <div class="mg6">
-                <img src="../../img/security/smoke.jpg" alt="Fire and Smoke Detection Icon">
+                <img src="{{ url_for('static', filename='img/security/smoke.jpg') }}" alt="Fire and Smoke Detection Icon">
             </div>
             <h3>Fire and Smoke Detection</h3>
             <p>Deploy smart fire and smoke detectors that send instant alerts to your smartphone in case of fire emergencies.</p>
         </div>
-    
+        
         <div class="feature7">
             <div class="mg7">
-                <img src="../../img/security/car2.jpg" alt="Vehicle Tracking System Icon">
+                <img src="{{ url_for('static', filename='img/security/car2.jpg') }}" alt="Vehicle Tracking System Icon">
             </div>
             <h3>Vehicle Tracking System</h3>
             <p>Keep track of your vehicles with a GPS-based tracking system, allowing you to monitor their location in real-time.</p>
         </div>
-    
+        
         <div class="feature8">
             <div class="mg8">
-                <img src="../../img/security/light2.jpg" alt="Smart Lighting Control Icon">
+                <img src="{{ url_for('static', filename='img/security/light2.jpg') }}" alt="Smart Lighting Control Icon">
             </div>
             <h3>Smart Lighting Control</h3>
             <p>Control lighting remotely to simulate occupancy and deter intruders, enhancing home security while conserving energy.</p>
         </div>
-    </div>
         </div>
-    </div>
+        </div>
+        </div>
+
     
-<!-- University Security Section -->
-<div class="university-security">
-    <div class="uni">
-    <h2>University Security</h2>
-    <p>Ensuring the safety and security of students, faculty, and staff is a top priority for universities. Our security emergency response system provides comprehensive security solutions for educational institutions to create a safe and secure campus environment.</p>
-    </div>
-    <div class="campus-sec">
-    <div class="image">
-        <img src="../../img/security/uni.jpeg" alt="University Security">
-    </div>
-    <div class="security-details">
-        <div class="feat">
-            <h3>Campus Patrol</h3>
-            <p>Our dedicated security team conducts regular patrols across the campus to ensure a visible security presence.</p>
+
+        
+        <!-- University Security Section -->
+        <div class="university-security">
+        <div class="uni">
+        <h2>University Security</h2>
+        <p>Ensuring the safety and security of students, faculty, and staff is a top priority for universities. Our security emergency response system provides comprehensive security solutions for educational institutions to create a safe and secure campus environment.</p>
         </div>
-        <div class="feat">
-            <h3>Emergency Response</h3>
-            <p>Immediate response to emergencies with strategically located emergency call boxes and trained personnel.</p>
+        <div class="campus-sec">
+        <div class="image">
+            <img src="{{ url_for('static', filename='img/security/uni.jpeg') }}" alt="University Security">
         </div>
-        <div class="feat">
-            <h3>24/7 Monitoring</h3>
-            <p>State-of-the-art surveillance systems and monitoring centers to oversee campus activities round the clock.</p>
+        <div class="security-details">
+            <div class="feat">
+                <h3>Campus Patrol</h3>
+                <p>Our dedicated security team conducts regular patrols across the campus to ensure a visible security presence.</p>
+            </div>
+            <div class="feat">
+                <h3>Emergency Response</h3>
+                <p>Immediate response to emergencies with strategically located emergency call boxes and trained personnel.</p>
+            </div>
+            <div class="feat">
+                <h3>24/7 Monitoring</h3>
+                <p>State-of-the-art surveillance systems and monitoring centers to oversee campus activities round the clock.</p>
+            </div>
+            <div class="feat">
+                <h3>Mobile App</h3>
+                <p>Download our security app for instant access to emergency services, reporting incidents, and receiving real-time alerts.</p>
+            </div>
+            <div class="feat">
+                <h3>Anonymous Reporting</h3>
+                <p>Report suspicious activities or safety concerns anonymously through our online reporting system.</p>
+            </div>
+            <div class="feat">
+                <h3>SwiftResponse</h3>
+                <p>SwiftResponse is our commitment to providing immediate and efficient assistance during emergency situations.</p>
+            </div>
         </div>
-        <div class="feat">
-            <h3>Mobile App</h3>
-            <p>Download our security app for instant access to emergency services, reporting incidents, and receiving real-time alerts.</p>
         </div>
-        <div class="feat">
-            <h3>Anonymous Reporting</h3>
-            <p>Report suspicious activities or safety concerns anonymously through our online reporting system.</p>
-        </div>
-        <div class="feat">
-            <h3>SwiftResponse</h3>
-            <p>SwiftResponse is our commitment to providing immediate and efficient assistance during emergency situations.</p>
-        </div>
-    </div>
-    </div>
+        
     <div class="emergency-numbers">
         <h3>Emergency Contact Numbers</h3>
         <div class="two">
@@ -232,173 +237,238 @@
         <textarea id="emergency-number-textarea" rows="4" cols="50" readonly></textarea>
     </div>
     <div class="report-button">
-        <a href="../report.html" target="_blank" rel="noopener noreferrer">
+        <a href="{{ url_for('report') }}" target="_blank" rel="noopener noreferrer">
             <button>Report Security Issue</button>
         </a>
     </div>
-</div>
-<!-- security features -->
-
-<div class="services">
-    <div class="serve">
-    <h2>SwiftResponse Security Services</h2>
-    <p>Our security services are designed to provide comprehensive support and assistance during security emergencies. From emergency chat support to safety awareness workshops, we offer a wide range of programs to ensure the safety and well-being of individuals in various security situations.</p>
     </div>
-    <div class="parts">
-<div class="part1">
-<div class="service1">
-    <div class="icon1">
-        <img src="../../img/security/gridicons--chat.svg" alt="Emergency Chat Support Icon">
-    </div>
-    <h2>Emergency Chat Support</h2>
-    <p>Our Emergency Chat Support provides a lifeline during times of crisis. Trained professionals and security personnel are available 24/7 to offer guidance and support. Whether you're facing a security threat or simply need someone to talk to, our chat support is here for you.</p>
-</div>
-
-<!-- Virtual Neighborhood Watch Section -->
-<div class="service2">
-    <div class="icon2">
-        <img src="../../img/security/icon-park-solid--virtual-reality-glasses.svg" alt="Virtual Neighborhood Watch Icon">
-    </div>
-    <h2>Virtual Neighborhood Watch</h2>
-    <p>Join our Virtual Neighborhood Watch program and be part of a community dedicated to enhancing security awareness and preventing incidents. By staying connected with your neighbors and sharing real-time updates, you become an active participant in creating a safer environment for everyone.</p>
-</div>
-</div>
-<div class="part2">
-
-<!-- Collaborative Security Task Force Section -->
-<div class="service3">
-    <div class="icon3">
-        <img src="../../img/security/ic--sharp-security.svg" alt="Collaborative Security Task Force Icon">
-    </div>
-    <h2>Collaborative Security Task Force</h2>
-    <p>Join our Collaborative Security Task Force and play an active role in shaping security initiatives. By working alongside local authorities and community members, you'll help identify security risks, develop preventive measures, and respond effectively to incidents.</p>
-</div>
-
-<!-- Safety Awareness Workshops Section -->
-<div class="service4">
-    <div class="icon4">
-        <img src="../../img/security/entypo--awareness-ribbon.svg" alt="Safety Awareness Workshops Icon">
-    </div>
-    <h2>Safety Awareness Workshops</h2>
-    <p>Our Safety Awareness Workshops empower you with the knowledge and skills to protect yourself and others in various situations. Led by experienced professionals and security experts, these workshops cover essential security tips, self-defense techniques, and emergency response strategies.</p>
-</div>
-
-<!-- Security Patrol Program Section -->
-<div class="service5">
-    <div class="icon5">
-        <img src="../../img/security/healthicons--security-worker-negative.svg" alt="Security Patrol Program Icon">
-    </div>
-    <h2>Security Patrol Program</h2>
-    <p>Our Security Patrol Program relies on the dedication of volunteers like you to monitor and maintain security. As a patrol volunteer, you'll work in coordination with local authorities to deter criminal activities and ensure a safe environment for everyone.</p>
-</div>
-
-<!-- Emergency Response Hotline Section -->
-<div class="service6">
-    <div class="icon6">
-        <img src="../../img/security/mdi--contact-phone.svg" alt="Emergency Response Hotline Icon">
-    </div>
-    <h2>Emergency Response Hotline</h2>
-    <p>Our Emergency Response Hotline provides immediate access to assistance in emergency situations. By dialing our hotline number, you'll connect with trained professionals who can dispatch help to your location quickly and efficiently.</p>
-</div>
-</div>
-    </div>
-</div>
-
-
-</div>
-
-
-<div class="community">
-    <div class="comm">
-    <h2>Join Our Community</h2>
-    <p>Be part of our community and stay informed about the latest security updates, safety tips, and emergency response initiatives. By joining our community, you'll have access to valuable resources and support networks that can help you stay safe and secure.</p>
-    </div>
-    <div class="intergrate">
-    <div class="images">
-        <div class="gp1">
-        <div class="img1">
-            <img src="../../img/security/training.jpg" alt="Community Support">
+    <!-- security features -->
+    
+    <div class="services">
+        <div class="serve">
+        <h2>SwiftResponse Security Services</h2>
+        <p>Our security services are designed to provide comprehensive support and assistance during security emergencies. From emergency chat support to safety awareness workshops, we offer a wide range of programs to ensure the safety and well-being of individuals in various security situations.</p>
         </div>
-        <div class="img2">
-            <img src="../../img/security/community.jpg" alt="Community Integration">
+        <div class="parts">
+    <div class="part1">
+    <div class="service1">
+        <div class="icon1">
+            <img src="{{ url_for('static', filename='img/security/gridicons--chat.svg') }}" alt="Emergency Chat Support Icon">
         </div>
+        <h2>Emergency Chat Support</h2>
+        <p>Our Emergency Chat Support provides a lifeline during times of crisis. Trained professionals and security personnel are available 24/7 to offer guidance and support. Whether you're facing a security threat or simply need someone to talk to, our chat support is here for you.</p>
+    </div>
+    
+    <!-- Virtual Neighborhood Watch Section -->
+    <div class="service2">
+        <div class="icon2">
+            <img src="{{ url_for('static', filename='img/security/icon-park-solid--virtual-reality-glasses.svg') }}" alt="Virtual Neighborhood Watch Icon">
         </div>
-        <div class="gp2">
-        <div class="img3">
-            <img src="../../img/security/home.jpg" alt="Community Solutions">
+        <h2>Virtual Neighborhood Watch</h2>
+        <p>Join our Virtual Neighborhood Watch program and be part of a community dedicated to enhancing security awareness and preventing incidents. By staying connected with your neighbors and sharing real-time updates, you become an active participant in creating a safer environment for everyone.</p>
+    </div>
+    </div>
+    <div class="part2">
+    
+    <!-- Collaborative Security Task Force Section -->
+    <div class="service3">
+        <div class="icon3">
+            <img src="{{ url_for('static', filename='img/security/ic--sharp-security.svg') }}" alt="Collaborative Security Task Force Icon">
         </div>
-
-        <div class="img4">
-            <img src="../../img/security/security.jpg" alt="Neighborhood Watch">
+        <h2>Collaborative Security Task Force</h2>
+        <p>Join our Collaborative Security Task Force and play an active role in shaping security initiatives. By working alongside local authorities and community members, you'll help identify security risks, develop preventive measures, and respond effectively to incidents.</p>
+    </div>
+    
+    <!-- Safety Awareness Workshops Section -->
+    <div class="service4">
+        <div class="icon4">
+            <img src="{{ url_for('static', filename='img/security/entypo--awareness-ribbon.svg') }}" alt="Safety Awareness Workshops Icon">
         </div>
+        <h2>Safety Awareness Workshops</h2>
+        <p>Our Safety Awareness Workshops empower you with the knowledge and skills to protect yourself and others in various situations. Led by experienced professionals and security experts, these workshops cover essential security tips, self-defense techniques, and emergency response strategies.</p>
+    </div>
+    
+    <!-- Security Patrol Program Section -->
+    <div class="service5">
+        <div class="icon5">
+            <img src="{{ url_for('static', filename='img/security/healthicons--security-worker-negative.svg') }}" alt="Security Patrol Program Icon">
+        </div>
+        <h2>Security Patrol Program</h2>
+        <p>Our Security Patrol Program relies on the dedication of volunteers like you to monitor and maintain security. As a patrol volunteer, you'll work in coordination with local authorities to deter criminal activities and ensure a safe environment for everyone.</p>
+    </div>
+    
+    <!-- Emergency Response Hotline Section -->
+    <div class="service6">
+        <div class="icon6">
+            <img src="{{ url_for('static', filename='img/security/mdi--contact-phone.svg') }}" alt="Emergency Response Hotline Icon">
+        </div>
+        <h2>Emergency Response Hotline</h2>
+        <p>Our Emergency Response Hotline provides immediate access to assistance in emergency situations. By dialing our hotline number, you'll connect with trained professionals who can dispatch help to your location quickly and efficiently.</p>
+    </div>
+    </div>
         </div>
     </div>
-    <div class="response">
-
-<div class="emergency-response-training">
-    <h2>Emergency Response Training</h2>
-    <p>Stay prepared for unexpected situations by actively participating in our comprehensive online training courses. Our emergency response training covers a wide range of protocols and crisis management strategies to equip you with the knowledge and skills needed to handle emergencies effectively.</p>
-    <p>Learn from industry experts and experienced professionals as they guide you through various scenarios, providing valuable insights and practical advice. Our interactive courses ensure that you are well-prepared to respond to emergencies in a timely and efficient manner.</p>
-</div>
-
-<div class="integration-home-security-systems">
-    <h2>Integration with Home Security Systems</h2>
-    <p>Enhance the security of your residential properties with our cutting-edge integration solutions. By connecting your home security systems with our platform, you can receive real-time alerts and monitoring, ensuring that you are always informed about the safety of your home.</p>
-    <p>Our seamless integration allows for quick and efficient communication between your security systems and our platform. Whether it's surveillance camera feeds, door/window sensors, or motion detectors, you can access and manage everything in one centralized location, providing you with peace of mind and complete control over your home security.</p>
-</div>
-
-<div class="customized-security-solutions">
-    <h2>Customized Security Solutions</h2>
-    <p>Take your security to the next level with our personalized and tailored security solutions. Our team of experts will work closely with you to understand your specific needs and design a custom security plan that aligns with your requirements.</p>
-    <p>From advanced threat detection to access control systems, we offer a range of solutions that cater to both residential and commercial properties. Our goal is to provide you with a comprehensive security framework that adapts to your unique circumstances, ensuring maximum protection for you, your loved ones, and your assets.</p>
-</div>
+    
+    
     </div>
-    </div>
-</div>
-
-   
-    <!-- Footer Section -->
-   
-<footer class="footer">
-    <div class="contain">
-        <div class="footer-content">
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./about.html">Services</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
+        <!-- Form for Security Emergency -->
+        <div class="sece">
+            <div class="emergency-form">
+                <h3>Report Security Emergency</h3>
+                <form id="security-form" action="/submit_security_form" method="POST">
+                    <!-- Personal Information -->
+                    <div class="section">
+                        <h4>Personal Information</h4>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
+                    </div>
+                    <!-- Security Details -->
+                    <div class="section">
+                        <h4>Security Details</h4>
+                        <div class="form-group">
+                            <label for="incident-type">Type of Incident</label>
+                            <select id="incident-type" name="incident-type" required>
+                                <option value="break-in">Break-in</option>
+                                <option value="theft">Theft</option>
+                                <option value="assault">Assault</option>
+                                <option value="vandalism">Vandalism</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description of Incident</label>
+                            <textarea id="description" name="description" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Additional Information -->
+                    <div class="section">
+                        <h4>Additional Information</h4>
+                        <div class="form-group">
+                            <label for="witnesses">Witnesses</label>
+                            <textarea id="witnesses" name="witnesses" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <button type="submit">Report Security Emergency</button>
+                </form>
             </div>
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>SwiftResponse ERCS</p>
-                <p>123 Main Street, City</p>
-                <p>Email: info@swiftresponse.com</p>
-                <p>Phone: +1 (123) 456-7890</p>
+                    </div>
+    
+    
+    <div class="community">
+        <div class="comm">
+        <h2>Join Our Community</h2>
+        <p>Be part of our community and stay informed about the latest security updates, safety tips, and emergency response initiatives. By joining our community, you'll have access to valuable resources and support networks that can help you stay safe and secure.</p>
+        </div>
+        <div class="intergrate">
+        <div class="images">
+            <div class="gp1">
+            <div class="img1">
+                <img src="{{ url_for('static', filename='img/security/training.jpg') }}" alt="Community Support">
             </div>
-            <div class="social-media">
-                <h3>Connect With Us</h3>
-                <div class="socials">
-                <a href="#"><img src="../../img/socials/facebook-outline.svg" alt="Facebook"></a>
-                <a href="#"><img src="../../img/socials/twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="../../img/socials/instagram (1).svg" alt="Instagram"></a>
-                <a href="#"><img src="../../img/socials/bi--linkedin.svg" alt="LinkedIn"></a>
+            <div class="img2">
+                <img src="{{ url_for('static', filename='img/security/community.jpg') }}" alt="Community Integration">
+            </div>
+            </div>
+            <div class="gp2">
+            <div class="img3">
+                <img src="{{ url_for('static', filename='img/security/home.jpg') }}" alt="Community Solutions">
+            </div>
+    
+            <div class="img4">
+                <img src="{{ url_for('static', filename='img/security/security.jpg') }}" alt="Neighborhood Watch">
+            </div>
+            </div>
+        </div>
+        <div class="response">
+    
+    <div class="emergency-response-training">
+        <h2>Emergency Response Training</h2>
+        <p>Stay prepared for unexpected situations by actively participating in our comprehensive online training courses. Our emergency response training covers a wide range of protocols and crisis management strategies to equip you with the knowledge and skills needed to handle emergencies effectively.</p>
+        <p>Learn from industry experts and experienced professionals as they guide you through various scenarios, providing valuable insights and practical advice. Our interactive courses ensure that you are well-prepared to respond to emergencies in a timely and efficient manner.</p>
+    </div>
+    
+    <div class="integration-home-security-systems">
+        <h2>Integration with Home Security Systems</h2>
+        <p>Enhance the security of your residential properties with our cutting-edge integration solutions. By connecting your home security systems with our platform, you can receive real-time alerts and monitoring, ensuring that you are always informed about the safety of your home.</p>
+        <p>Our seamless integration allows for quick and efficient communication between your security systems and our platform. Whether it's surveillance camera feeds, door/window sensors, or motion detectors, you can access and manage everything in one centralized location, providing you with peace of mind and complete control over your home security.</p>
+    </div>
+    
+    <div class="customized-security-solutions">
+        <h2>Customized Security Solutions</h2>
+        <p>Take your security to the next level with our personalized and tailored security solutions. Our team of experts will work closely with you to understand your specific needs and design a custom security plan that aligns with your requirements.</p>
+        <p>From advanced threat detection to access control systems, we offer a range of solutions that cater to both residential and commercial properties. Our goal is to provide you with a comprehensive security framework that adapts to your unique circumstances, ensuring maximum protection for you, your loved ones, and your assets.</p>
+    </div>
+        </div>
+        </div>
+    </div>
+    
+       
+        <!-- Footer Section -->
+       
+    <footer class="footer">
+        <div class="contain">
+            <div class="footer-content">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
                 </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>SwiftResponse ERCS</p>
+                    <p>123 Main Street, City</p>
+                    <p>Email: info@swiftresponse.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                <div class="social-media">
+                    <h3>Connect With Us</h3>
+                    <div class="socials">
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="LinkedIn"></a>
+                    </div>
+            </div>
+            <div class="copyright">
+            <p>
+                &copy; 2024 SwiftResponse ERCS. All rights reserved.
+            </p>
+            </div>
+            
         </div>
-        <div class="copyright">
-        <p>
-            &copy; 2024 SwiftResponse ERCS. All rights reserved.
-        </p>
-        </div>
-        
-    </div>
-</footer>
-
-
-    <script src="../../js/security.js"></script>
-    <!-- Add any additional JavaScript or libraries here -->
-</body>
-</html>
+    </footer>
+    
+    
+        <script src="{{ url_for('static', filename='js/security.js') }}"></script>
+        <!-- Add any additional JavaScript or libraries here -->
+    </body>
+    </html>
+    

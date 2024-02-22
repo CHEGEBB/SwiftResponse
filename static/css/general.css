@@ -265,7 +265,7 @@ header {
 
 .row {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: hidden; /* Enable horizontal scrolling */
   flex-direction: row; /* Display cards horizontally */
 }
 

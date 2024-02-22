@@ -463,6 +463,70 @@ strong{
 .call button:hover {
     background-color: #0056b3;
 }
+.fom{
+    background-color: #000;
+    height: 900px;
+    padding-top: 50px;
+    margin-top: -20px;
+    padding-left: 450px;
+}
+.request-form {
+    max-width: 500px;
+    padding: 20px;
+    background-color: rgba(220, 20, 60, 0.2); /* Crimson color with transparency */
+    border-radius: 10px; /* Border radius */
+    margin-top: -40px;
+}
+
+.request-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.request-form p{
+        color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #dc143c; /* Crimson color */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+}
+
+button[type="submit"]:hover {
+    background-color: #b22222; /* Darker crimson color on hover */
+}
 
 /* University Safety System container styling */
 .content-item4 {

@@ -6,34 +6,47 @@
     <title>Contact Us</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 </head>
+<style>
+  /* Default style for the icon */
+  .fas.fa-bars {
+    display: none; /* Hide the icon by default */
+  }
+  
+  /* Media query for screens with a maximum width of 768px */
+  @media (max-width: 768px) {
+    .fas.fa-bars {
+      display: inline; /* Display the icon when screen width is at most 768px */
+    }
+  }
+</style>
 <body>
     <!-- Navigation Section -->
 <nav class="navbar">
     <div class="menu-toggle" onclick="toggleMenu()">
       <!-- Custom hamburger icon -->
-      <img src="{{ url_for('static', filename='img/general/mdi--hamburger-open.svg') }}" alt="Menu" class="hamburger-icon">
+      <i class="fas fa-bars"></i>
     </div>
     <ul class="nav-list" id="navList">
-      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
       <li class="nav-item dropdown">
         <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('static', filename='pages/alerts/general.html') }}">General Alerts</a></li>
+          <li><a href="{{ url_for('general') }}">General Alerts</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown">
         <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
         <ul class="dropdown-menu">
-          <li><a href="{{ url_for('static', filename='pages/emergency/fire.html') }}">Fire Emergencies</a></li>
-          <li><a href="{{ url_for('static', filename='pages/emergency/medical.html') }}">Medical Emergencies</a></li>
-          <li><a href="{{ url_for('static', filename='pages/emergency/accident.html') }}">Accident Emergencies</a></li>
-          <li><a href="{{ url_for('static', filename='pages/emergency/security.html') }}">Security Emergencies</a></li>
-          <li><a href="#">Report Emergency</a></li>
+          <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
+          <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
+          <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
+          <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
+          <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
         </ul>
       </li>
-      <li class="nav-item"><a href="{{ url_for('static', filename='report.html') }}">Report</a></li>
-      <li class="nav-item"><a href="{{ url_for('static', filename='about.html') }}">About</a></li>
-      <li class="nav-item"><a href="{{ url_for('static', filename='contact.html') }}">Contact</a></li>
+      <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+      <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+      <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
     </ul>
   </nav>
   

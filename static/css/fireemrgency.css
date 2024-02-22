@@ -545,6 +545,66 @@ button:hover{
 .technology p{
     margin-left: 20px;
 }
+.firem{
+    background-color: #252729;
+    height: 1000px;
+    padding-top: 50px;
+}
+.emergency-form {
+    background-color:crimson; 
+    width: 550px; /* Adjust as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Add padding */
+    border-radius: 15px;
+    height: 800px;
+    box-shadow: 0px 0px 10px rgba(167, 150, 150, 0.9);
+    font-family: 'Ropa Sans', sans-serif; 
+    
+}
+
+.section {
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Add spacing between form elements */
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ropa Sans', sans-serif; 
+}
+
+.emergency-form input[type="text"],
+.emergency-form input[type="email"],
+.emergency-form input[type="tel"],
+.emergency-form select,
+.emergency-form textarea {
+    width: calc(100% - 20px); /* Adjust width of form elements */
+    padding: 8px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    font-family: 'Ropa Sans', sans-serif; 
+    border-radius: 5px; /* Add border radius */
+    outline: none;
+}
+
+.emergency-form button {
+    width: 400px; 
+    padding: 10px; 
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+   margin-left: 50px;
+   font-family: 'Ropa Sans', sans-serif; 
+}
+
+.emergency-form button:hover {
+    background-color: #555; /* Button hover background color */
+}
+
 
 /* Center aligning the elements */
 .emergency{
@@ -1419,6 +1479,9 @@ flex-direction: column;
             gap: 5px;
             margin-left: 5px;
             
+        }
+        .emergency-form {
+            width: 90%; /* Adjust width for smaller screens */
         }
         .card2 {
             background-color:#000;

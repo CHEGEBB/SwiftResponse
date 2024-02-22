@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accident Response System</title>
-    <link rel="stylesheet" href="../../css/accident.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accident.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Add any additional CSS or libraries here -->
 </head>
@@ -15,38 +15,34 @@
     <nav class="navbar">
         <div class="menu-toggle" onclick="toggleNav()">
             <!-- Custom hamburger icon -->
-            <img src="/img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+            <img src="{{ url_for('static', filename='img/general/mdi--hamburger-open.svg') }}" alt="Menu" class="hamburger-icon">
         </div>
         <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="./pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="{{ url_for('general') }}">General Alerts</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
                 <ul class="dropdown-menu" id="emergencyDropdown">
-                    <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
-                    <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
-                    <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
-                    <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
-                    <li><a href="#">Report Emergency</a></li>
+                    <li><a href="{{ url_for('fire') }}"Fire Emergencies</a></li>
+                    <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
+                    <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
+                    <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
+                    <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="./report.html">Report</a></li>
-            <li class="nav-item"><a href="./about.html">About</a></li>
-            <li class="nav-item"><a href="./contact.html">Contact</a></li>
+            <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
     </nav>
-</div>
 
 
-
-
-
-    <header class="header" style="background-image: url('../../img/accident/car3.jpg');">
+    <header class="header" style="background-image: url('{{ url_for('static', filename='img/accident/car3.jpg') }}');">
         <div class="header-overlay"></div>
         <div class="container">
             <div class="ficon">
@@ -62,129 +58,123 @@
         </div>
     </header>
     
-    
     <!-- Main Content Section -->
-    <main class="main-content">
-        <div class="cont1">
-            <!-- Live Accident Reporting -->
-            <div class="content-item1">
-                <div class="say">
+<main class="main-content">
+    <div class="cont1">
+        <!-- Live Accident Reporting -->
+        <div class="content-item1">
+            <div class="say">
                 <h2>Live Accident Reporting</h2>
                 <p>Report accidents in real-time to provide crucial information for emergency responders.</p>
-                </div>
-                <div class="rep">
+            </div>
+            <div class="rep">
                 <div class="live">
                     <div class="img1">
-                        <img src="../../img/accident/car.jpg" alt="Accident Reporting">
+                        <img src="{{ url_for('static', filename='img/accident/car.jpg') }}" alt="Accident Reporting">
                     </div>
-                <h2>Live Accident Reporting</h2>
-                <p>Report accidents in real-time to provide crucial information for emergency responders.</p>
-                
+                    <h2>Live Accident Reporting</h2>
+                    <p>Report accidents in real-time to provide crucial information for emergency responders.</p>
                 </div>
                 <div class="why">
                     <div class="img2">
-                        <img src="../../img/accident/car3.jpg" alt="Accident Reporting">
+                        <img src="{{ url_for('static', filename='img/accident/car3.jpg') }}" alt="Accident Reporting">
                     </div>
-                <h3>Why Live Accident Reporting Matters</h3>
-                <p>Accidents can happen at any moment, and the ability to report them in real-time can make a significant difference in how quickly and effectively emergency responders can react. <a href="/report.html" class="primary-btn"><button>Report Accident</button></a></p>
+                    <h3>Why Live Accident Reporting Matters</h3>
+                    <p>Accidents can happen at any moment, and the ability to report them in real-time can make a significant difference in how quickly and effectively emergency responders can react. <a href="{{ url_for('static', filename='report.html') }}" class="primary-btn">Report Accident</a></p>
                 </div>
                 <div class="works">
                     <div class="img3">
-                        <img src="../../img/accident/car4.jpg" alt="Accident Reporting">
+                        <img src="{{ url_for('static', filename='img/accident/car4.jpg') }}" alt="Accident Reporting">
                     </div>
-                <h3>How It Works</h3>
-                <p>Our live accident reporting system allows users to quickly and easily submit details about accidents as they occur. The process is simple and intuitive, ensuring that crucial information reaches emergency responders promptly.</p>
+                    <h3>How It Works</h3>
+                    <p>Our live accident reporting system allows users to quickly and easily submit details about accidents as they occur. The process is simple and intuitive, ensuring that crucial information reaches emergency responders promptly.</p>
                 </div>
+            </div>
+            <div class="offer">
+                <div class="accident2">
+                    <img src="{{ url_for('static', filename='img/accident/car2.jpg') }}" alt="Accident Reporting">
                 </div>
-                <div class="offer">
-                    <div class="accident2">
-                        <img src="../../img/accident/car2.jpg" alt="Accident Reporting">
-                    </div>
                 <div class="benefits">
-                <h3>Benefits of Live Accident Reporting</h3>
-                <p>Live accident reporting offers numerous benefits, including:</p>
-                <p><strong>Rapid Response:</strong> Emergency responders can be alerted to accidents in real-time, allowing them to mobilize quickly and provide assistance faster.</p>
-                <p><strong>Improved Coordination:</strong> By centralizing accident reports, responders can better coordinate their efforts and allocate resources more effectively.</p>
-                <p><strong>Enhanced Safety:</strong> Prompt reporting of accidents helps to identify potential hazards and prevent further incidents, contributing to overall road safety.</p>
-                <p><strong>Data-driven Decision Making:</strong> The data collected through live accident reporting can be analyzed to identify trends, areas of high risk, and opportunities for intervention, leading to informed decision-making and targeted safety measures.</p>
-                <h3>Get Involved</h3>
-                <p>Join us in our efforts to improve road safety by participating in live accident reporting. Your contribution can make a real difference in how quickly and effectively emergency responders can respond to accidents, ultimately saving lives.<a href="/report.html" class="primary-btn"><button>Report Accident</button></a></p>
+                    <h3>Benefits of Live Accident Reporting</h3>
+                    <p>Live accident reporting offers numerous benefits, including:</p>
+                    <p><strong>Rapid Response:</strong> Emergency responders can be alerted to accidents in real-time, allowing them to mobilize quickly and provide assistance faster.</p>
+                    <p><strong>Improved Coordination:</strong> By centralizing accident reports, responders can better coordinate their efforts and allocate resources more effectively.</p>
+                    <p><strong>Enhanced Safety:</strong> Prompt reporting of accidents helps to identify potential hazards and prevent further incidents, contributing to overall road safety.</p>
+                    <p><strong>Data-driven Decision Making:</strong> The data collected through live accident reporting can be analyzed to identify trends, areas of high risk, and opportunities for intervention, leading to informed decision-making and targeted safety measures.</p>
+                    <h3>Get Involved</h3>
+                    <p>Join us in our efforts to improve road safety by participating in live accident reporting. Your contribution can make a real difference in how quickly and effectively emergency responders can respond to accidents, ultimately saving lives. <a href="{{ url_for('static', filename='report.html') }}" class="primary-btn">Report Accident</a></p>
                 </div>
-                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Map Section -->
+        <div class="content-item2">
+            <div class="rectangle2"></div>
+            <h2>SwiftResponse: Smart Emergency Management System</h2>
+            <div class="section-description">
+                <p>Welcome to SwiftResponse, our smart emergency management system designed to provide real-time assistance during critical situations.</p>
+                <p>With SwiftResponse, we offer a comprehensive interactive map feature that empowers users to efficiently handle emergency scenarios. By seamlessly integrating live data, including accident incidents and medical facilities, into a user-friendly interface, SwiftResponse ensures timely and effective response efforts.</p>
             </div>
             
-<!-- Interactive Map Section -->
-<div class="content-item2">
-    <div class="rectangle2"></div>
-    <h2>SwiftResponse: Smart Emergency Management System</h2>
-    <div class="section-description">
-        <p>Welcome to SwiftResponse, our smart emergency management system designed to provide real-time assistance during critical situations.</p>
-        <p>With SwiftResponse, we offer a comprehensive interactive map feature that empowers users to efficiently handle emergency scenarios. By seamlessly integrating live data, including accident incidents and medical facilities, into a user-friendly interface, SwiftResponse ensures timely and effective response efforts.</p>
-    </div>
-    
-    <div class="section-features">
-        <h3>Key Features:</h3>
-        <div class="feature1">
-            
-            <div class="con1">
-                <img src="../../img/accident/fluent--location-live-24-filled.svg" alt="Live Incident Tracking">
+            <div class="section-features">
+                <h3>Key Features:</h3>
+                <div class="feature1">
+                    <div class="con1">
+                        <img src="{{ url_for('static', filename='img/accident/fluent--location-live-24-filled.svg') }}" alt="Live Incident Tracking">
+                    </div>
+                    <h4>Live Incident Tracking:</h4>
+                    <p>SwiftResponse dynamically updates the map with real-time accident incidents, allowing users to stay informed about ongoing emergencies as they unfold.</p>
+                </div>
+                <div class="feature2">
+                    <div class="con2">
+                        <img src="{{ url_for('static', filename='img/accident/fa6-solid--house-medical.svg') }}" alt="Nearby Medical Facilities">
+                    </div>
+                    <h4>Nearby Medical Facilities:</h4>
+                    <p>Easily locate nearby medical facilities such as hospitals, clinics, and pharmacies directly on the map, enabling swift access to essential healthcare services.</p>
+                </div>
+                <div class="feature3">
+                    <div class="con3">
+                        <img src="{{ url_for('static', filename='img/accident/healthicons--paved-road-negative.svg') }}" alt="Live Incident Tracking">
+                    </div>
+                    <h4>Optimized Route Planning:</h4>
+                    <p>SwiftResponse offers intelligent route planning functionality, enabling emergency responders to chart the most efficient and safest routes to incident locations.</p>
+                </div>
             </div>
-            <h4>Live Incident Tracking:</h4>
-            <p>SwiftResponse dynamically updates the map with real-time accident incidents, allowing users to stay informed about ongoing emergencies as they unfold.</p>
-        </div>
-        <div class="feature2">
-           
-            <div class="con2">
-                <img src="../../img/accident/fa6-solid--house-medical.svg" alt="Nearby Medical Facilities">
+
+            <div class="section-experience">
+                <h3>Experience the Power:</h3>
+                <p>Explore the live data visualization below to see SwiftResponse's interactive map in action it shows traffic and accidents along the road:</p>
             </div>
-            <h4>Nearby Medical Facilities:</h4>
-            <p>Easily locate nearby medical facilities such as hospitals, clinics, and pharmacies directly on the map, enabling swift access to essential healthcare services.</p>
-        </div>
-        <div class="feature3">
-            <div class="con3">
-                <img src="../../img/accident/healthicons--paved-road-negative.svg" alt="Live Incident Tracking">
+
+            <!-- Key Legend -->
+            <div class="key-legend">
+                <h3>Key Legend:</h3>
+                <div class="legend-item">
+                    <div class="legend-color heavy"></div>
+                    <div class="legend-label">Heavy Traffic</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color moderate"></div>
+                    <div class="legend-label">Moderate Traffic</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color light"></div>
+                    <div class="legend-label">Light Traffic</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color accident"></div>
+                    <div class="legend-label">Accident</div>
+                </div>
             </div>
-            <h4>Optimized Route Planning:</h4>
-            <p>SwiftResponse offers intelligent route planning functionality, enabling emergency responders to chart the most efficient and safest routes to incident locations.</p>
+
+            <!-- Include interactive map here -->
+            <div id="map" class="map-container">
+                <!-- Map will be rendered here -->
+            </div>
         </div>
     </div>
 
-    <div class="section-experience">
-        <h3>Experience the Power:</h3>
-        <p>Explore the live data visualization below to see SwiftResponse's interactive map in action it shows traffic and acccidents along the road:</p>
-    </div>
-
-    <!-- Key Legend -->
-    <div class="key-legend">
-        <h3>Key Legend:</h3>
-        <div class="legend-item">
-            <div class="legend-color heavy"></div>
-            <div class="legend-label">Heavy Traffic</div>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color moderate"></div>
-            <div class="legend-label">Moderate Traffic</div>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color light"></div>
-            <div class="legend-label">Light Traffic</div>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color accident"></div>
-            <div class="legend-label">Accident</div>
-        </div>
-    </div>
-
-    <!-- Include interactive map here -->
-    <div id="map" class="map-container">
-        <!-- Map will be rendered here -->
-    </div>
-</div>
-
-</div>
-
-
-          <!-- Emergency Contacts and Crowd-Sourced Assistance Section -->
+     <!-- Emergency Contacts and Crowd-Sourced Assistance Section -->
 <div class="content-item3">
     <h2>Emergency Assistance</h2>
     <div class="section-description">
@@ -268,111 +258,138 @@
         </div>
     </div>
 </div>
-
-
 </div>
 
-          
+<!-- form to submit after accident oocuurence -->
+<div class="fom">
 
-    
+<div class="request-form">
+    <h3>Request Urgent Medical Care during an accident </h3>
+    <form id="request-form" method="POST" action="/submit_form">
+        <div class="form-group name">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group phone">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group address">
+            <label for="address">Home Address</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group insurance">
+            <label for="insurance">Insurance Provider</label>
+            <input type="text" id="insurance" name="insurance">
+        </div>
+        <div class="form-group details">
+            <label for="details">Details of Accident</label>
+            <textarea id="details" name="details" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
+</div>
+
+
           <!-- University Safety System -->
 <div class="content-item4">
     <div class="saf">
-    <h2>University Safety System</h2>
-    <p>Ensure the safety of students and faculty with our comprehensive university safety system.</p>
+        <h2>University Safety System</h2>
+        <p>Ensure the safety of students and faculty with our comprehensive university safety system.</p>
     </div>
 
-<div class="feats">
-    <!-- University Accident Reporting -->
-    <div class="feat">
-        <h3>Accident Reporting</h3>
-        <p>Students can promptly report accidents occurring around the university campus, contributing to a safer environment for everyone.</p>
-        <button onclick="window.location.href='./report.html'">Report Accident</button>
-    </div>
+    <div class="feats">
+        <!-- University Accident Reporting -->
+        <div class="feat">
+            <h3>Accident Reporting</h3>
+            <p>Students can promptly report accidents occurring around the university campus, contributing to a safer environment for everyone.</p>
+            <button onclick="window.location.href='{{ url_for('static', filename='report.html') }}'">Report Accident</button>
+        </div>
 
-    <!-- Notification System -->
-    <div class="feat">
-        <h3>Notification System</h3>
-        <p>Stay informed about nearby accidents, road closures, and emergency situations with our real-time notification system. Receive instant alerts to ensure you're always aware of potential safety hazards.</p>
-    </div>
+        <!-- Notification System -->
+        <div class="feat">
+            <h3>Notification System</h3>
+            <p>Stay informed about nearby accidents, road closures, and emergency situations with our real-time notification system. Receive instant alerts to ensure you're always aware of potential safety hazards.</p>
+        </div>
 
-    <!-- Additional Features -->
-    <div class="feat">
-        <h3>Additional Features</h3>
-        <p>Our university safety system goes beyond accident reporting and notification. It includes features such as emergency alerts, campus safety guidelines, live incident tracking, and community engagement.</p>
-    </div>
+        <!-- Additional Features -->
+        <div class="feat">
+            <h3>Additional Features</h3>
+            <p>Our university safety system goes beyond accident reporting and notification. It includes features such as emergency alerts, campus safety guidelines, live incident tracking, and community engagement.</p>
+        </div>
 
-    <!-- Conclusion -->
-    <div class="feat">
-        <h3>Conclusion</h3>
-        <p>Our university safety system is designed to create a secure and conducive environment for learning and growth. By leveraging advanced technology and community participation, we aim to mitigate risks and promote a culture of safety on campus.</p>
+        <!-- Conclusion -->
+        <div class="feat">
+            <h3>Conclusion</h3>
+            <p>Our university safety system is designed to create a secure and conducive environment for learning and growth. By leveraging advanced technology and community participation, we aim to mitigate risks and promote a culture of safety on campus.</p>
+        </div>
     </div>
 </div>
-</div>
 
-            
-      
 <div class="items">
     <div class="pics">
         <div class="gp1">
-        <div class="pic1">
-            <img src="../../img/accident/community.jpg" alt="Accident Reporting">
-        </div>
-        <div class="pic2">
-            <img src="../../img/accident/volunteer.jpg" alt="Accident Reporting">
-        </div>
+            <div class="pic1">
+                <img src="{{ url_for('static', filename='img/accident/community.jpg') }}" alt="Accident Reporting">
+            </div>
+            <div class="pic2">
+                <img src="{{ url_for('static', filename='img/accident/volunteer.jpg') }}" alt="Accident Reporting">
+            </div>
         </div>
         <div class="gp2">
-        <div class="pic3">
-            <img src="../../img/accident/emr.jpg" alt="Accident Reporting">
-        </div>
-        <div class="pic4">
-            <img src="../../img/accident/join.jpg" alt="Accident Reporting">
-        </div>
+            <div class="pic3">
+                <img src="{{ url_for('static', filename='img/accident/emr.jpg') }}" alt="Accident Reporting">
+            </div>
+            <div class="pic4">
+                <img src="{{ url_for('static', filename='img/accident/join.jpg') }}" alt="Accident Reporting">
+            </div>
         </div>
     </div>
-            <div class="content">
-<div class="content-item">
-    <h2>Community Forums</h2>
-    <p>Engage with others, share experiences, and exchange information on accident prevention and response.</p>
-</div>
-
-<div class="content-item">
-    <h2>Volunteer Coordination</h2>
-    <p>Coordinate volunteers to assist during emergencies, assigning specific roles or tasks.</p>
-</div>
-
-<div class="content-item">
-    <h2>Additional Information</h2>
-    <p>Access resources for accident prevention and safety training.</p>
-    <p>Learn about local emergency services and contact information.</p>
-    <p>Find tips for creating emergency preparedness plans.</p>
-</div>
-
-<div class="content-item">
-    <h2>Get Involved</h2>
-    <p>Join community safety initiatives and awareness campaigns.</p>
-    <p>Participate in volunteer training programs.</p>
-    <p>Contribute to research on accident prevention and response strategies.</p>
-</div>
+    <div class="content">
+        <div class="content-item">
+            <h2>Community Forums</h2>
+            <p>Engage with others, share experiences, and exchange information on accident prevention and response.</p>
         </div>
-</div>
-    </main>
 
-    
-    <!-- Footer Section -->
-   
+        <div class="content-item">
+            <h2>Volunteer Coordination</h2>
+            <p>Coordinate volunteers to assist during emergencies, assigning specific roles or tasks.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Additional Information</h2>
+            <p>Access resources for accident prevention and safety training.</p>
+            <p>Learn about local emergency services and contact information.</p>
+            <p>Find tips for creating emergency preparedness plans.</p>
+        </div>
+
+        <div class="content-item">
+            <h2>Get Involved</h2>
+            <p>Join community safety initiatives and awareness campaigns.</p>
+            <p>Participate in volunteer training programs.</p>
+            <p>Contribute to research on accident prevention and response strategies.</p>
+        </div>
+    </div>
+</div>
+</main>
+
+<!-- Footer Section -->
 <footer class="footer">
     <div class="contain">
         <div class="footer-content">
             <div class="quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./about.html">Services</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+
                     <li><a href="#">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <div class="contact-info">
@@ -385,23 +402,21 @@
             <div class="social-media">
                 <h3>Connect With Us</h3>
                 <div class="socials">
-                <a href="#"><img src="../../img/socials/facebook-outline.svg" alt="Facebook"></a>
-                <a href="#"><img src="../../img/socials/twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="../../img/socials/instagram (1).svg" alt="Instagram"></a>
-                <a href="#"><img src="../../img/socials/bi--linkedin.svg" alt="LinkedIn"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="LinkedIn"></a>
                 </div>
+            </div>
         </div>
         <div class="copyright">
-        <p>
-            &copy; 2024 SwiftResponse ERCS. All rights reserved.
-        </p>
+            <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
         </div>
-        
     </div>
 </footer>
 
-    <!-- Add any additional JavaScript or libraries here -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="../../js/accident.js"></script>
+<!-- Add any additional JavaScript or libraries here -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/accident.js') }}"></script>
 </body>
 </html>

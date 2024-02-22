@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Emergency Response System</title>
-    <link rel="stylesheet" href="../../css/medical.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/medical.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
 <body>
@@ -15,36 +15,34 @@
     <nav class="navbar">
         <div class="menu-toggle" onclick="toggleNav()">
             <!-- Custom hamburger icon -->
-            <img src="/img/general/mdi--hamburger-open.svg" alt="Menu" class="hamburger-icon">
+            <img src="{{ url_for('static', filename='img/general/mdi--hamburger-open.svg') }}" alt="Menu" class="hamburger-icon">
         </div>
         <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
                 <ul class="dropdown-menu">
-                    <li><a href="./pages/alerts/general.html">General Alerts</a></li>
+                    <li><a href="{{ url_for('general') }}">General Alerts</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
                 <ul class="dropdown-menu" id="emergencyDropdown">
-                    <li><a href="./pages/emergency/fire.html">Fire Emergencies</a></li>
-                    <li><a href="./pages/emergency/medical.html">Medical Emergencies</a></li>
-                    <li><a href="./pages/emergency/accident.html">Accident Emergencies</a></li>
-                    <li><a href="./pages/emergency/security.html">Security Emergencies</a></li>
+                    <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
+                    <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
+                    <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
+                    <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
                     <li><a href="#">Report Emergency</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="./report.html">Report</a></li>
-            <li class="nav-item"><a href="./about.html">About</a></li>
-            <li class="nav-item"><a href="./contact.html">Contact</a></li>
+            <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
     </nav>
 </div>
 
-
-
-  <header class="header" style="background-image: url('../../img/med/pic1.jpg');">
+<header class="header" style="background-image: url('{{ url_for('static', filename='img/med/pic1.jpg') }}');">
     <div class="header-overlay"></div>
     <div class="container">
         <h1>SwiftResponse Medical Emergency System</h1>
@@ -65,26 +63,24 @@
         <p>For any medical emergency, seek immediate medical care by calling an ambulance or visiting the nearest hospital.
             SwiftResponse provides quick access to medical assistance during emergencies. Call an ambulance or find the nearest hospital for immediate care through our system.
         </p>
-        
-        
     </div>
     <div class="help">
-    <div class="ambulance">
-        <div class="access">
-        <p>Access our 24/7 ambulance services.SwiftResponse collaborates with various ambulance services to ensure instant response to medical emergencies</p>
+        <div class="ambulance">
+            <div class="access">
+                <p>Access our 24/7 ambulance services.SwiftResponse collaborates with various ambulance services to ensure instant response to medical emergencies</p>
+            </div>
+            <button class="quick-access-btn">Call Ambulance</button>
         </div>
-        <button class="quick-access-btn">Call Ambulance</button>
-    </div>
 
-    <div class="hospital">
-        <div class="locate">
-        <p>Locate the nearest hospital for immediate medical care. SwiftResponse provides real-time information on hospital locations,with realtime and geo-positioning hospitals near your location
-             will be accessible  and availability of medical services topnotch.</p>
-             <button class="quick-access-btn">Find Nearest Hospital</button>
+        <div class="hospital">
+            <div class="locate">
+                <p>Locate the nearest hospital for immediate medical care. SwiftResponse provides real-time information on hospital locations,with realtime and geo-positioning hospitals near your location will be accessible  and availability of medical services topnotch.</p>
+                <button class="quick-access-btn">Find Nearest Hospital</button>
+            </div>
         </div>
-    </div>
     </div>
 </div>
+
 <div class="hospitals-near-me">
     <div class="content2">
         <h1>Hospitals Near Me</h1>
@@ -101,72 +97,69 @@
     <div class="hospital-list-container">
         <!-- Hospital cards -->
         <div class="group1">
-        <div class="hospital-card">
-            <h3>The Aga Khan Hospital</h3>
-            <img src="../../img/med/agakhan.jpg" alt="Aga Khan Hospital">
-            <h4>Location</h4>
-            <p>3rd Parklands Avenue, Nairobi, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 2 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
-                
-            </p>
-        </div>
+            <div class="hospital-card">
+                <h3>The Aga Khan Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/agakhan.jpg') }}" alt="Aga Khan Hospital">
+                <h4>Location</h4>
+                <p>3rd Parklands Avenue, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 2 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
+                </p>
+            </div>
 
-        <div class="hospital-card">
-            <h3>Nairobi Hospital</h3>
-            <img src="../../img/med/nh.jpg" alt="Nairobi Hospital">
-            <h4>Location</h4>
-            <p>Argwings Kodhek Road, Nairobi, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 1.5 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
-                
-            </p>
-        </div>
+            <div class="hospital-card">
+                <h3>Nairobi Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/nh.jpg') }}" alt="Nairobi Hospital">
+                <h4>Location</h4>
+                <p>Argwings Kodhek Road, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 1.5 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
+                </p>
+            </div>
 
-        <div class="hospital-card">
-            <h3>Kenyatta National Hospital</h3>
-            <img src="../../img/med/knh.jpg" alt="Kenyatta National Hospital">
-            <h4>Location</h4>
-            <p>Hospital Road, Nairobi, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 3 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>
-              
-            </p>
-        </div>
+            <div class="hospital-card">
+                <h3>Kenyatta National Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/knh.jpg') }}" alt="Kenyatta National Hospital">
+                <h4>Location</h4>
+                <p>Hospital Road, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 3 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>
+                </p>
+            </div>
 
-        <div class="hospital-card">
-            <h3>M.P. Shah Hospital</h3>
-            <img src="../../img/med/MP-Shah-Hospital-1024x768.jpg" alt="M.P. Shah Hospital">
-            <h4>Location</h4>
-            <p>Shivachi Road, Nairobi, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 2.5 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
-            </p>
-        </div>
-        <div class="hospital-card">
-            <h3>Kenyatta University Hospital</h3>
-            <img src="../../img/med/ku.jpg" alt="Kenyatta University Hospital">
-            <h4>Location</h4>
-            <p>Thika Road, Nairobi, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 5 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.2/5</span>
-            </p>
-        </div>
+            <div class="hospital-card">
+                <h3>M.P. Shah Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/MP-Shah-Hospital-1024x768.jpg') }}" alt="M.P. Shah Hospital">
+                <h4>Location</h4>
+                <p>Shivachi Road, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 2.5 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.4/5</span>
+                </p>
+            </div>
+            <div class="hospital-card">
+                <h3>Kenyatta University Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/ku.jpg') }}" alt="Kenyatta University Hospital">
+                <h4>Location</h4>
+                <p>Thika Road, Nairobi, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 5 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.2/5</span>
+                </p>
+            </div>
         </div>
         <div class="group2">
             <div class="hospital-card">
                 <h3>The Karen Hospital</h3>
-                <img src="../../img/med/The-Karen-Hospital-Nairobi-Kenya.jpg" alt="The Karen Hospital">
+                <img src="{{ url_for('static', filename='img/med/The-Karen-Hospital-Nairobi-Kenya.jpg') }}" alt="The Karen Hospital">
                 <h4>Location</h4>
                 <p>Langata Road, Nairobi, Kenya</p>
                 <h4>Distance</h4>
@@ -175,196 +168,298 @@
                 <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.6/5</span></p>
             </div>
             
-        <div class="hospital-card">
-            <h3>Moi teaching and Referral Hospital</h3>
-            <img src="../../img/med/moi.jpg" alt="Eldoret Hospital">
-            <h4>Location</h4>
-            <p>Jomo Kenyatta Street, Eldoret, Kenya</p>
-            <h4>Distance</h4>  
-            <p>Distance: 150 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
-                
-            </p>
-        </div>
+            <div class="hospital-card">
+                <h3>Moi teaching and Referral Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/moi.jpg') }}" alt="Eldoret Hospital">
+                <h4>Location</h4>
+                <p>Jomo Kenyatta Street, Eldoret, Kenya</p>
+                <h4>Distance</h4>  
+                <p>Distance: 150 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.5/5</span>
+                </p>
+            </div>
 
-        <div class="hospital-card">
-            <h3>Kitale County Referral Hospital</h3>
-            <img src="../../img/med/TRANS-NZOIA-TEACHING-AND-REFERRAL-HOSPITAL.jpg" alt="Kitale County Referral Hospital">
-            <h4>Location</h4>
-            <p>Milimani Road, Kitale, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 200 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span>    
-            </p>
+            <div class="hospital-card">
+                <h3>Kitale County Referral Hospital</h3>
+                <img src="{{ url_for('static', filename='img/med/TRANS-NZOIA-TEACHING-AND-REFERRAL-HOSPITAL.jpg') }}" alt="Kitale County Referral Hospital">
+                <h4>Location</h4>
+                <p>Milimani Road, Kitale, Kenya</p>
+                <h4>Distance</h4>
+                <p>Distance: 200 miles</p>
+                <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+                <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span>    
+                </p>
+            </div>
         </div>
+    
 
-        <div class="hospital-card">
-            <h3>Kisumu County Hospital</h3>
-            <img src="../../img/med/kisumu.jpg" alt="Kisumu County Hospital">
-            <h4>Location</h4>
-            <p>Obote Road, Kisumu, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 300 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.0/5</span>
-            </p>
-        </div>
 
-        <div class="hospital-card">
-            <h3>Nakuru County Hospital</h3>
-            <img src="../../img/med/nakuru-hos.jpg" alt="Nakuru County Hospital">
-            <h4>Location</h4>
-            <p>Geoffrey Kamau Way, Nakuru, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 150 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>  
-            </p>
-        </div>
-        </div>
 
-        <div class="group3">
+<div class="hospital-card">
+    <h3>Kisumu County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/kisumu.jpg') }}" alt="Kisumu County Hospital">
+    <h4>Location</h4>
+    <p>Obote Road, Kisumu, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 300 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">4.0/5</span>
+    </p>
+</div>
 
-        <div class="hospital-card">
-            <h3>Embu County Hospital</h3>
-            <img src="../../img/med/embu-level-five-hospital.jpg" alt="Embu County Hospital">
-            <h4>Location</h4>
-            <p>Embu-Meru Highway, Embu, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 100 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
-                
-            </p>
-        </div>
+<div class="hospital-card">
+    <h3>Nakuru County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/nakuru-hos.jpg') }}" alt="Nakuru County Hospital">
+    <h4>Location</h4>
+    <p>Geoffrey Kamau Way, Nakuru, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 150 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.3/5</span>  
+    </p>
+</div>
 
-        <div class="hospital-card">
-            <h3>Meru County Hospital</h3>
-            <img src="../../img/med/MERU.jpg" alt="Meru County Hospital">
-            <h4>Location</h4>
-            <p>Meru-Maua Road, Meru, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 150 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.8/5</span>
-            </p>
-        </div>
+<div class="group3">
 
-        <div class="hospital-card">
-            <h3>Nyeri County Hospital</h3>
-            <img src="../../img/med/nyeri.jpg" alt="Nyeri County Hospital">
-            <h4>Location</h4>
-            <p>Ring Road, Nyeri, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 100 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
-            </p>
-        </div>
+<div class="hospital-card">
+    <h3>Embu County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/embu-level-five-hospital.jpg') }}" alt="Embu County Hospital">
+    <h4>Location</h4>
+    <p>Embu-Meru Highway, Embu, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 100 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
+        
+    </p>
+</div>
 
-        <div class="hospital-card">
-            <h3>Thika County Hospital</h3>
-            <img src="../../img/med/thika.jpg" alt="Thika County Hospital">
-            <h4>Location</h4>
-            <p>General Kago Road, Thika, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 20 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span></p>
-        </div>
+<div class="hospital-card">
+    <h3>Meru County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/MERU.jpg') }}" alt="Meru County Hospital">
+    <h4>Location</h4>
+    <p>Meru-Maua Road, Meru, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 150 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.8/5</span>
+    </p>
+</div>
 
-        <div class="hospital-card">
-            <h3>Machakos County Hospital</h3>
-            <img src="../../img/med/Machakos Level 5 Hospital.jpg" alt="Machakos County Hospital">
-            <p>Machakos-Wote Road, Machakos, Kenya</p>
-            <h4>Distance</h4>
-            <p>Distance: 30 miles</p>
-            <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
-            <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">3.5/5</span>
-                
-            </p>
-        </div>
-        </div>
+<div class="hospital-card">
+    <h3>Nyeri County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/nyeri.jpg') }}" alt="Nyeri County Hospital">
+    <h4>Location</h4>
+    <p>Ring Road, Nyeri, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 100 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating: <span style="color: hsla(43, 94%, 58%, 1);">3.9/5</span>
+    </p>
+</div>
 
-    <!-- HTML for navigation arrows -->
+<div class="hospital-card">
+    <h3>Thika County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/thika.jpg') }}" alt="Thika County Hospital">
+    <h4>Location</h4>
+    <p>General Kago Road, Thika, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 20 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">4.1/5</span></p>
+</div>
+
+<div class="hospital-card">
+    <h3>Machakos County Hospital</h3>
+    <img src="{{ url_for('static', filename='img/med/Machakos Level 5 Hospital.jpg') }}" alt="Machakos County Hospital">
+    <p>Machakos-Wote Road, Machakos, Kenya</p>
+    <h4>Distance</h4>
+    <p>Distance: 30 miles</p>
+    <p style="color: hsla(180, 100%, 27%, 1);font-family: 'Ropa Sans', sans-serif;font-weight: 700;text-decoration: underline;">Open 24hrs</p>
+    <p>Rating:<span style="color: hsla(43, 94%, 58%, 1);">3.5/5</span>
+        
+    </p>
+</div>
+</div>
+</div>
+
+
+<!-- HTML for navigation arrows -->
 <button class="prev-arrow">
-    <img src="../../img/med/gg--arrow-left-o.svg" alt="Previous">
+<img src="{{ url_for('static', filename='img/med/gg--arrow-left-o.svg') }}" alt="Previous">
 </button>
 
 <button class="next-arrow">
-    <img src="../../img/med/gg--arrow-right-o.svg" alt="Next">
+<img src="{{ url_for('static', filename='img/med/gg--arrow-right-o.svg') }}" alt="Next">
 </button>
 
 </div>
-<!-- Ambulance Services -->
-<div class="ambulance-services">
-    <div class="content3">
-        <h2>Ambulance Services</h2>
-        <h1>When every second counts, our ambulance services ensure swift response to emergencies, providing critical care en route to the nearest medical facility.</h1>
-        <div class="services">
-            <div class="part1">
-                <div class="ambulance-service1">
-                    <img src="../../img/med/alpha.jpg" alt="Ambulance">
-                    <h3>Alpha Ambulance</h3>
-                    <p>Dial 0711475475 for immediate assistance. Alpha Ambulance  operates 24/7 across major cities and rural areas, equipped with advanced life-support systems.</p>
-                    <button class="call-button" onclick="callNumber('0800-123-456')">Call 0711475475</button>
-                </div>
 
-                <div class="ambulance-service2">
-                    <img src="../../img/med/amb1.jpg" alt="Ambulance">
-                    <h3>RedCross Emergency Medical Services</h3>
-                    <p>Contact the Kenyan Red Cross Society at 1199 for emergency medical transportation. Their fleet of ambulances is stationed nationwide to respond promptly to emergencies.</p>
-                    <button class="call-button" onclick="callNumber('1199')">Call 1199</button>
-                </div>
-
-                <div class="ambulance-service3">
-                    <img src="../../img/med/national.jpg" alt="Ambulance">
-                    <h3>National Hospital Ambulance Services</h3>
-                    <p>Leading hospitals like Aga Khan Hospital (Call: +254 20 3662000) and Nairobi Hospital (Call: +254 20 2845000) provide ambulance services for inter-hospital transfers and emergency response.</p>
-                    <button class="call-button" onclick="callNumber('+254203662000')">Call +254 20 3662000</button>
-                    <button class="call-button" onclick="callNumber('+254202845000')">Call +254 20 2845000</button>
-                </div>
-
-                <div class="ambulance-service4">
-                    <img src="../../img/med/medicross.jpg" alt="Ambulance">
-                    <h3>MediCross Ambulance Services</h3>
-                    <p>Call 0722-123-456 for emergency medical assistance. MediCross operates a network of ambulances equipped with advanced medical equipment and staffed by experienced paramedics.</p>
-                    <button class="call-button" onclick="callNumber('0722-123-456')">Call 0722-123-456</button>
-                </div>
+<!-- Form for Medical Emergency -->
+<div class="emergency-form">
+    <h3>Request Medical Assistance</h3>
+    <form id="medical-form" action="/submit_medical_form" method="POST">
+        <!-- Personal Information -->
+        <div class="personal-info">
+            <h4>Personal Information</h4>
+            <div class="form-group name">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-        
-            <div class="part2">
-                <div class="ambulance-service5">
-                    <img src="../../img/med/john.jpg" alt="Ambulance">
-                    <h3>St. John Ambulance</h3>
-                    <p>Contact St. John Ambulance at 0721-123-456 for emergency medical services. They provide pre-hospital care, first aid training, and ambulance services across Kenya.</p>
-                    <button class="call-button" onclick="callNumber('0721-123-456')">Call 0721-123-456</button>
-                </div>
-
-                <div class="ambulance-service6">
-                    <img src="../../img/med/mediceast.jpg" alt="Ambulance">
-                    <h3>MedicEast Ambulance</h3>
-                    <p>For emergency medical assistance, call MedicEast Ambulance at 0733-123-456. They offer rapid response and transportation to medical facilities with trained paramedics onboard.</p>
-                    <button class="call-button" onclick="callNumber('0733-123-456')">Call 0733-123-456</button>
-                </div>
-
-                <div class="ambulance-service7">
-                    <img src="../../img/med/amb2.jpg" alt="Ambulance">
-                    <h3>Paramedics Plus</h3>
-                    <p>Paramedics Plus operates a fleet of ambulances equipped with advanced medical equipment. Call 0710-123-456 for emergency medical assistance and transportation to hospitals.</p>
-                    <button class="call-button" onclick="callNumber('0710-123-456')">Call 0710-123-456</button>
-                </div>
-
-                <div class="ambulance-service8">
-                    <img src="../../img/med/lifecare.jpg" alt="Ambulance">
-                    <h3>LifeCare Ambulance Services</h3>
-                    <p>LifeCare Ambulance Services can be reached at 0708-123-456. They provide emergency medical response and transportation to medical facilities with trained medical professionals.</p>
-                    <button class="call-button" onclick="callNumber('0708-123-456')">Call 0708-123-456</button>
-                </div>
+            <div class="form-group age">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group gender">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group blood-type">
+                <label for="blood-type">Blood Type</label>
+                <select id="blood-type" name="blood-type">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
             </div>
         </div>
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h4>Contact Information</h4>
+            <div class="form-group email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group phone">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group address">
+                <label for="address">Home Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+        </div>
+        <!-- Health Profile -->
+        <div class="health-profile">
+            <h4>Health Profile</h4>
+            <div class="form-group allergies">
+                <label for="allergies">Allergies (if any)</label>
+                <textarea id="allergies" name="allergies" rows="2"></textarea>
+            </div>
+            <div class="form-group medical-history">
+                <label for="medical-history">Medical History</label>
+                <textarea id="medical-history" name="medical-history" rows="4"></textarea>
+            </div>
+            <div class="form-group medications">
+                <label for="medications">Current Medications</label>
+                <textarea id="medications" name="medications" rows="4"></textarea>
+            </div>
+        </div>
+        <!-- Emergency Details -->
+        <div class="emergency-details">
+            <h4>Emergency Details</h4>
+            <div class="form-group emergency-type">
+                <label for="emergency-type">Type of Medical Emergency</label>
+                <select id="emergency-type" name="emergency-type" required>
+                    <option value="heart-attack">Heart Attack</option>
+                    <option value="stroke">Stroke</option>
+                    <option value="injury">Injury</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group symptoms">
+                <label for="symptoms">Symptoms</label>
+                <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+            </div>
+            <div class="form-group additional-info">
+                <label for="additional-info">Additional Information</label>
+                <textarea id="additional-info" name="additional-info" rows="4"></textarea>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit">Request Assistance</button>
+    </form>
+</div>
+
+<!-- Ambulance Services -->
+<div class="ambulance-services">
+<div class="content3">
+    <h2>Ambulance Services</h2>
+    <h1>When every second counts, our ambulance services ensure swift response to emergencies, providing critical care en route to the nearest medical facility.</h1>
+    <div class="services">
+        <div class="part1">
+            <div class="ambulance-service1">
+                <img src="{{ url_for('static', filename='img/med/alpha.jpg') }}" alt="Ambulance">
+                <h3>Alpha Ambulance</h3>
+                <p>Dial 0711475475 for immediate assistance. Alpha Ambulance  operates 24/7 across major cities and rural areas, equipped with advanced life-support systems.</p>
+                <button class="call-button" onclick="callNumber('0800-123-456')">Call 0711475475</button>
+            </div>
+
+            <div class="ambulance-service2">
+                <img src="{{ url_for('static', filename='img/med/amb1.jpg') }}" alt="Ambulance">
+                <h3>RedCross Emergency Medical Services</h3>
+                <p>Contact the Kenyan Red Cross Society at 1199 for emergency medical transportation. Their fleet of ambulances is stationed nationwide to respond promptly to emergencies.</p>
+                <button class="call-button" onclick="callNumber('1199')">Call 1199</button>
+            </div>
+
+            <div class="ambulance-service3">
+                <img src="{{ url_for('static', filename='img/med/national.jpg') }}" alt="Ambulance">
+                <h3>National Hospital Ambulance Services</h3>
+                <p>Leading hospitals like Aga Khan Hospital (Call: +254 20 3662000) and Nairobi Hospital (Call: +254 20 2845000) provide ambulance services for inter-hospital transfers and emergency response.</p>
+                <button class="call-button" onclick="callNumber('+254203662000')">Call +254 20 3662000</button>
+                <button class="call-button" onclick="callNumber('+254202845000')">Call +254 20 2845000</button>
+            </div>
+
+            <div class="ambulance-service4">
+                <img src="{{ url_for('static', filename='img/med/medicross.jpg') }}" alt="Ambulance">
+                <h3>MediCross Ambulance Services</h3>
+                <p>Call 0722-123-456 for emergency medical assistance. MediCross operates a network of ambulances equipped with advanced medical equipment and staffed by experienced paramedics.</p>
+                <button class="call-button" onclick="callNumber('0722-123-456')">Call 0722-123-456</button>
+            </div>
+        </div>
+    
+        <div class="part2">
+            <div class="ambulance-service5">
+                <img src="{{ url_for('static', filename='img/med/john.jpg') }}" alt="Ambulance">
+                <h3>St. John Ambulance</h3>
+                <p>Contact St. John Ambulance at 0721-123-456 for emergency medical services. They provide pre-hospital care, first aid training, and ambulance services across Kenya.</p>
+                <button class="call-button" onclick="callNumber('0721-123-456')">Call 0721-123-456</button>
+            </div>
+
+            <div class="ambulance-service6">
+                <img src="{{ url_for('static', filename='img/med/mediceast.jpg') }}" alt="Ambulance">
+                <h3>MedicEast Ambulance</h3>
+                <p>For emergency medical assistance, call MedicEast Ambulance at 0733-123-456. They offer rapid response and transportation to medical facilities with trained paramedics onboard.</p>
+                <button class="call-button" onclick="callNumber('0733-123-456')">Call 0733-123-456</button>
+            </div>
+
+            <div class="ambulance-service7">
+                <img src="{{ url_for('static', filename='img/med/amb2.jpg') }}" alt="Ambulance">
+                <h3>Paramedics Plus</h3>
+                <p>Paramedics Plus operates a fleet of ambulances equipped with advanced medical equipment. Call 0710-123-456 for emergency medical assistance and transportation to hospitals.</p>
+                <button class="call-button" onclick="callNumber('0710-123-456')">Call 0710-123-456</button>
+            </div>
+
+            <div class="ambulance-service8">
+                <img src="{{ url_for('static', filename='img/med/lifecare.jpg') }}" alt="Ambulance">
+                <h3>LifeCare Ambulance Services</h3>
+                <p>LifeCare Ambulance Services can be reached at 0708-123-456. They provide emergency medical response and transportation to medical facilities with trained medical professionals.</p>
+                <button class="call-button" onclick="callNumber('0708-123-456')">Call 0708-123-456</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         <!-- Kenyan University Ambulance Services for Students -->
 <div class="university-ambulance-services">
@@ -570,7 +665,7 @@
         </div>
 
 
-       <!-- Community Support -->
+  <!-- Community Support -->
 <div class="community-support">
     <div class="content">
         <h2>Community Support</h2>
@@ -579,25 +674,24 @@
             <h3>Support Groups</h3>
             <p>Find support groups in your area where you can connect with others facing similar health challenges. Share experiences, seek advice, and provide encouragement.</p>
             <div class="support-group">
-                <img src="../../img/med/support1.jpg" alt="Support Group Image">
+                <img src="{{ url_for('static', filename='img/med/support1.jpg') }}" alt="Support Group Image">
                 <h4>Chronic Illness Support Group</h4>
                 <p>Join our supportive community of individuals living with chronic illnesses. Together, we navigate the ups and downs, share coping strategies, and offer emotional support.</p>
             </div>
             <div class="support-group">
-                <img src="../../img/med/support3.jpg" alt="Support Group Image">
-           
+                <img src="{{ url_for('static', filename='img/med/support3.jpg') }}" alt="Support Group Image">
             </div>
         </div>
         <div class="volunteer-opportunities">
             <h3>Volunteer Opportunities</h3>
             <p>Make a difference in your community by volunteering your time and skills. Explore various volunteer opportunities ranging from assisting the elderly to participating in health awareness campaigns.</p>
             <div class="volunteer-opportunity">
-                <img src="../../img/med/volunteer1.jpg" alt="Volunteer Opportunity Image">
+                <img src="{{ url_for('static', filename='img/med/volunteer1.jpg') }}" alt="Volunteer Opportunity Image">
                 <h4>Senior Companion Program</h4>
                 <p>Join our senior companion program and provide companionship and assistance to elderly individuals in your neighborhood. Your support can brighten someone's day!</p>
             </div>
             <div class="volunteer-opportunity">
-                <img src="../../img/med/volunteer2.jpg" alt="Volunteer Opportunity Image">
+                <img src="{{ url_for('static', filename='img/med/volunteer2.jpg') }}" alt="Volunteer Opportunity Image">
                 <h4>Health Education Campaign</h4>
                 <p>Participate in our health education campaigns aimed at raising awareness about common health issues and promoting preventive measures. Be a health advocate in your community!</p>
             </div>
@@ -605,18 +699,17 @@
     </div>
 </div>
 
-
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="quick-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./about.html">Services</a></li>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="#">Services</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="contact-info">
@@ -629,23 +722,20 @@
             <div class="social-media">
                 <h3>Connect With Us</h3>
                 <div class="socials">
-                <a href="#"><img src="../../img/socials/facebook-outline.svg" alt="Facebook"></a>
-                <a href="#"><img src="../../img/socials/twitter.svg" alt="Twitter"></a>
-                <a href="#"><img src="../../img/socials/instagram (1).svg" alt="Instagram"></a>
-                <a href="#"><img src="../../img/socials/bi--linkedin.svg" alt="LinkedIn"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="LinkedIn"></a>
                 </div>
+            </div>
         </div>
         <div class="copyright">
-        <p>
-            &copy; 2024 SwiftResponse ERCS. All rights reserved.
-        </p>
+            <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
         </div>
-        
     </div>
 </footer>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="../../js/medical.js"></script>
-    <!-- Add any additional JavaScript or libraries here -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/medical.js') }}"></script>
 </body>
 </html>
+```

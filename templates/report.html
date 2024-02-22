@@ -4,46 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emergency Reporting System</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
   <!-- Add any additional CSS or libraries here -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
   <style>
-    /* Add custom styles here */
+    /* Default style for the icon */
+    .fas.fa-bars {
+      display: none; /* Hide the icon by default */
+    }
+    
+    /* Media query for screens with a maximum width of 768px */
+    @media (max-width: 768px) {
+      .fas.fa-bars {
+        display: inline;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="background>
   <div class="container1">
     <!-- Navigation Section -->
-
     <nav class="navbar">
         <div class="menu-toggle" onclick="toggleNav()">
             <!-- Custom hamburger icon -->
-            <img src="{{ url_for('static', filename='img/general/mdi--hamburger-open.svg') }}" alt="Menu" class="hamburger-icon">
+            <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-list" id="navList">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url_for('static', filename='pages/alerts/general.html') }}">General Alerts</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-                <ul class="dropdown-menu" id="emergencyDropdown">
-                    <li><a href="{{ url_for('static', filename='pages/emergency/fire.html') }}">Fire Emergencies</a></li>
-                    <li><a href="{{ url_for('static', filename='pages/emergency/medical.html') }}">Medical Emergencies</a></li>
-                    <li><a href="{{ url_for('static', filename='pages/emergency/accident.html') }}">Accident Emergencies</a></li>
-                    <li><a href="{{ url_for('static', filename='pages/emergency/security.html') }}">Security Emergencies</a></li>
-                    <li><a href="#">Report Emergency</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="{{ url_for('university_report') }}">Report</a></li>
-            <li class="nav-item"><a href="{{ url_for('static', filename='about.html') }}">About</a></li>
-            <li class="nav-item"><a href="{{ url_for('static', filename='contact.html') }}">Contact</a></li>
+            <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
     </nav>
-</div>
-
+  </div>
 
   <!-- Header Section -->
   <header>
@@ -51,184 +47,82 @@
       <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo">
     </div>
     <h1>SwiftResponse Emergency Reporting System</h1>
-    <p>Report emergencies and seek assistance in a fast and efficient manner.
-    </p>
+    <p>Report emergencies and seek assistance in a fast and efficient manner.</p>
   </header>
 
   <!-- Main Content Section -->
   <main>
-    <!-- Container 1: University Emergency Reporting Section -->
+    <!-- Container 1: Emergency Reporting Section -->
     <div class="container1">
-      <section class="university-emergency-section">
-        <h2>University Emergency Reporting</h2>
-        <p>Welcome to University Emergency Reporting. We're here to assist you in any emergency situation on campus.</p>
-        <div class="university-images">
-          <!-- Add images of the university here -->
-        </div>
+      <section class="emergency-reporting-section">
+        <h2>Emergency Reporting</h2>
+        <p>Welcome to Emergency Reporting. We're here to assist you in any emergency situation.</p>
         <p>If you're experiencing an emergency, please fill out the form below:</p>
-        <form name="university-report-form" id="university-report-form" action="/report" method="POST">
-          {% if message %}
-            <p style="color: green;">{{ message }}</p>
-          {% endif %}
+        {% if message %}
+          <p style="color: red;" class="message">{{ message }}</p>
+        {% endif %}
+        <form name="emergency-report-form" id="emergency-report-form" action="{{ url_for('report') }}" method="POST">
+          <!-- Name Input -->
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <!-- Phone Number Input -->
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
           <!-- Location Input -->
           <div class="form-group">
-            <label for="university-location">Location:</label>
-            <input type="text" id="university-location" name="university-location" placeholder="Enter location" required>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
           </div>
-          <!-- Incident Details Input -->
+          <!-- Incident Select -->
           <div class="form-group">
-            <label for="university-details">Incident Details:</label>
-            <textarea id="university-details" name="university-details" placeholder="Describe the incident" required></textarea>
-          </div>
-          <!-- Student Name Input -->
-          <div class="form-group">
-            <label for="student-name">Student Name:</label>
-            <input type="text" id="student-name" name="student-name" placeholder="Enter your name" required>
-          </div>
-          <!-- Student ID Input -->
-          <div class="form-group">
-            <label for="student-id">Student ID:</label>
-            <input type="text" id="student-id" name="student-id" placeholder="Enter your student ID" required>
-          </div>
-          <!-- Emergency Type Selection -->
-          <div class="form-group">
-            <label for="university-emergency-type">Emergency Type:</label>
-            <select id="university-emergency-type" name="university-emergency-type">
+            <label for="incident">Incident:</label>
+            <select id="incident" name="incident" required>
+              <option value="" disabled selected>Select Incident</option>
               <option value="fire">Fire</option>
-              <option value="medical">Medical</option>
               <option value="security">Security</option>
               <option value="accident">Accident</option>
-              <!-- Add more emergency types as needed -->
+              <option value="medical">Medical</option>
             </select>
-          </div>
-          <!-- Submit Button -->
-          <button type="submit">Submit Report</button>
-        </form>
-      </section>
-    </div>
-
-    <!-- Container 2: General User Reporting Section -->
-    <div class="container2">
-      <section class="general-user-section">
-        <h2>General User Reporting</h2>
-        <p>If you're not affiliated with the university, you can also report emergencies using the form below:</p>
-        <form id="general-user-report-form" action="/submit_general_report" method="POST">
-          <!-- Location Input -->
-          <div class="form-group">
-            <label for="general-user-location">Location:</label>
-            <input type="text" id="general-user-location" name="general-user-location" placeholder="Enter location" required>
           </div>
           <!-- Incident Details Input -->
           <div class="form-group">
-            <label for="general-user-details">Incident Details:</label>
-            <textarea id="general-user-details" name="general-user-details" placeholder="Describe the incident" required></textarea>
-          </div>
-          <!-- Emergency Type Selection -->
-          <div class="form-group">
-            <label for="general-user-emergency-type">Emergency Type:</label>
-            <select id="general-user-emergency-type" name="general-user-emergency-type">
-              <option value="fire">Fire</option>
-              <option value="medical">Medical</option>
-              <option value="security">Security</option>
-               <option value="accident">Accident</option>
-              <!-- Add more emergency types as needed -->
-            </select>
+            <label for="details">Incident Details:</label>
+            <textarea id="details" name="details" placeholder="Describe the incident" required></textarea>
           </div>
           <!-- Submit Button -->
-          <button type="submit">Submit Report</button>
+          <button type="submit" name="submit">Submit Report</button>
         </form>
-      </section>
-    </div>
-
-    <!-- Container 3: Special Treatment for PWD Section -->
-    <div class="container3">
-      <section class="pwd-section">
-        <h2>Accessibility Options for Persons with Disabilities (PWD)</h2>
-        <p>We provide accessible ways to report emergencies:</p>
-        <ul>
-          <!-- Integration with Screen Readers -->
-          <li>
-            <div class="screen-reader-only">
-              <p>This content is for screen readers only and will be read aloud to visually impaired users.</p>
-            </div>
-          </li>
-          <!-- Option for Voice Commands -->
-          <li>
-            <div class="voice-command-input">
-              <label for="voice-command">Voice Command:</label>
-              <input type="text" id="voice-command" name="voice-command" placeholder="Speak command...">
-              <button onclick="startVoiceRecognition()">Start</button>
-            </div>
-          </li>
-          <!-- High-Contrast and Large Font Options -->
-          <li>
-            <div class="high-contrast-font">
-              <div class="btn1">
-              <button onclick="toggleHighContrast()">Toggle High Contrast</button>
-              </div>
-              <div class="btn2">
-              <button onclick="increaseFontSize()">Increase Font Size</button>
-              </div>
-            </div>
-          </li>
-          <!-- Support for Alternative Input Devices -->
-          <li>
-            <div class="alternative-input">
-              <p>Connect your alternative input device:</p>
-              <div class="btns">
-              <div class="btn3">
-              <button onclick="connectSwitchDevice()">Connect Switch Device</button>
-              </div>
-              <div class="btn4">
-              <button onclick="connectSipAndPuffDevice()">Connect Sip-and-Puff Device</button>
-              </div>
-              </div>
-            </div>
-          </li>
-          <!-- Clear and Intuitive Interface Design -->
-          <li>
-            <div class="cognitive-interface">
-              <p>Clear and simple interface:</p>
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username" placeholder="Enter your username">
-            </div>
-          </li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- Container 4: Alarms and Community Assistance Section -->
-    <div class="container4">
-      <section class="alarms-community-section">
-        <h2>Alarms and Community Assistance</h2>
-        <p>Activate alarms and seek community assistance:</p>
-        <!-- Include options for activating alarms and seeking community assistance -->
-        <!-- Quick Access Icons -->
-        <div class="quick-access-icons">
-          <a href="/help"><img src="{{ url_for('static', filename='img/report/noto--sos-button.svg') }}" alt="Help Icon"></a>
-          <a href="/report"><img src="{{ url_for('static', filename='img/report/octicon--report-16.svg') }}" alt="Report Icon"></a>
-          <a href="/emergency"><img src="{{ url_for('static', filename='img/report/fluent--alert-on-16-filled.svg') }}" alt="Alert Icon"></a>
-        </div>
       </section>
     </div>
   </main>
+
 
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2024 Emergency Reporting System</p>
 
     <div class="footer-links">
-      <a href="{{ url_for('static', filename='index.html') }}">Home</a>
-      <a href="{{ url_for('static', filename='pages/alerts/general.html') }}">Alerts</a>
-      <a href="{{ url_for('static', filename='report.html') }}">Report</a>
-      <a href="{{ url_for('static', filename='about.html') }}">About</a>
-      <a href="{{ url_for('static', filename='contact.html') }}">Contact</a>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
   </footer>
    <!-- Scroll to top button -->
    <div class="scroll-to-top">
     <a href="#top"><img src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}" alt="Scroll to Top"></a>
   </div>
+  </div>
 
+  <!-- Add any additional JavaScript files or scripts here -->
   <script src="{{ url_for('static', filename='js/report.js') }}"></script>
 </body>
 </html>

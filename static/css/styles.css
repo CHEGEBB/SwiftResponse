@@ -1156,16 +1156,13 @@ h1 {
     .dropdown-toggle {
         display: block;
     }
-    /* Hide hamburger icon on larger screens */
+   /* Media query to hide menu toggle on screens larger than 768px */
+@media (min-width: 769px) {
     .menu-toggle {
         display: none;
-        display: none;
     }
-    .menu-toggle img {
-        width: 40px;
-        height: 40px;
-        display: none;
-    }
+}
+
     /* Show hamburger icon only on smaller screens */
     @media screen and (max-width: 768px) {
         .menu-toggle {

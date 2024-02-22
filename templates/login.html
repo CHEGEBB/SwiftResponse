@@ -15,19 +15,19 @@
                 <h1>Welcome back!</h1>
 
                 <div class="nav">
-                    <a href="./login.html" class="active">SIGN IN</a>
-                    <a href="./signup.html">SIGN UP</a>
+                    <a href="{{url_for ('login')}}" class="active">SIGN IN</a>
+                    <a href="{{url_for ('signup')}}">SIGN UP</a>
                 </div>
                    <!-- Flash messages -->
-                   {% with messages = get_flashed_messages() %}
-                   {% if messages %}
-                       <ul>
-                           {% for message in messages %}
-                               <li>{{ message }}</li>
-                           {% endfor %}
-                       </ul>
-                   {% endif %}
-               {% endwith %}
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-danger">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
                 <h2>Sign in with</h2>
                 <!-- Sign in with Google -->
                 <div class="external-signin">
@@ -40,7 +40,7 @@
                     <div class="forms">
                         <div class="form-group">
                             <label for="email"> Enter username or Email:</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address...">
+                            <input type="text" id="email" name="email" required placeholder="Enter your email address...">
                         </div>
                         <div class="form-group">
                             <label for="password">Password:</label>
@@ -50,7 +50,7 @@
                     </div>
                     <button type="submit">Sign in</button>
                 </form>
-                <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+                <p>Don't have an account? <a href="{{url_for('signup')}}">Sign up</a></p>
             </div>
         </div>
     </div>

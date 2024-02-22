@@ -37,7 +37,7 @@ body {
     margin: 50px auto;
     padding: 20px;
     border-radius: 10px;
-    height: 500px;
+    height: 550px;
     position: relative;
     z-index: 1;
 }
@@ -102,7 +102,7 @@ label {
     display: block;
 }
 
-input[type="email"],
+input[type="text"],
 input[type="password"] {
     width: 400px;
     padding: 10px;

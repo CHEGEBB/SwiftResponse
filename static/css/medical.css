@@ -22,6 +22,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* Navigation bar styles */
@@ -164,7 +165,7 @@ body {
 /* Immediate medical care */
 .seek-medical-care {
   background-color: hsla(180, 14%, 18%, 1);
-  height: 600px;
+  height: 700px;
   display: flex;
   flex-direction: row;
   gap: 50px;
@@ -213,6 +214,92 @@ body {
   gap: 20px;
   margin-top: 30px;
 }
+/* CSS for Medical Emergency Form */
+
+.emergency-form {
+  background-color: rgba(47, 79, 79, 0.8); /* Dark Slate Grey with transparency */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  height: 2200px;
+}
+
+.emergency-form h3 {
+  color: #fff; /* White text */
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #fff; /* White text */
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 450px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 500px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f0f0f0; /* Light Grey */
+  margin-left: 450px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+.health-profile label{
+ margin-left: 50px;
+ font-family: 'Ropa Sans', sans-serif;
+}
+.health-profile textarea{
+  margin-left: 50px;
+
+}
+.health-profile h4{
+  margin-left: 50px;
+  font-size: 24px;
+  color: crimson;
+  font-family: 'Ropa Sans', sans-serif;
+}
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+h4{
+  margin-left: 450px;
+  color: crimson;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+}
+.emergency-form h3{
+  margin-left: 450px;
+  font-size: 26px;
+}
+/* Submit Button */
+button[type="submit"] {
+  background-color: #4caf50; /* Green */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 450px;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker Green on hover */
+}
+
 
 .ambulance {
   width: 400px;
@@ -267,7 +354,7 @@ body {
 /* Hospitals near me */
 .hospitals-near-me {
   background-color: hsla(0, 0%, 70%, 1);
-  height: 700px;
+  height: 800px;
 }
 
 .hospitals-near-me h1 {
@@ -327,13 +414,13 @@ body {
 /* Hospital card container */
 .hospital-list-container {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: hidden; /* Enable horizontal scrolling */
   width: 100%;
   padding-bottom: 20px;
   margin-top: -450px; /* Adjust as needed */
   position: relative; /* Add this */
   flex-direction: row;
-  height: 600px;
+  height: 700px;
   overflow-x: hidden;
 }
 .group1 {
@@ -392,6 +479,7 @@ body {
   height: 420px;
   box-shadow: 0px 0px 9px rgba(26, 137, 141, 0.7);
   transition: transform 0.3s ease box-shadow 0.3s ease;
+  height: 450px;
 }
 
 .hospital-card:hover {
