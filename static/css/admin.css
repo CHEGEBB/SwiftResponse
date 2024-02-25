@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;600;700&family=Ropa+Sans&display=swap');
+/* font-family: 'Jost', sans-serif;
+font-family: 'Ropa Sans', sans-serif; */
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ropa Sans', sans-serif;
+    color: crimson;
+}
+p{
+    font-family: 'Jost', sans-serif;
+    color: white;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    background-color: hsla(180, 25%, 25%, 1);
+    font-family: 'Jost', sans-serif;
+}
+
+/* Background video */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -1; /* Ensure video is behind other content */
+    opacity: 0.5; /* Adjust video opacity as needed */
+}
+/* Navigation bar */
+.navigation {
+    background-color: #b17e7e; /* Set background color */
+    padding: 10px; /* Add padding */
+}
+
+.navbar-nav {
+    display: flex; /* Make the navbar items display horizontally */
+    justify-content: flex-start; /* Align items at the start */
+    align-items: center; /* Align items vertically */
+}
+
+.nav-item {
+    list-style: none; /* Remove the default list style */
+    margin-right: 10px; /* Add margin between nav items */
+}
+
+.nav-link {
+    color: #d48282; /* Set text color */
+    text-decoration: none; /* Remove default underline */
+    padding: 10px 15px; /* Add padding */
+    border-radius: 5px; /* Add border-radius */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.nav-link:hover {
+    background-color: #cccccc; /* Change background color on hover */
+}
+
+/* Highlight active navigation item */
+.nav-item.active .nav-link {
+    background-color: #ff5733; /* Orange-red color for active item */
+}
+
+/* Navbar animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar-nav li {
+    animation: fadeIn 0.5s ease forwards; /* Apply animation */
+}
+
+/* Navbar toggler icon */
+.navbar-toggler {
+    border: none; /* Remove border */
+}
+
+.navbar-toggler-icon {
+    background-color: #000000; /* Set toggler icon color */
+}
+
+/* Style for navbar brand */
+.navbar-brand {
+    font-weight: bold; /* Make the brand text bold */
+}
+
+ /* Gradient Background */
+ .adminadd {
+    background: linear-gradient(to bottom, crimson, darkslategrey, silver);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+/* Form Styling */
+h2, p {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: crimson;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: darkred;
+}
+
+/* Optional: Additional Styling */
+.form-control:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 5px white;
+}
+.list-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-group-item{
+    background-color: #c03333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+}
+.list-group-item:hover{
+    background-color: darkred;
+    color: white;
+}
+.list-group-item a.list-group-item-action {
+    color: white;
+    text-decoration: none;
+}
+
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+/* Main Content styles */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(74, 110, 119, 0.8); /* Adjust background opacity as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1; 
+    height: 100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust background opacity as needed */
+    z-index: 1; /* Ensure footer is above video */
+    background-color: #333;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

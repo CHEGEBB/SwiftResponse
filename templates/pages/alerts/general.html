@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>General Alerts - SwiftResponse ERCS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/general.css') }}"
+    />
     <!-- Add any additional CSS or libraries here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <!-- Font Awesome for icons -->
     <style>
       /* Default style for the icon */
       .fas.fa-bars {
         display: none; /* Hide the icon by default */
       }
-      
+
       /* Media query for screens with a maximum width of 768px */
       @media (max-width: 768px) {
         .fas.fa-bars {
@@ -21,650 +27,920 @@
         }
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- navigation menu -->
     <div class="navbar">
-        <div class="menu-toggle" onclick="toggleNav()">
-            <i class="fas fa-bars"></i>
+      <div class="menu-toggle" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav class="nav-menu">
+        <ul class="alert-types">
+          <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
+          <li>
+            <a href="#fire" onclick="scrollToSection('fire')">Fire Alerts</a>
+          </li>
+          <li>
+            <a href="#medical" onclick="scrollToSection('medical')"
+              >Medical Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#accident" onclick="scrollToSection('accident')"
+              >Accident Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#security" onclick="scrollToSection('security')"
+              >Security Alerts</a
+            >
+          </li>
+          <li>
+            <a href="#university" onclick="scrollToSection('university')"
+              >University Alerts</a
+            >
+          </li>
+        </ul>
+        <div class="notification-icon">
+          <i class="fas fa-bell"></i>
+          <span class="notification-count">5</span>
         </div>
-        <nav class="nav-menu">
-            <ul class="alert-types">
-                <li class="nav-item"><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="#fire" onclick="scrollToSection('fire')">Fire Alerts</a></li>
-                <li><a href="#medical" onclick="scrollToSection('medical')">Medical Alerts</a></li>
-                <li><a href="#accident" onclick="scrollToSection('accident')">Accident Alerts</a></li>
-                <li><a href="#security" onclick="scrollToSection('security')">Security Alerts</a></li>
-                <li><a href="#university" onclick="scrollToSection('university')">University Alerts</a></li>
-            </ul>
-            <div class="notification-icon">
-                <i class="fas fa-bell"></i>
-                <span class="notification-count">5</span>
-            </div>
-        </nav>
+      </nav>
     </div>
 
-    <header style="height: 600px; background-image: url('{{ url_for('static', filename='img/general/gfg.jpg') }}'); background-size: cover; background-position: center; position: relative;">
-        <div class="header-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);"></div>
-        <nav>
-            <!-- Navigation content goes here -->
-        </nav>
-        <div class="header-container" style="position: relative; z-index: 1">
-            <h1>Stay Alert with SwiftResponse ERCS</h1>
-            <p>Welcome to the General Alerts section of SwiftResponse Emergency Response and Communication System (ERCS). SwiftResponse keeps you informed about various emergency situations, ensuring you receive real-time updates to stay safe and prepared.</p>
-            <p>SwiftResponse ERCS is your reliable companion during times of crisis, offering comprehensive information and resources to help you navigate emergency situations with confidence. Whether it's natural disasters, security threats, or public health emergencies, SwiftResponse provides timely alerts and guidance to protect yourself and your loved ones.</p>
-            <div class="button-container">
-                <button class="primary-button">Get Started</button>
-                <button class="secondary-button">Learn More</button>
-            </div>
+    <header
+      style="height: 600px; background-image: url('{{ url_for('static', filename='img/general/gfg.jpg') }}'); background-size: cover; background-position: center; position: relative;"
+    >
+      <div
+        class="header-overlay"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+        "
+      ></div>
+      <nav>
+        <!-- Navigation content goes here -->
+      </nav>
+      <div class="header-container" style="position: relative; z-index: 1">
+        <h1>Stay Alert with SwiftResponse ERCS</h1>
+        <p>
+          Welcome to the General Alerts section of SwiftResponse Emergency
+          Response and Communication System (ERCS). SwiftResponse keeps you
+          informed about various emergency situations, ensuring you receive
+          real-time updates to stay safe and prepared.
+        </p>
+        <p>
+          SwiftResponse ERCS is your reliable companion during times of crisis,
+          offering comprehensive information and resources to help you navigate
+          emergency situations with confidence. Whether it's natural disasters,
+          security threats, or public health emergencies, SwiftResponse provides
+          timely alerts and guidance to protect yourself and your loved ones.
+        </p>
+        <div class="button-container">
+          <button class="primary-button">Get Started</button>
+          <button class="secondary-button">Learn More</button>
         </div>
+      </div>
     </header>
 
     <div class="facts">
-        <section id="emergencies-responded" class="alert-section">
-            <div class="eme">
-                <h2>Emergencies Responded To</h2>
+      <section id="emergencies-responded" class="alert-section">
+        <div class="eme">
+          <h2>Emergencies Responded To</h2>
+        </div>
+        <div id="count1" class="count">0</div>
+      </section>
+
+      <section id="satisfied-clients" class="alert-section">
+        <h2>Satisfied Clients</h2>
+        <div id="count2" class="count">0</div>
+      </section>
+
+      <section id="rated-best" class="alert-section">
+        <h2>Rated Best in Alerts</h2>
+        <div id="count3" class="count">0</div>
+      </section>
+
+      <section id="response-time" class="alert-section">
+        <h2>Response Time(min)</h2>
+        <div id="count4" class="count">0</div>
+      </section>
+
+      <section id="issues-resolved" class="alert-section">
+        <h2>Issues Resolved</h2>
+        <div id="count5" class="count">0</div>
+      </section>
+
+      <section id="community-support" class="alert-section">
+        <h2>Community Support</h2>
+        <div id="count6" class="count">0</div>
+      </section>
+    </div>
+    <!-- main -->
+    <main>
+      <section id="fire" class="alert-section">
+        <div class="firee">
+          <h2>Fire Alerts</h2>
+          <p>
+            Stay informed about the latest fire emergencies and updates. Our
+            comprehensive fire alert system provides real-time information to
+            help you stay safe and prepared.
+          </p>
+        </div>
+        <div id="fire-alerts-container" class="cards-container">
+          <!-- First Row -->
+          <div class="row">
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/mk.jpg') }}"
+                alt="Fire Alert Image 1"
+              />
+              <div class="card-content">
+                <h3>Mount Kenya Forest Fire</h3>
+                <p>
+                  A wildfire has broken out in the Mount Kenya forest region,
+                  posing a threat to nearby wildlife and communities.
+                </p>
+              </div>
             </div>
-            <div id="count1" class="count">0</div>
-        </section>
-
-        <section id="satisfied-clients" class="alert-section">
-            <h2>Satisfied Clients</h2>
-            <div id="count2" class="count">0</div>
-        </section>
-
-        <section id="rated-best" class="alert-section">
-            <h2>Rated Best in Alerts</h2>
-            <div id="count3" class="count">0</div>
-        </section>
-
-        <section id="response-time" class="alert-section">
-            <h2>Response Time(min)</h2>
-            <div id="count4" class="count">0</div>
-        </section>
-
-        <section id="issues-resolved" class="alert-section">
-            <h2>Issues Resolved</h2>
-            <div id="count5" class="count">0</div>
-        </section>
-
-        <section id="community-support" class="alert-section">
-          <h2>Community Support</h2>
-          <div id="count6" class="count">0</div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/masai.jpg') }}"
+                alt="Fire Alert Image 2"
+              />
+              <div class="card-content">
+                <h3>Maasai Mara Grassland Fire</h3>
+                <p>
+                  A fire has ignited in the Maasai Mara grasslands, endangering
+                  the habitat of various animal species.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/nairobi.jpg') }}"
+                alt="Fire Alert Image 3"
+              />
+              <div class="card-content">
+                <h3>Nairobi Urban Fire</h3>
+                <p>
+                  Authorities are responding to a fire outbreak in urban areas
+                  of Nairobi, urging residents to evacuate safely.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/naks.jpg') }}"
+                alt="Fire Alert Image 4"
+              />
+              <div class="card-content">
+                <h3>Lake Nakuru National Park Fire</h3>
+                <p>
+                  Reports of a fire incident in Lake Nakuru National Park raise
+                  concerns over the safety of wildlife and visitors.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/kaj.jpg') }}"
+                alt="Fire Alert Image 5"
+              />
+              <div class="card-content">
+                <h3>Kajiado Grass Fire</h3>
+                <p>
+                  A grass fire has erupted in the Kajiado region, prompting
+                  emergency response teams to contain the blaze.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/coast.jpg') }}"
+                alt="Fire Alert Image 6"
+              />
+              <div class="card-content">
+                <h3>Coastal Forest Fire</h3>
+                <p>
+                  Firefighters are battling a forest fire along the Kenyan
+                  coast, urging residents to stay indoors.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/western.jpg') }}"
+                alt="Fire Alert Image 7"
+              />
+              <div class="card-content">
+                <h3>Western Kenya Grassland Fire</h3>
+                <p>
+                  Alerts issued as a grassland fire spreads rapidly in western
+                  Kenya, threatening agricultural lands.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/kibera-fire3.jpg') }}"
+                alt="Fire Alert Image 8"
+              />
+              <div class="card-content">
+                <h3>Urban Slum Fire</h3>
+                <p>
+                  A fire outbreak in an urban slum area of Kenya sparks concerns
+                  over shelter.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Second Row -->
+          <div class="row">
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/cali.jpeg') }}"
+                alt="Fire Alert Image 9"
+              />
+              <div class="card-content">
+                <h3>California Wildfire</h3>
+                <p>
+                  A massive wildfire has erupted in California, threatening
+                  several communities. Evacuation orders are in place.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/australia.jpg') }}"
+                alt="Fire Alert Image 10"
+              />
+              <div class="card-content">
+                <h3>Bushfire in Australia</h3>
+                <p>
+                  Emergency services are battling a bushfire in Australia's
+                  bushland. Residents urged to stay vigilant.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/amazon.jpg') }}"
+                alt="Fire Alert Image 11"
+              />
+              <div class="card-content">
+                <h3>Amazon Rainforest Fire</h3>
+                <p>
+                  A significant fire outbreak has been reported in the Amazon
+                  Rainforest, raising concerns for biodiversity.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/siberia.jpg') }}"
+                alt="Fire Alert Image 12"
+              />
+              <div class="card-content">
+                <h3>Siberian Forest Fire</h3>
+                <p>
+                  Large-scale wildfires have engulfed parts of the Siberian
+                  forests, prompting international firefighting efforts.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/europe.jpg') }}"
+                alt="Fire Alert Image 13"
+              />
+              <div class="card-content">
+                <h3>European Wildfire</h3>
+                <p>
+                  Several European countries are facing wildfires, with
+                  firefighters battling to contain the blazes.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/brazil.jpg') }}"
+                alt="Fire Alert Image 14"
+              />
+              <div class="card-content">
+                <h3>Forest Fire in Brazil</h3>
+                <p>
+                  Authorities are combating a forest fire in Brazil's
+                  rainforest, urging residents to take necessary precautions.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/sa.jpg') }}"
+                alt="Fire Alert Image 15"
+              />
+              <div class="card-content">
+                <h3>Wildfire in South Africa</h3>
+                <p>
+                  A wildfire has broken out in South Africa, posing a threat to
+                  wildlife and communities.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="{{ url_for('static', filename='img/general/tehran.jpg') }}"
+                alt="Fire Alert Image 16"
+              />
+              <div class="card-content">
+                <h3>Fire engulfs Tehran hospital, no casualties</h3>
+                <p>
+                  A fire broke out at a hospital in Tehran, Iran, with no
+                  casualties reported.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      </div>
-      <!-- main -->
-      <main>
-          <section id="fire" class="alert-section">
-              <div class="firee">
-                  <h2>Fire Alerts</h2>
+
+      <!-- medical alerts -->
+      <div class="medical">
+        <section id="medical" class="alert-section2">
+          <div class="al">
+            <h2>Medical Alerts</h2>
+            <p>
+              Stay informed about the latest medical emergencies and health
+              advisories. Our comprehensive medical alert system provides
+              real-time information to help you stay safe and prepared.
+            </p>
+          </div>
+          <div id="medical-alerts-container" class="cards-container">
+            <!-- First Row -->
+            <div class="row1">
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/image1.jpg') }}"
+                  alt="Medical Alert Image 1"
+                />
+                <div class="card-content">
+                  <h3>COVID-19 Outbreak</h3>
                   <p>
-                      Stay informed about the latest fire emergencies and updates. Our comprehensive fire alert system provides real-time information to help you stay safe and prepared.
+                    A new wave of COVID-19 infections has been reported in the
+                    community, urging people to follow safety guidelines.
                   </p>
+                </div>
               </div>
-              <div id="fire-alerts-container" class="cards-container">
-                  <!-- First Row -->
-                  <div class="row">
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/mk.jpg') }}" alt="Fire Alert Image 1" />
-                          <div class="card-content">
-                              <h3>Mount Kenya Forest Fire</h3>
-                              <p>
-                                  A wildfire has broken out in the Mount Kenya forest region, posing a threat to nearby wildlife and communities.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/masai.jpg') }}" alt="Fire Alert Image 2" />
-                          <div class="card-content">
-                              <h3>Maasai Mara Grassland Fire</h3>
-                              <p>
-                                  A fire has ignited in the Maasai Mara grasslands, endangering the habitat of various animal species.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/nairobi.jpg') }}" alt="Fire Alert Image 3" />
-                          <div class="card-content">
-                              <h3>Nairobi Urban Fire</h3>
-                              <p>
-                                  Authorities are responding to a fire outbreak in urban areas of Nairobi, urging residents to evacuate safely.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/naks.jpg') }}" alt="Fire Alert Image 4" />
-                          <div class="card-content">
-                              <h3>Lake Nakuru National Park Fire</h3>
-                              <p>
-                                  Reports of a fire incident in Lake Nakuru National Park raise concerns over the safety of wildlife and visitors.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/kaj.jpg') }}" alt="Fire Alert Image 5" />
-                          <div class="card-content">
-                              <h3>Kajiado Grass Fire</h3>
-                              <p>
-                                  A grass fire has erupted in the Kajiado region, prompting emergency response teams to contain the blaze.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/coast.jpg') }}" alt="Fire Alert Image 6" />
-                          <div class="card-content">
-                              <h3>Coastal Forest Fire</h3>
-                              <p>
-                                  Firefighters are battling a forest fire along the Kenyan coast, urging residents to stay indoors.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/western.jpg') }}" alt="Fire Alert Image 7" />
-                          <div class="card-content">
-                              <h3>Western Kenya Grassland Fire</h3>
-                              <p>
-                                  Alerts issued as a grassland fire spreads rapidly in western Kenya, threatening agricultural lands.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/kibera-fire3.jpg') }}" alt="Fire Alert Image 8" />
-                          <div class="card-content">
-                              <h3>Urban Slum Fire</h3>
-                              <p>
-                                  A fire outbreak in an urban slum area of Kenya sparks concerns over shelter.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- Second Row -->
-                  <div class="row">
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/cali.jpeg') }}" alt="Fire Alert Image 9" />
-                          <div class="card-content">
-                              <h3>California Wildfire</h3>
-                              <p>
-                                  A massive wildfire has erupted in California, threatening several communities. Evacuation orders are in place.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/australia.jpg') }}" alt="Fire Alert Image 10" />
-                          <div class="card-content">
-                              <h3>Bushfire in Australia</h3>
-                              <p>
-                                  Emergency services are battling a bushfire in Australia's bushland. Residents urged to stay vigilant.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/amazon.jpg') }}" alt="Fire Alert Image 11" />
-                          <div class="card-content">
-                              <h3>Amazon Rainforest Fire</h3>
-                              <p>
-                                  A significant fire outbreak has been reported in the Amazon Rainforest, raising concerns for biodiversity.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/siberia.jpg') }}" alt="Fire Alert Image 12" />
-                          <div class="card-content">
-                              <h3>Siberian Forest Fire</h3>
-                              <p>
-                                  Large-scale wildfires have engulfed parts of the Siberian forests, prompting international firefighting efforts.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/europe.jpg') }}" alt="Fire Alert Image 13" />
-                          <div class="card-content">
-                              <h3>European Wildfire</h3>
-                              <p>
-                                  Several European countries are facing wildfires, with firefighters battling to contain the blazes.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/brazil.jpg') }}" alt="Fire Alert Image 14" />
-                          <div class="card-content">
-                              <h3>Forest Fire in Brazil</h3>
-                              <p>
-                                  Authorities are combating a forest fire in Brazil's rainforest, urging residents to take necessary precautions.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/sa.jpg') }}" alt="Fire Alert Image 15" />
-                          <div class="card-content">
-                              <h3>Wildfire in South Africa</h3>
-                              <p>
-                                  A wildfire has broken out in South Africa, posing a threat to wildlife and communities.
-                              </p>
-                          </div>
-                      </div>
-                      <div class="card">
-                          <img src="{{ url_for('static', filename='img/general/tehran.jpg') }}" alt="Fire Alert Image 16" />
-                          <div class="card-content">
-                              <h3>Fire engulfs Tehran hospital, no casualties</h3>
-                              <p>
-                                  A fire broke out at a hospital in Tehran, Iran, with no casualties reported.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/influenza.jpg') }}"
+                  alt="Medical Alert Image 2"
+                />
+                <div class="card-content">
+                  <h3>Influenza Season</h3>
+                  <p>
+                    Cases of influenza are on the rise, reminding individuals to
+                    get vaccinated and practice good hygiene.
+                  </p>
+                </div>
               </div>
-          </section>
-      
-
-<!-- medical alerts -->
-<div class="medical">
-  <section id="medical" class="alert-section2">
-      <div class="al">
-          <h2>Medical Alerts</h2>
-          <p>
-              Stay informed about the latest medical emergencies and health advisories.
-              Our comprehensive medical alert system provides real-time information to
-              help you stay safe and prepared.
-          </p>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/zika.jpg') }}"
+                  alt="Medical Alert Image 3"
+                />
+                <div class="card-content">
+                  <h3>Zika Virus Alert</h3>
+                  <p>
+                    Zika virus cases have been detected in the region,
+                    highlighting the importance of mosquito control measures.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/food.jpg') }}"
+                  alt="Medical Alert Image 4"
+                />
+                <div class="card-content">
+                  <h3>Foodborne Illnesses</h3>
+                  <p>
+                    Several cases of food poisoning have been reported,
+                    emphasizing food safety practices.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Second Row -->
+            <div class="row2">
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/allergy.jpg') }}"
+                  alt="Medical Alert Image 5"
+                />
+                <div class="card-content">
+                  <h3>Allergy Alert</h3>
+                  <p>
+                    High pollen levels are causing allergic reactions in
+                    susceptible individuals, advising them to stay indoors.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/heat.jpg') }}"
+                  alt="Medical Alert Image 6"
+                />
+                <div class="card-content">
+                  <h3>Heatwave Warning</h3>
+                  <p>
+                    Extreme heat conditions are forecasted, urging people to
+                    stay hydrated and avoid direct sun exposure.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/dengue.jpg') }}"
+                  alt="Medical Alert Image 7"
+                />
+                <div class="card-content">
+                  <h3>Dengue Fever Outbreak</h3>
+                  <p>
+                    Dengue fever cases are increasing in the area, reminding
+                    residents to eliminate mosquito breeding sites.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/contamin.jpg') }}"
+                  alt="Medical Alert Image 8"
+                />
+                <div class="card-content">
+                  <h3>Water Contamination Notice</h3>
+                  <p>
+                    Contamination has been detected in the local water supply,
+                    advising residents to use boiled or bottled water.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Third Row -->
+            <div class="row3">
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/cholera.jpg') }}"
+                  alt="Medical Alert Image 9"
+                />
+                <div class="card-content">
+                  <h3>Cholera Outbreak</h3>
+                  <p>
+                    Cholera cases have been reported in the region, urging
+                    people to practice proper sanitation and hygiene.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/respiratory.jpg') }}"
+                  alt="Medical Alert Image 10"
+                />
+                <div class="card-content">
+                  <h3>Respiratory Infections Alert</h3>
+                  <p>
+                    Respiratory infections are spreading, advising individuals
+                    to avoid crowded places and wear masks.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/lead.jpg') }}"
+                  alt="Medical Alert Image 11"
+                />
+                <div class="card-content">
+                  <h3>Lead Poisoning Awareness</h3>
+                  <p>
+                    Elevated lead levels have been detected, educating residents
+                    about sources of lead exposure and prevention measures.
+                  </p>
+                </div>
+              </div>
+              <div class="card2">
+                <img
+                  src="{{ url_for('static', filename='img/general/rabies.jpg') }}"
+                  alt="Medical Alert Image 12"
+                />
+                <div class="card-content">
+                  <h3>Rabies Alert</h3>
+                  <p>
+                    Rabies cases have been reported in the area, urging pet
+                    owners to vaccinate their pets and avoid contact with wild
+                    animals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div id="medical-alerts-container" class="cards-container">
-          <!-- First Row -->
-          <div class="row1">
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/image1.jpg') }}" alt="Medical Alert Image 1" />
-                  <div class="card-content">
-                      <h3>COVID-19 Outbreak</h3>
-                      <p>
-                          A new wave of COVID-19 infections has been reported in the
-                          community, urging people to follow safety guidelines.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/influenza.jpg') }}" alt="Medical Alert Image 2" />
-                  <div class="card-content">
-                      <h3>Influenza Season</h3>
-                      <p>
-                          Cases of influenza are on the rise, reminding individuals to get
-                          vaccinated and practice good hygiene.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/zika.jpg') }}" alt="Medical Alert Image 3" />
-                  <div class="card-content">
-                      <h3>Zika Virus Alert</h3>
-                      <p>
-                          Zika virus cases have been detected in the region, highlighting the
-                          importance of mosquito control measures.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/food.jpg') }}" alt="Medical Alert Image 4" />
-                  <div class="card-content">
-                      <h3>Foodborne Illnesses</h3>
-                      <p>
-                          Several cases of food poisoning have been reported, emphasizing food
-                          safety practices.
-                      </p>
-                  </div>
-              </div>
-          </div>
-          <!-- Second Row -->
-          <div class="row2">
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/allergy.jpg') }}" alt="Medical Alert Image 5" />
-                  <div class="card-content">
-                      <h3>Allergy Alert</h3>
-                      <p>
-                          High pollen levels are causing allergic reactions in susceptible
-                          individuals, advising them to stay indoors.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/heat.jpg') }}" alt="Medical Alert Image 6" />
-                  <div class="card-content">
-                      <h3>Heatwave Warning</h3>
-                      <p>
-                          Extreme heat conditions are forecasted, urging people to stay hydrated
-                          and avoid direct sun exposure.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/dengue.jpg') }}" alt="Medical Alert Image 7" />
-                  <div class="card-content">
-                      <h3>Dengue Fever Outbreak</h3>
-                      <p>
-                          Dengue fever cases are increasing in the area, reminding residents to
-                          eliminate mosquito breeding sites.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/contamin.jpg') }}" alt="Medical Alert Image 8" />
-                  <div class="card-content">
-                      <h3>Water Contamination Notice</h3>
-                      <p>
-                          Contamination has been detected in the local water supply, advising
-                          residents to use boiled or bottled water.
-                      </p>
-                  </div>
-              </div>
-          </div>
-          <!-- Third Row -->
-          <div class="row3">
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/cholera.jpg') }}" alt="Medical Alert Image 9" />
-                  <div class="card-content">
-                      <h3>Cholera Outbreak</h3>
-                      <p>
-                          Cholera cases have been reported in the region, urging people to
-                          practice proper sanitation and hygiene.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/respiratory.jpg') }}" alt="Medical Alert Image 10" />
-                  <div class="card-content">
-                      <h3>Respiratory Infections Alert</h3>
-                      <p>
-                          Respiratory infections are spreading, advising individuals to avoid
-                          crowded places and wear masks.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/lead.jpg') }}" alt="Medical Alert Image 11" />
-                  <div class="card-content">
-                      <h3>Lead Poisoning Awareness</h3>
-                      <p>
-                          Elevated lead levels have been detected, educating residents about
-                          sources of lead exposure and prevention measures.
-                      </p>
-                  </div>
-              </div>
-              <div class="card2">
-                  <img src="{{ url_for('static', filename='img/general/rabies.jpg') }}" alt="Medical Alert Image 12" />
-                  <div class="card-content">
-                      <h3>Rabies Alert</h3>
-                      <p>
-                          Rabies cases have been reported in the area, urging pet owners to
-                          vaccinate their pets and avoid contact with wild animals.
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-</div>
-
+     
       <!-- accident alerts -->
-<div class="accident">
-  <section id="accident" class="alert-section2">
-      <div class="aler">
-          <h2>Accident Alerts</h2>
+      <div class="accident">
+        <section id="accident" class="alert-section2">
+          <div class="aler">
+            <h2>Accident Alerts</h2>
+            <p>
+              Stay informed about the latest accident reports and safety
+              advisories. Our comprehensive accident alert system provides
+              real-time information to help you stay safe and prepared.
+            </p>
+          </div>
+          <div id="accident-alerts-container" class="cards-container">
+            <!-- First Row -->
+            <div class="group1">
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Vehicle Collision</h3>
+                  <p>
+                    A vehicle collision has occurred on [Location], causing
+                    traffic disruptions. Please avoid the area if possible and
+                    drive with caution.
+                  </p>
+                </div>
+              </div>
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Workplace Accident</h3>
+                  <p>
+                    An accident has been reported at [Company Name], urging
+                    employees to be mindful of safety protocols and hazard
+                    prevention measures.
+                  </p>
+                </div>
+              </div>
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Slip and Fall Incident</h3>
+                  <p>
+                    A slip and fall incident occurred at [Location], reminding
+                    individuals to watch their step and be cautious of slippery
+                    surfaces.
+                  </p>
+                </div>
+              </div>
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Construction Site Accident</h3>
+                  <p>
+                    An accident has occurred at a construction site near
+                    [Location], emphasizing the importance of safety gear and
+                    adherence to construction regulations.
+                  </p>
+                </div>
+              </div>
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Industrial Accident</h3>
+                  <p>
+                    An industrial accident has been reported, highlighting the
+                    importance of proper equipment usage and safety training.
+                  </p>
+                </div>
+              </div>
+              <div class="card3">
+                <div class="card-content">
+                  <h3>Public Transport Incident</h3>
+                  <p>
+                    An incident involving public transport has occurred, causing
+                    delays and disruptions to commuter services.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Button -->
+          <a href="{{ url_for('accident') }}" class="btn"
+            >Check Live Map for Accidents on Road</a
+          >
+        </section>
+      </div>
+
+      <!-- security section -->
+      <div class="security">
+        <section id="security" class="alert-section2">
+          <h2>Physical Security Alerts</h2>
           <p>
-              Stay informed about the latest accident reports and safety advisories.
-              Our comprehensive accident alert system provides real-time information to
-              help you stay safe and prepared.
+            Stay informed about the latest physical security threats and safety
+            advisories. Our comprehensive security alert system provides
+            real-time information to help you stay secure and vigilant in public
+            and campus environments.
           </p>
-      </div>
-      <div id="accident-alerts-container" class="cards-container">
-          <!-- First Row -->
-          <div class="group1">
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Vehicle Collision</h3>
-                      <p>
-                          A vehicle collision has occurred on [Location], causing traffic disruptions.
-                          Please avoid the area if possible and drive with caution.
-                      </p>
-                  </div>
+          <div id="security-alerts-container" class="cards-container">
+            <!-- First Row -->
+            <div class="row1">
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static', filename='/img/general/thief.jpg')}}"
+                  alt="Suspicious Individual"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Suspicious Individual</h3>
+                  <p>
+                    A suspicious individual has been spotted near the campus
+                    entrance. Report any sightings to campus security
+                    immediately.
+                  </p>
+                </div>
               </div>
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Workplace Accident</h3>
-                      <p>
-                          An accident has been reported at [Company Name], urging employees to be
-                          mindful of safety protocols and hazard prevention measures.
-                      </p>
-                  </div>
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static' ,filename='/img/general/unauthorized.jpg')}}"
+                  alt="Unauthorized Access"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Unauthorized Access</h3>
+                  <p>
+                    Unauthorized access attempt detected at the public park
+                    entrance. Ensure all entry points are secured and monitored.
+                  </p>
+                </div>
               </div>
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Slip and Fall Incident</h3>
-                      <p>
-                          A slip and fall incident occurred at [Location], reminding individuals to
-                          watch their step and be cautious of slippery surfaces.
-                      </p>
-                  </div>
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static',filename='img/general/physical.jpg')}}"
+                  alt="Physical Altercation"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Physical Altercation</h3>
+                  <p>
+                    A physical altercation has broken out in the shopping mall
+                    parking lot. Avoid the area and notify law enforcement if
+                    necessary.
+                  </p>
+                </div>
               </div>
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Construction Site Accident</h3>
-                      <p>
-                          An accident has occurred at a construction site near [Location], emphasizing
-                          the importance of safety gear and adherence to construction regulations.
-                      </p>
-                  </div>
+            </div>
+            <!-- Second Row -->
+            <div class="row2">
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static' , filename='img/general/sus.jpg')}}"
+                  alt="Suspicious Package"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Suspicious Package</h3>
+                  <p>
+                    A suspicious package has been found near the public
+                    transportation station. Keep a safe distance and report to
+                    authorities immediately.
+                  </p>
+                </div>
               </div>
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Industrial Accident</h3>
-                      <p>
-                          An industrial accident has been reported, highlighting the importance of
-                          proper equipment usage and safety training.
-                      </p>
-                  </div>
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static' , filename='/img/general/tres.jpeg')}}"
+                  alt="Trespassing Alert"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Trespassing Alert</h3>
+                  <p>
+                    Trespassing alert issued near the city hall premises. Secure
+                    all access points and notify security personnel.
+                  </p>
+                </div>
               </div>
-              <div class="card3">
-                  <div class="card-content">
-                      <h3>Public Transport Incident</h3>
-                      <p>
-                          An incident involving public transport has occurred, causing delays and
-                          disruptions to commuter services.
-                      </p>
-                  </div>
+              <div class="card4">
+                <img
+                  src="{{url_for( 'static' , filename='/img/general/eva.jpg')}}"
+                  alt="Emergency Evacuation"
+                  class="card-image"
+                />
+                <div class="card-content">
+                  <h3>Emergency Evacuation</h3>
+                  <p>
+                    Emergency evacuation drill scheduled for tomorrow at the
+                    public library. Follow evacuation procedures and stay safe.
+                  </p>
+                </div>
               </div>
+            </div>
           </div>
+          <!-- Button -->
+          <a href="{{ url_for('security') }}" class="btn"
+            >Check out our security page</a
+          >
+        </section>
       </div>
-      <!-- Button -->
-      <a href="{{ url_for('accident') }}" class="btn">Check Live Map for Accidents on Road</a>
-  </section>
-</div>
+    </main>
+    <div class="outside">
+        <div class="container9">
+          <h1>General Alerts Form</h1>
+          <form action="{{ url_for('submit_general_alert') }}" method="post">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="alert_type" required />
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea
+                id="description"
+                name="alert_message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
 
-
-   <!-- security section -->
-<div class="security">
-  <section id="security" class="alert-section2">
-      <h2>Physical Security Alerts</h2>
-      <p>
-          Stay informed about the latest physical security threats and safety advisories.
-          Our comprehensive security alert system provides real-time information to
-          help you stay secure and vigilant in public and campus environments.
-      </p>
-      <div id="security-alerts-container" class="cards-container">
-          <!-- First Row -->
-          <div class="row1">
-              <div class="card4">
-                  <img src="{{url_for( 'static', filename='/img/general/thief.jpg')}}" alt="Suspicious Individual" class="card-image">
-                  <div class="card-content">
-                      <h3>Suspicious Individual</h3>
-                      <p>
-                          A suspicious individual has been spotted near the campus entrance. Report any sightings
-                          to campus security immediately.
-                      </p>
-                  </div>
-              </div>
-              <div class="card4">
-                  <img src="{{url_for( 'static' ,filename='/img/general/unauthorized.jpg')}}" alt="Unauthorized Access" class="card-image">
-                  <div class="card-content">
-                      <h3>Unauthorized Access</h3>
-                      <p>
-                          Unauthorized access attempt detected at the public park entrance. Ensure all entry points
-                          are secured and monitored.
-                      </p>
-                  </div>
-              </div>
-              <div class="card4">
-                  <img src="{{url_for( 'static',filename='img/general/physical.jpg')}}" alt="Physical Altercation" class="card-image">
-                  <div class="card-content">
-                      <h3>Physical Altercation</h3>
-                      <p>
-                          A physical altercation has broken out in the shopping mall parking lot. Avoid the area
-                          and notify law enforcement if necessary.
-                      </p>
-                  </div>
-              </div>
-          </div>
-          <!-- Second Row -->
-          <div class="row2">
-              <div class="card4">
-                  <img src="{{url_for( 'static' , filename='img/general/sus.jpg')}}" alt="Suspicious Package" class="card-image">
-                  <div class="card-content">
-                      <h3>Suspicious Package</h3>
-                      <p>
-                          A suspicious package has been found near the public transportation station. Keep a safe distance
-                          and report to authorities immediately.
-                      </p>
-                  </div>
-              </div>
-              <div class="card4">
-                  <img src="{{url_for( 'static' , filename='/img/general/tres.jpeg')}}"alt="Trespassing Alert" class="card-image">
-                  <div class="card-content">
-                      <h3>Trespassing Alert</h3>
-                      <p>
-                          Trespassing alert issued near the city hall premises. Secure all access points and notify
-                          security personnel.
-                      </p>
-                  </div>
-              </div>
-              <div class="card4">
-                  <img src="{{url_for( 'static' , filename='/img/general/eva.jpg')}}" alt="Emergency Evacuation" class="card-image">
-                  <div class="card-content">
-                      <h3>Emergency Evacuation</h3>
-                      <p>
-                          Emergency evacuation drill scheduled for tomorrow at the public library. Follow evacuation
-                          procedures and stay safe.
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Button -->
-      <a href="{{ url_for('security') }}" class="btn">Check out our security page</a>
-  </section>
-</div>
-      </main>
-   <!-- Community Engagement and Resources section -->
-<div class="res">
-  <section class="community-resources">
-      <!-- Social media-like features -->
-      <div class="social-media">
+    <!-- Community Engagement and Resources section -->
+    <div class="res">
+      <section class="community-resources">
+        <!-- Social media-like features -->
+        <div class="social-media">
           <h2>Connect with Us</h2>
-          <p>Stay updated and engaged with our community through various channels:</p>
+          <p>
+            Stay updated and engaged with our community through various
+            channels:
+          </p>
           <div class="social-icons">
-              <div class="social-icon">
-                  <img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter Icon">
-                  <span>Twitter</span>
-              </div>
-              <div class="social-icon">
-                  <img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook Icon">
-                  <span>Facebook</span>
-              </div>
-              <div class="social-icon">
-                  <img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram Icon">
-                  <span>Instagram</span>
-              </div>
-              <div class="social-icon">
-                  <img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="LinkedIn">
-                  <span>LinkedIn</span>
-              </div>
+            <div class="social-icon">
+              <img
+                src="{{ url_for('static', filename='img/socials/twitter.svg') }}"
+                alt="Twitter Icon"
+              />
+              <span>Twitter</span>
+            </div>
+            <div class="social-icon">
+              <img
+                src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}"
+                alt="Facebook Icon"
+              />
+              <span>Facebook</span>
+            </div>
+            <div class="social-icon">
+              <img
+                src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}"
+                alt="Instagram Icon"
+              />
+              <span>Instagram</span>
+            </div>
+            <div class="social-icon">
+              <img
+                src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}"
+                alt="LinkedIn"
+              />
+              <span>LinkedIn</span>
+            </div>
           </div>
-          <p>Join the conversation using <strong>#CommunityEngagement</strong>.</p>
-      </div>
+          <p>
+            Join the conversation using <strong>#CommunityEngagement</strong>.
+          </p>
+        </div>
 
-      <!-- Resources and crowd-sourced knowledge section -->
-      <div class="resources">
+        <!-- Resources and crowd-sourced knowledge section -->
+        <div class="resources">
           <h2>Resources</h2>
-          <p>Explore helpful resources and crowd-sourced knowledge shared by the community.</p>
+          <p>
+            Explore helpful resources and crowd-sourced knowledge shared by the
+            community.
+          </p>
           <ul>
-              <li><a href="https://example.com/emergency_contacts">Emergency Contacts</a></li>
-              <li><a href="https://example.com/community_events">Community Events Calendar</a></li>
-              <li><a href="https://example.com/volunteer_opportunities">Volunteer Opportunities</a></li>
-              <li><a href="https://example.com/local_services">Local Services Directory</a></li>
+            <li>
+              <a href="https://example.com/emergency_contacts"
+                >Emergency Contacts</a
+              >
+            </li>
+            <li>
+              <a href="https://example.com/community_events"
+                >Community Events Calendar</a
+              >
+            </li>
+            <li>
+              <a href="https://example.com/volunteer_opportunities"
+                >Volunteer Opportunities</a
+              >
+            </li>
+            <li>
+              <a href="https://example.com/local_services"
+                >Local Services Directory</a
+              >
+            </li>
           </ul>
-      </div>
-  </section>
-
-  <!-- Four cards with styled background images -->
-  <div class="thecards">
-      <section class="four-cards">
-          <div class="card" style="background-image: url('{{ url_for('static', filename='img/general/contact.jpg') }}');">
-              <div class="card-overlay"></div>
-              <h3>Emergency Contacts</h3>
-              <p>Find important emergency contact numbers for your area.</p>
-          </div>
-          <div class="card" style="background-image: url('{{ url_for('static', filename='img/general/community.jpg') }}');">
-              <div class="card-overlay"></div>
-              <h3>Community Events</h3>
-              <p>Discover upcoming community events and activities.</p>
-          </div>
-          <div class="card" style="background-image: url('{{ url_for('static', filename='img/general/vol.jpg') }}');">
-              <div class="card-overlay"></div>
-              <h3>Volunteer Opportunities</h3>
-              <p>Get involved in volunteer programs and make a difference in your community.</p>
-          </div>
-          <div class="card" style="background-image: url('{{ url_for('static', filename='img/general/services.jpg') }}');">
-              <div class="card-overlay"></div>
-              <h3>Local Services</h3>
-              <p>Explore local services available in your area, from healthcare to transportation.</p>
-          </div>
+        </div>
       </section>
-  </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
-      <div class="footer-content">
+      <!-- Four cards with styled background images -->
+      <div class="thecards">
+        <section class="four-cards">
+          <div
+            class="card"
+            style="background-image: url('{{ url_for('static', filename='img/general/contact.jpg') }}');"
+          >
+            <div class="card-overlay"></div>
+            <h3>Emergency Contacts</h3>
+            <p>Find important emergency contact numbers for your area.</p>
+          </div>
+          <div
+            class="card"
+            style="background-image: url('{{ url_for('static', filename='img/general/community.jpg') }}');"
+          >
+            <div class="card-overlay"></div>
+            <h3>Community Events</h3>
+            <p>Discover upcoming community events and activities.</p>
+          </div>
+          <div
+            class="card"
+            style="background-image: url('{{ url_for('static', filename='img/general/vol.jpg') }}');"
+          >
+            <div class="card-overlay"></div>
+            <h3>Volunteer Opportunities</h3>
+            <p>
+              Get involved in volunteer programs and make a difference in your
+              community.
+            </p>
+          </div>
+          <div
+            class="card"
+            style="background-image: url('{{ url_for('static', filename='img/general/services.jpg') }}');"
+          >
+            <div class="card-overlay"></div>
+            <h3>Local Services</h3>
+            <p>
+              Explore local services available in your area, from healthcare to
+              transportation.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
           <div class="quick-links">
-              <h3>Quick Links</h3>
-              <ul>
-                  <li><a href="{{ url_for('index') }}">Home</a></li>
-                  <li><a href="{{ url_for('about') }}">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="{{ url_for('contact') }}">Contact</a></li>
-              </ul>
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('about') }}">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
           </div>
           <div class="contact-info">
-              <h3>Contact Information</h3>
-              <p>SwiftResponse ERCS</p>
-              <p>123 Main Street, City</p>
-              <p>Email: info@swiftresponse.com</p>
-              <p>Phone: +1 (123) 456-7890</p>
+            <h3>Contact Information</h3>
+            <p>SwiftResponse ERCS</p>
+            <p>123 Main Street, City</p>
+            <p>Email: info@swiftresponse.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
           </div>
           <div class="social-media">
-              <h3>Connect With Us</h3>
-              <div class="socials">
-                  <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook"></a>
-                  <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter"></a>
-                  <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram"></a>
-                  <a href="#"><img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="LinkedIn"></a>
-              </div>
+            <h3>Connect With Us</h3>
+            <div class="socials">
+              <a href="#"
+                ><img
+                  src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}"
+                  alt="Facebook"
+              /></a>
+              <a href="#"
+                ><img
+                  src="{{ url_for('static', filename='img/socials/twitter.svg') }}"
+                  alt="Twitter"
+              /></a>
+              <a href="#"
+                ><img
+                  src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}"
+                  alt="Instagram"
+              /></a>
+              <a href="#"
+                ><img
+                  src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}"
+                  alt="LinkedIn"
+              /></a>
+            </div>
           </div>
-      </div>
-      <div class="copyright">
+        </div>
+        <div class="copyright">
           <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
+        </div>
       </div>
-  </div>
-</footer>
+    </footer>
 
-<script src="{{ url_for('static', filename='js/general.js') }}"></script>
-<!-- Add any additional JavaScript or libraries here -->
-</body>
+    <script src="{{ url_for('static', filename='js/general.js') }}"></script>
+    <!-- Add any additional JavaScript or libraries here -->
+  </body>
 </html>

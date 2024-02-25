@@ -252,3 +252,43 @@
      hideNav(); // Restart the hideNav functionality
  }
 });
+function checkSymptoms() {
+    var symptoms = document.querySelectorAll('input[name="symptoms"]:checked');
+    var selectedSymptoms = [];
+    symptoms.forEach(function(symptom) {
+        selectedSymptoms.push({"id": symptom.value});
+    });
+
+    var requestData = {
+        "sex": "male", // Assuming default to male, can be dynamic based on user input
+        "age": 30, // Assuming default age, can be dynamic based on user input
+        "evidence": selectedSymptoms
+    };
+
+    fetch('https://api.infermedica.com/v3/diagnosis', {
+        method: 'POST',
+        mode: 'cors', // Add this line to enable CORS mode
+        headers: {
+            'Content-Type': 'application/json',
+            'App-Id': 'c5d5fa88',
+            'App-Key': 'd1386160b2e2409d464c52ccc2b2307e'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        var diagnosisText = "Diagnosis Results:\n";
+        data.conditions.forEach(function(condition) {
+            diagnosisText += "- " + condition.name + "\n";
+        });
+        document.getElementById("diagnosisResults").value = diagnosisText;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}

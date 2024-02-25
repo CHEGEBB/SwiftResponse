@@ -275,7 +275,7 @@ body {
     width: 95%;
     max-width: 550px; /* Limit width for smaller screens */
     margin: 0 auto; /* Center the form */
-    background-color: rgba(247, 0, 255, 0.3); /* Orangered with transparency */
+    background-color:#007bff;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(34, 204, 204, 0.5);

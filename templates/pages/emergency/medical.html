@@ -498,7 +498,6 @@
     </div>
 </div>
 
-
 <div class="intelligent-symptom-checker">
     <div class="content5">
         <h2>Intelligent Symptom Checker</h2>
@@ -506,49 +505,47 @@
         <p>Select the symptoms you are experiencing and click "Check Symptoms" to get a preliminary diagnosis:</p>
         <form id="symptomCheckerForm">
             <div class="symptoms">
-            <label for="symptoms">Select Symptoms:</label><br>
-            <input type="checkbox" id="fever" name="symptoms" value="fever">
-            <label for="fever">Fever</label><br>
-            <input type="checkbox" id="cough" name="symptoms" value="cough">
-            <label for="cough">Cough</label><br>
-            <input type="checkbox" id="headache" name="symptoms" value="headache">
-            <label for="headache">Headache</label><br>
-            <input type="checkbox" id="fatigue" name="symptoms" value="fatigue">
-            <label for="fatigue">Fatigue</label><br>
-            <input type="checkbox" id="nausea" name="symptoms" value="nausea">
-            <label for="nausea">Nausea</label><br>
-            <input type="checkbox" id="musclePain" name="symptoms" value="musclePain">
-            <label for="musclePain">Muscle Pain</label><br>
-            <input type="checkbox" id="shortnessOfBreath" name="symptoms" value="shortnessOfBreath">
-            <label for="shortnessOfBreath">Shortness of Breath</label><br>
-            <input type="checkbox" id="lossOfTaste" name="symptoms" value="lossOfTaste">
-            <label for="lossOfTaste">Loss of Taste</label><br>
-            <input type="checkbox" id="lossOfSmell" name="symptoms" value="lossOfSmell">
-            <label for="lossOfSmell">Loss of Smell</label><br>
-            <input type="checkbox" id="soreThroat" name="symptoms" value="soreThroat">
-            <label for="soreThroat">Sore Throat</label><br>
-            <input type="checkbox" id="diarrhea" name="symptoms" value="diarrhea">
-            <label for="diarrhea">Diarrhea</label><br>
-            <input type="checkbox" id="vomiting" name="symptoms" value="vomiting">
-            <label for="vomiting">Vomiting</label><br>
-            <input type="checkbox" id="chestPain" name="symptoms" value="chestPain">
-            <label for="chestPain">Chest Pain</label><br>
-            <input type="checkbox" id="abdominalPain" name="symptoms" value="abdominalPain">
-            <label for="abdominalPain">Abdominal Pain</label><br>
-            <input type="checkbox" id="chills" name="symptoms" value="chills">
-            <label for="chills">Chills</label><br>
-            <input type="checkbox" id="dizziness" name="symptoms" value="dizziness">
-            <label for="dizziness">Dizziness</label><br>
+                <label for="symptoms">Select Symptoms:</label><br>
+                <input type="checkbox" id="fever" name="symptoms" value="fever">
+                <label for="fever">Fever</label><br>
+                <input type="checkbox" id="cough" name="symptoms" value="cough">
+                <label for="cough">Cough</label><br>
+                <input type="checkbox" id="headache" name="symptoms" value="headache">
+                <label for="headache">Headache</label><br>
+                <input type="checkbox" id="fatigue" name="symptoms" value="fatigue">
+                <label for="fatigue">Fatigue</label><br>
+                <input type="checkbox" id="nausea" name="symptoms" value="nausea">
+                <label for="nausea">Nausea</label><br>
+                <input type="checkbox" id="musclePain" name="symptoms" value="musclePain">
+                <label for="musclePain">Muscle Pain</label><br>
+                <input type="checkbox" id="shortnessOfBreath" name="symptoms" value="shortnessOfBreath">
+                <label for="shortnessOfBreath">Shortness of Breath</label><br>
+                <input type="checkbox" id="lossOfTaste" name="symptoms" value="lossOfTaste">
+                <label for="lossOfTaste">Loss of Taste</label><br>
+                <input type="checkbox" id="lossOfSmell" name="symptoms" value="lossOfSmell">
+                <label for="lossOfSmell">Loss of Smell</label><br>
+                <input type="checkbox" id="soreThroat" name="symptoms" value="soreThroat">
+                <label for="soreThroat">Sore Throat</label><br>
+                <input type="checkbox" id="diarrhea" name="symptoms" value="diarrhea">
+                <label for="diarrhea">Diarrhea</label><br>
+                <input type="checkbox" id="vomiting" name="symptoms" value="vomiting">
+                <label for="vomiting">Vomiting</label><br>
+                <input type="checkbox" id="chestPain" name="symptoms" value="chestPain">
+                <label for="chestPain">Chest Pain</label><br>
+                <input type="checkbox" id="abdominalPain" name="symptoms" value="abdominalPain">
+                <label for="abdominalPain">Abdominal Pain</label><br>
+                <input type="checkbox" id="chills" name="symptoms" value="chills">
+                <label for="chills">Chills</label><br>
+                <input type="checkbox" id="dizziness" name="symptoms" value="dizziness">
+                <label for="dizziness">Dizziness</label><br>
             </div>
-            <!-- Add more symptoms here -->
             <div class="type">
-            <button type="button" onclick="checkSymptoms()">Check Symptoms</button>
+                <button type="button" onclick="checkSymptoms()">Check Symptoms</button>
             </div>
         </form>
-        <div id="diagnosisResults">
-            <!-- Diagnosis results will be displayed here -->
-
-
+        <textarea class="text" id="diagnosisResults" rows="4" cols="50" readonly></textarea>
+    </div>
+</div>
         </div>
     </div>
 </div>

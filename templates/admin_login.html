@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_login.css') }}">
+</head>
+<body>
+
+    <div id="video-container">
+        <video autoplay loop muted id="video-background">
+            <source src="{{ url_for('static', filename='img/admin/video.mp4') }}" type="video/mp4">
+            <!-- Add additional video sources for compatibility with different browsers -->
+            Your browser does not support the video tag.
+        </video>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="signin-content">
+            <div class="form-content">
+                <h1>Hello Admin!!</h1>
+                <div class="nav">
+                    <a href="{{url_for ('login')}}" class="active">SIGN IN</a>
+                </div>
+                <!-- Flash messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error' %}
+                            <div class="alert alert-danger">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% elif category == 'success' %}
+                            <div class="alert alert-success">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+                <form id="signinForm" method="POST" action="{{ url_for('admin_login') }}">
+                    <div class="forms">
+                        <div class="form-group">
+                            <label for="email"> Enter username or Email:</label>
+                            <input type="text" id="email" name="email" required placeholder="Enter your email address...">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password...">
+                        </div>
+                        <p><a href="#">Forgot your password?</a></p>
+                    </div>
+                    <button type="submit">Sign in</button>
+                </form>
+                <p>Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+</body>
+</html>

@@ -112,8 +112,7 @@ roadsData.forEach(function(road) {
     } else {
         marker.bindPopup(`<strong>${road.name}</strong><br>Traffic: ${road.traffic}<br>Accident: No`);
     }
-});
-// Toggle navigation
+});// Toggle navigation
 var menuToggle = document.querySelector('.menu-toggle');
 menuToggle.addEventListener('click', toggleNav);
 
@@ -140,12 +139,16 @@ document.addEventListener('mousemove', function() {
 // Initially hide navigation
 hideNav();
 
+// Function to display pop-up message
+function showSuccessMessage() {
+    alert("Accident report submitted successfully!");
+}
 
 function toggleNav() {
-console.log("Toggling navigation...");
-var navList = document.getElementById("navList");
-navList.classList.toggle("active");
-clearTimeout(timeout); // Clear the timeout whenever the navigation is toggled
-hideNav(); // Restart the hideNav functionality
+    console.log("Toggling navigation...");
+    var navList = document.getElementById("navList");
+    navList.classList.toggle("active");
+    clearTimeout(timeout); // Clear the timeout whenever the navigation is toggled
+    hideNav(); // Restart the hideNav functionality
 }
 

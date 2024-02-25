@@ -1,10 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
+from functools import wraps
 import os
 
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'your_secret_key')
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'email' not in session:
+            flash('You need to be logged in to access this page!', 'error')
+            return redirect(url_for('admin_login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 
 
@@ -85,6 +95,15 @@ class SecurityReport(db.Model):
     description = db.Column(db.Text, nullable=False)
     urgency = db.Column(db.String(10), nullable=False)
     witnesses = db.Column(db.Text)
+class Admin(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+
+class GeneralAlert(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    alert_type = db.Column(db.String(50), nullable=False)
+    alert_message = db.Column(db.Text, nullable=False)
 
 
 # Create tables if they don't exist
@@ -137,11 +156,13 @@ def login():
 
             if user_name and user_password:
                 session['email'] = email
-                flash('Login successful!', 'success')
                 return redirect('/SwiftResponse')
             return redirect('/')
         user_email = User.query.filter_by(email=email).first()
         user_password = User.query.filter_by(password=password).first()
+        flash('Invalid email or password!', 'error')
+        
+        
 
         if user_email and user_password:
             session['email'] = email
@@ -329,6 +350,93 @@ def submit_security_form():
     else:
         flash('Failed to submit security emergency report. Please try again.', 'error')
         return redirect(url_for('index'))
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    # Fetch data for reports and contacts from the database
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        conPassword = request.form['confirmPassword']
+
+        if password != conPassword:
+            flash('Passwords do not match!', 'error')
+            return redirect('/admin')
+        
+        # Check if the email already exists
+        existing_user = Admin.query.filter_by(email=email).first()
+        if existing_user:
+            flash('Email already exists!', 'error')
+            return redirect('/admin')
+        
+        # Create a new user
+        new_user = Admin(email=email, password=password)
+        db.session.add(new_user)
+        db.session.commit()
+        
+        flash('Admin added successful!', 'success')
+        return redirect('/admin')
+
+    fire_reports = FireEmergency.query.all()
+    security_reports = SecurityReport.query.all()
+    accident_reports = AccidentData.query.all()
+    medical_reports = EmergencyResponse.query.all()
+    contacts = Contact.query.all()
+    general_alert = GeneralAlert.query.all()
+    user = User.query.all()
+    return render_template('admin.html',users=user, contacts=contacts,alert=general_alert, fire_reports=fire_reports,security_reports=security_reports,accident_reports=accident_reports,medical_reports=medical_reports)
+@app.route('/admin_login', methods=['GET', 'POST'])
+def admin_login():
+        if request.method == 'POST':
+            email = request.form['email']
+            password = request.form['password']
+            if email == 'admin' and password == 'admin':
+                session['admin'] = email
+                flash('Login successful!', 'success')
+                return redirect('/admin')
+            if '@' not in email:
+                email = email
+                user_name = Admin.query.filter_by(email=email).first()
+                user_password = Admin.query.filter_by(password=password).first()
+
+                if user_name and user_password:
+                    session['email'] = email
+                    flash('Login successful!', 'success')
+                    return redirect('/admin')
+                return redirect('/admin_login')
+            user_email = Admin.query.filter_by(email=email).first()
+            user_password = Admin.query.filter_by(password=password).first()
+
+            if user_email and user_password:
+                session['email'] = email
+                flash('Admin login successful!', 'success')
+                return redirect('/admin')
+
+            flash('Invalid email or password!', 'error')
+            return redirect('/admin_login')
+        return render_template('admin_login.html')
+    # if request.method == 'POST':
+    #     username = request.form['email']
+    #     password = request.form['password']
+    #     if username == 'admin' and password == 'admin':
+    #         session['admin'] = username
+    #         flash('Login successful!', 'success')
+    #         return redirect('/admin')
+    #     flash('Invalid username or password!', 'error')
+    #     return redirect('/admin_login')
+    # return render_template('admin_login.html')
+@app.route('/submit_general_alert', methods=['POST'])
+def submit_general_alert():
+    if request.method == 'POST':
+        alert_type = request.form['alert_type']
+        alert_message = request.form['alert_message']
+
+        # Perform any other action as needed with the form data
+        flash('Alert submitted successfully!', 'success')
+        return redirect(url_for('general'))
+    else:
+        flash('Failed to submit alert. Please try again.', 'error')
+        return redirect(url_for('general'))
+
 
 
 if __name__ == '__main__':

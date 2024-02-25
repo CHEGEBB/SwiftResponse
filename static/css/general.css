@@ -360,6 +360,67 @@ header {
   width: 300px;
   width: 250px;
 }
+.outside{
+  background-color: #333;
+  height: 450px;
+  padding-top: 30px;
+}
+.container9 {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Ropa Sans', sans-serif; 
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Ropa Sans', sans-serif; 
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Ropa Sans', sans-serif; 
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
 /* accident alerts */
 .accident {
   background-color: #36454F; 

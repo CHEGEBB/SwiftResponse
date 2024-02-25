@@ -714,6 +714,7 @@ select {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-top: -10px;
+  height: 1000px;
 }
 
 .intelligent-symptom-checker h2 {
@@ -758,6 +759,19 @@ select {
 
 button:hover {
   background-color: #0056b3;
+}
+ .intelligent-symptom-checker textarea {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Prevent resizing */
+  margin-top: 10px;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  outline: none;
+  color: crimson;
+  margin-left: -100px;
 }
 
 #diagnosisResults {

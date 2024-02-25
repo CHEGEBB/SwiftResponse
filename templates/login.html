@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Signin</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Signin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
 </head>
 <body>
-    <div class="background-image">
-        <div class="overlay"></div>
+  <div class="background-image">
+    <div class="overlay"></div>
     <div class="container">
-        <div class="signin-content">
-            <div class="form-content">
-                <h1>Welcome back!</h1>
+      <div class="signin-content">
+        <div class="form-content">
+          <h1>Welcome back!</h1>
 
-                <div class="nav">
-                    <a href="{{url_for ('login')}}" class="active">SIGN IN</a>
-                    <a href="{{url_for ('signup')}}">SIGN UP</a>
-                </div>
-                   <!-- Flash messages -->
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <div class="alert alert-danger">
-                            {% for message in messages %}
-                                <p>{{ message }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                {% endwith %}
-                <h2>Sign in with</h2>
-                <!-- Sign in with Google -->
-                <div class="external-signin">
-                    <img src="{{ url_for('static', filename='img/phone/flat-color-icons--google.svg') }}" alt="Google" id="googleSignInBtn">
-                    <!-- Include other sign-in buttons for Facebook and Apple -->
-                    <img src="{{ url_for('static', filename='img/phone/icomoon-free--facebook.svg') }}" alt="Facebook">
-                    <img src="{{ url_for('static', filename='img/phone/bi--apple.svg') }}" alt="Apple">
-                </div>
-                <form id="signinForm" method="post" action="{{ url_for('login') }}">
-                    <div class="forms">
-                        <div class="form-group">
-                            <label for="email"> Enter username or Email:</label>
-                            <input type="text" id="email" name="email" required placeholder="Enter your email address...">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required placeholder="Enter your password...">
-                        </div>
-                        <p><a href="#">Forgot your password?</a></p>
-                    </div>
-                    <button type="submit">Sign in</button>
-                </form>
-                <p>Don't have an account? <a href="{{url_for('signup')}}">Sign up</a></p>
+          <div class="nav">
+            <a href="{{url_for ('login')}}" class="active">SIGN IN</a>
+            <a href="{{url_for ('signup')}}">SIGN UP</a>
+          </div>
+          <!-- Flash messages -->
+          <!-- Flash messages -->
+          {% with messages = get_flashed_messages(with_categories=true) %} {%
+          for category, message in messages %} {% if category == 'error' %}
+          <div class="alert alert-danger" role="alert">
+            <ul>
+              <li>{{ message }}</li>
+            </ul>
+          </div>
+          {% endif %} {% endfor %} {% endwith %}
+
+          <h2>Sign in with</h2>
+          <!-- Sign in with Google -->
+          <div class="external-signin">
+            <!-- On click, call signInWithGoogle() -->
+            <img src="{{ url_for('static', filename='img/phone/flat-color-icons--google.svg') }}" alt="Google" id="googleSignInBtn" onclick="signInWithGoogle()">
+            <!-- On click, call signInWithFacebook() -->
+            <img src="{{ url_for('static', filename='img/phone/icomoon-free--facebook.svg') }}" alt="Facebook" onclick="signInWithFacebook()">
+            <!-- On click, call signInWithApple() -->
+            <img src="{{ url_for('static', filename='img/phone/bi--apple.svg') }}" alt="Apple" onclick="signInWithApple()">
+          </div>
+          <form id="signinForm" method="post" action="{{ url_for('login') }}">
+            <div class="forms">
+              <div class="form-group">
+                <label for="email"> Enter username or Email:</label>
+                <input type="text" id="email" name="email" required placeholder="Enter your email address...">
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password...">
+              </div>
+              <p><a href="#">Forgot your password?</a></p>
             </div>
+            <button type="submit">Sign in</button>
+          </form>
+          <p>Don't have an account? <a href="{{url_for('signup')}}">Sign up</a></p>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    <script src="{{ url_for('static', filename='js/signin.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/signin.js') }}"></script>
 </body>
 </html>
