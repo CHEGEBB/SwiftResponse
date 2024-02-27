@@ -328,6 +328,99 @@ h1 {
     margin-left: 500px;
     border-radius: 15px;
 }
+/* Modal styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: rgba(47, 79, 79, 0.4);
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px; 
+    border-radius: 12px;
+}
+
+  
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Modal column layout */
+  .modal h2{
+    font-family: 'Jost', sans-serif;
+    color: #8B0000;
+  }
+  .modal-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ /* Modal select */
+.modal-select {
+    margin-bottom: 10px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #000; /* Text color */
+  font-family: 'Ropa Sans', sans-serif;
+  }
+  
+  /* Modal button */
+  .modal-button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modal-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal textarea */
+  .modal-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #007bff; /* Border color */
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    color: #007bff; /* Text color */
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+  }
+  
 
 .help img {
     width: 480px;
@@ -375,12 +468,17 @@ h1 {
     transform: scale(0.9);
     box-shadow: none;
 }
-
+.acc{
+    height: 400px;
+    background-color: #000;
+    margin-top: -50px;
+}
 .accessibility {
     width: 350px;
     height: 300px;
     margin-left: 300px;
     margin-top: 50px;
+    background-color: #000;
 }
 
 .accessibility h1 {

@@ -143,7 +143,6 @@
         </div>
     </section>
 </div>
-
 <!-- Safety Services -->
 <div class="container3">
     <div class="safety">
@@ -152,19 +151,19 @@
         </div>
         <div class="services">
             <div class="group1">
-                <div class="alarm">
+                <div class="alarm" onclick="openModal('alarm')">
                     <div class="alarmicon">
                         <img src="{{ url_for('static', filename='img/siren-rounded-bold.svg') }}" alt="siren">
                     </div>
                     <p>ALARM</p>
                 </div>
-                <div class="ambulance">
+                <div class="ambulance" onclick="openModal('ambulance')">
                     <div class="ambicon">
                         <img src="{{ url_for('static', filename='img/ambulance (1).svg') }}" alt="ambulance">
                     </div>
                     <p>AMBULANCE</p>
                 </div>
-                <div class="fire">
+                <div class="fire" onclick="openModal('fire')">
                     <div class="fireicon">
                         <img src="{{ url_for('static', filename='img/fire.svg') }}" alt="fire">
                     </div>
@@ -172,19 +171,19 @@
                 </div>
             </div>
             <div class="group2">
-                <div class="location">
+                <div class="location" onclick="openModal('location')">
                     <div class="licon">
                         <img src="{{ url_for('static', filename='img/googlemaps.svg') }}" alt="location">
                     </div>
                     <p>MY LOCATION</p>
                 </div>
-                <div class="police">
+                <div class="police" onclick="openModal('police')">
                     <div class="policon">
                         <img src="{{ url_for('static', filename='img/user-police.svg') }}" alt="police">
                     </div>
                     <p>POLICE</p>
                 </div>
-                <div class="panic">
+                <div class="panic" onclick="openModal('panic')">
                     <div class="panicicon">
                         <img src="{{ url_for('static', filename='img/sos-help-emergency-sign.svg') }}" alt="panic">
                     </div>
@@ -192,19 +191,19 @@
                 </div>
             </div>
             <div class="group3">
-                <div class="emergencycontacts">
+                <div class="emergencycontacts" onclick="openModal('emergencycontacts')">
                     <div class="emicon">
                         <img src="{{ url_for('static', filename='img/baseline-contacts.svg') }}" alt="emergencycontacts">
                     </div>
                     <p>EMERGENCY CONTACTS</p>
                 </div>
-                <div class="healthprofile">
+                <div class="healthprofile" onclick="openModal('healthprofile')">
                     <div class="hicon">
                         <img src="{{ url_for('static', filename='img/health-care-2-solid.svg') }}" alt="healthprofile">
                     </div>
                     <p>MY HEALTH PROFILE</p>
                 </div>
-                <div class="report">
+                <div class="report" onclick="openModal('report')">
                     <div class="ricon">
                         <img src="{{ url_for('static', filename='img/report-16.svg') }}" alt="report">
                     </div>
@@ -212,14 +211,33 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-heading">Modal Heading</h2>
+      <div id="modal-content" class="modal-column">
+        <select id="number-select" class="modal-select">
+          <!-- Options will be dynamically populated here -->
+        </select>
+        <button onclick="displayNumber()" class="modal-button">Display Number</button>
+        <textarea id="number-display" rows="4" cols="50" readonly class="modal-textarea"></textarea>
+      </div>
+    </div>
+</div>
+
+  <div class="acc">
         <div class="accessibility">
             <div class="rectangle"></div>
             <h1>ACCESSIBILITY</h1>
             <p>Swift-Response offers a centralized hub for <span style="color:hsla(348, 83%, 47%, 1);">vital emergency
                     services,</span> ensuring quick access to essential resources in critical situations</p>
         </div>
-    </div>
-</div>
+  </div>
+        
 
 
 
