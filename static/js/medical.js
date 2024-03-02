@@ -292,3 +292,43 @@ function checkSymptoms() {
         console.error('Error:', error);
     });
 }
+// Initialize Google Maps
+function initMap() {
+    // Map options
+    var options = {
+        zoom: 10,
+        center: { lat: 0, lng: 0 }
+    };
+    // New map
+    var map = new google.maps.Map(document.getElementById('map'), options);
+
+    // Listen for form submission
+    document.getElementById('location-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Get user location input
+        var location = document.getElementById('location-input').value;
+        // Geocode location
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: location }, function(results, status) {
+            if (status == 'OK') {
+                // Set map center to user location
+                map.setCenter(results[0].geometry.location);
+                // Place a marker at user location
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+                // Call function to find nearby hospitals
+                findNearbyHospitals(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    });
+}
+
+// Function to find nearby hospitals
+function findNearbyHospitals(location) {
+    // Your logic to find nearby hospitals using location
+    // This function will be called when user submits their location
+}

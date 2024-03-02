@@ -284,7 +284,7 @@ h4{
   font-size: 26px;
 }
 /* Submit Button */
-button[type="submit"] {
+.hospital-search-form button[type="submit"] {
   background-color: #4caf50; /* Green */
   color: #fff; /* White text */
   padding: 10px 20px;
@@ -294,13 +294,39 @@ button[type="submit"] {
   transition: background-color 0.3s;
   margin-left: 450px;
   font-family: 'Ropa Sans', sans-serif;
+  margin-left: -10px;
+}
+live-location-form {
+  width: 40%;
 }
 
-button[type="submit"]:hover {
-  background-color: #45a049; /* Darker Green on hover */
+.location-form, .hospital-search-form {
+  display: flex;
+  margin-bottom: 20px;
 }
 
+.location-form input, .hospital-search-form input, .location-form button, .hospital-search-form button {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+.location-form button, .hospital-search-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.content2 {
+  width: 50%;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
 .ambulance {
   width: 400px;
   height: 400px;
