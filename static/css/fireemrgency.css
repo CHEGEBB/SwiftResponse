@@ -624,10 +624,11 @@ label {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f7f7f7;
-    color: crimson;
+    color: blue;
     outline: none;
     transition: border-color 0.3s ease;
     font-family: 'Jost', sans-serif;
+    font-weight: 700;
     
 
 }
