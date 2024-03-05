@@ -251,6 +251,7 @@ def submit_form():
         db.session.add(new_data)
         db.session.commit()
         return 'Form submitted successfully'
+    
 @app.route('/submit_medical_form', methods=['POST'])
 def submit_medical_form():
     # Get form data
@@ -437,7 +438,27 @@ def submit_general_alert():
         flash('Failed to submit alert. Please try again.', 'error')
         return redirect(url_for('general'))
 
+@app.route('/admin/edit_item/<int:item_id>', methods=['GET', 'POST'])
+@login_required
+def edit_item(item_id):
+    # Retrieve the item from the database
+    item = item.query.get(item_id)
 
+    if request.method == 'POST':
+        # Update the item with data from the form
+        item.name = request.form['name']
+        item.price = request.form['price']
+        item.description = request.form['description']
+
+        # Commit the changes to the database
+        db.session.commit()
+
+        # Redirect to the admin page after editing
+        flash('Item updated successfully!', 'success')
+        return redirect(url_for('admin'))
+
+    # Render the form for editing the item
+    return render_template('edit_item.html', item=item)
 
 if __name__ == '__main__':
     # Run the Flask application
