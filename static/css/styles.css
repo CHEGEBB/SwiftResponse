@@ -200,6 +200,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+   
 }
 
 .button {
@@ -210,6 +211,18 @@ h1 {
     text-align: center;
     gap: 50px;
 }
+.btn{
+    text-decoration: none;
+    padding-top: 5px;
+}
+.btn2{
+    text-decoration: none;
+    background-color: #000;
+    padding-top: 5px;
+    height: 30px;
+}
+
+
 
 
 /* Why us */
@@ -311,6 +324,7 @@ h1 {
     display: flex;
     flex-direction: row;
 }
+
 
 .services {
     display: flex;
@@ -1295,7 +1309,14 @@ h1 {
     opacity: 0;
     pointer-events: none; 
 }
-
+.container1 {
+    background: url("../img/firefighters.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    max-width: 100%;
+    padding-left: -500px;
+}
     .container1{
         height: 700px;
         
@@ -1375,15 +1396,16 @@ h1 {
         flex-direction: column;
     }
     .services {
-        width: 370px;
-        margin-left: 16px;
+        width: 350px;
+        margin-left: 12px;
         height: 1000px;
         margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(206, 27, 27, 0.5);
     }
     .help img {
-        width: 370px;
+        width: 350px;
         height: 300px;
-        margin-left: 16px;
+        margin-left: 12px;
     }
     .accessibility {
         width: 100%;
@@ -1449,12 +1471,12 @@ h1 {
         margin-left: 0;
     }
     .firefight img {
-        width: 360px;
+        width: 350px;
         height: 300px;
         margin-left: 18px;
     }
     .images img {
-        width: 360px;
+        width: 350px;
         height: 330px;
         margin-left: 18px;
     }

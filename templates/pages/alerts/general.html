@@ -55,11 +55,6 @@
               >Security Alerts</a
             >
           </li>
-          <li>
-            <a href="#university" onclick="scrollToSection('university')"
-              >University Alerts</a
-            >
-          </li>
         </ul>
         <div class="notification-icon">
           <i class="fas fa-bell"></i>
@@ -89,7 +84,7 @@
         <h1>Stay Alert with SwiftResponse ERCS</h1>
         <p>
           Welcome to the General Alerts section of SwiftResponse Emergency
-          Response and Communication System (ERCS). SwiftResponse keeps you
+          Response and Coordination System (ERCS). SwiftResponse keeps you
           informed about various emergency situations, ensuring you receive
           real-time updates to stay safe and prepared.
         </p>
@@ -101,8 +96,8 @@
           timely alerts and guidance to protect yourself and your loved ones.
         </p>
         <div class="button-container">
-          <button class="primary-button">Get Started</button>
-          <button class="secondary-button">Learn More</button>
+          <a href="{{url_for('signup')}}" class="primary-button">Get Started</a>
+          <a href="{{url_for('about')}}" class="secondary-button">Learn More</a>
         </div>
       </div>
     </header>
@@ -550,7 +545,7 @@
           </div>
         </section>
       </div>
-     
+
       <!-- accident alerts -->
       <div class="accident">
         <section id="accident" class="alert-section2">
@@ -745,26 +740,26 @@
       </div>
     </main>
     <div class="outside">
-        <div class="container9">
-          <h1>General Alerts Form</h1>
-          <form action="{{ url_for('submit_general_alert') }}" method="post">
-            <div class="form-group">
-              <label for="title">Title:</label>
-              <input type="text" id="title" name="alert_type" required />
-            </div>
-            <div class="form-group">
-              <label for="description">Description:</label>
-              <textarea
-                id="description"
-                name="alert_message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+      <div class="container9">
+        <h1>General Alerts Form</h1>
+        <form action="{{ url_for('submit_general_alert') }}" method="post">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="alert_type" required />
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="alert_message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </div>
+    </div>
 
     <!-- Community Engagement and Resources section -->
     <div class="res">

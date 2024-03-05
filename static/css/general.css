@@ -185,20 +185,29 @@ header {
 .secondary-button {
   padding: 10px 20px; 
   border: none;
-  border-radius: 5px; 
+  border-radius: 15px; 
   cursor: pointer;
+  text-decoration: none;
+  font-family: 'Ropa Sans', sans-serif;
 }
 
 .primary-button {
   background-color: #007bff; 
   color: white; 
+  width: 200px;
 }
 
 .secondary-button {
   background-color: #e7e7e7; 
   color: black; 
+  width: 200px;
 }
-
+.primary-button:hover {
+  background-color: crimson; 
+}
+.secondary-button:hover {
+  background-color: #4CAF50; 
+}
 .animated-heading,
 .animated-paragraph {
   animation: fadeIn 2s ease-in-out forwards;
@@ -328,8 +337,7 @@ header {
 .card2 img{
   width: 200px;
   height: 200px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
+  border-radius: 12px;
   box-shadow: 0 0 10px rgba(23, 165, 197, 0.6);
 }
 .row1 img{
@@ -340,7 +348,7 @@ header {
   gap: 50px;
 }
 .row3{
-  margin-left: 30px;
+  margin-left: -130px;
   gap: 50px;
 }
 .row3 p{
