@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
-    <link rel="icon" href="{{ url_for('static', filename='img/logo.jpg') }}" type="image/x-icon">
-    <title>SwiftResponse ERCS</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="icon" href="{{ url_for('static', filename='img/logo.jpg') }}"
+            type="image/x-icon">
+        <title>SwiftResponse ERCS</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}">
+        <style>
         /* Default style for the icon */
         .fas.fa-bars {
           display: none; /* Hide the icon by default */
@@ -21,441 +23,559 @@
           }
         }
       </style>
-</head>
+    </head>
 
-<body>
+    <body>
 
-
-    <!-- top with social icons and email -->
-    <div class="top">
-        <div class="social-iconss">
-            <div class="facebook">
-                <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="facebook"></a>
+        <!-- top with social icons and email -->
+        <div class="top">
+            <div class="social-iconss">
+                <div class="facebook">
+                    <a href="#"><img
+                            src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}"
+                            alt="facebook"></a>
+                </div>
+                <div class="twitter">
+                    <a href="#"><img
+                            src="{{ url_for('static', filename='img/socials/twitter.svg') }}"
+                            alt="twitter"></a>
+                </div>
+                <div class="instagram">
+                    <a href="#"><img
+                            src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}"
+                            alt="instagram"></a>
+                </div>
+                <div class="linkedin">
+                    <a href="#"><img
+                            src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}"
+                            alt="linkedin"></a>
+                </div>
             </div>
-            <div class="twitter">
-                <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="twitter"></a>
-            </div>
-            <div class="instagram">
-                <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="instagram"></a>
-            </div>
-            <div class="linkedin">
-                <a href="#"><img src="{{ url_for('static', filename='img/socials/bi--linkedin.svg') }}" alt="linkedin"></a>
+            <div class="account">
+                <div class="signup">
+                    <a href="{{ url_for('signup') }}">Sign Up</a>
+                </div>
+                <div class="login">
+                    <a href="{{ url_for('login') }}">Login</a>
+                </div>
             </div>
         </div>
-        <div class="account">
-            <div class="signup">
-                <a href="{{ url_for('signup') }}">Sign Up</a>
+        <div class="container1">
+            <!-- Navigation Section -->
+
+            <nav class="navbar">
+                <div class="menu-toggle" onclick="toggleNav()">
+                    <!-- Custom hamburger icon -->
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list" id="navList">
+                    <li class="nav-item"><a href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('general') }}">General
+                                    Alerts</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
+                        <ul class="dropdown-menu" id="emergencyDropdown">
+                            <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
+                            <li><a href="{{ url_for('medical') }}">Medical
+                                    Emergencies</a></li>
+                            <li><a href="{{ url_for('accident') }}">Accident
+                                    Emergencies</a></li>
+                            <li><a href="{{ url_for('security') }}">Security
+                                    Emergencies</a></li>
+                            <li><a href="{{ url_for('report') }}">Report
+                                    Emergency</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
+                    <li class="nav-item"><a href="{{url_for('about')}}">About</a></li>
+                    <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- HOME SECTION using the section tag -->
+        <section class="home">
+            <div class="home-content">
+                <h1 style="color: crimson;">SwiftResponse ERCS</h1>
+                <h2>SAVED OVER 2000+ LIVES</h2>
+                <p>SwiftResponse ERCS is a platform that <span
+                        style="color: crimson;font-weight: 700;">allows users to
+                        report emergencies and receive alerts.</span></p>
+                <div class="button">
+                    <button class="btn" id="learnMoreBtn">Learn More</button>
+                    <button class="btn2" id="callNowBtn">Call Now</button>
+                    <!-- Modal for displaying the emergency number -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p id="emergencyNumber"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="login">
-                <a href="{{ url_for('login') }}">Login</a>
+        </section>
+
+        <!-- why us -->
+
+        <div class="container2">
+            <section>
+                <div class="trust">
+                    <div class="swift">
+                        <h1>Swift-Response: Where Trust Meets Emergency</h1>
+                        <p>Swift-Response is a leading emergency response and
+                            crisis management platform, providing a centralized
+                            hub for vital emergency services. With cutting-edge
+                            technology and a commitment to excellence,
+                            Swift-Response stands as your reliable
+                            partner in times of need.</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="daily">
+                            <div class="hours">
+                                <img
+                                    src="{{ url_for('static', filename='img/hours-24.svg') }}"
+                                    alt="24hours">
+                            </div>
+                            <div class="anytime">
+                                <h1>24/7 Emergency Response, Anytime, Anywhere.</h1>
+                            </div>
+
+                        </div>
+                        <div class="satisfaction">
+                            <div class="satisfied">
+                                <img
+                                    src="{{ url_for('static', filename='img/icons/mdi--verified.svg') }}"
+                                    alt="satisfied">
+                            </div>
+                            <div class="satisfy">
+                                <h1>Satisfaction Guaranteed Your Peace of Mind,
+                                    Our Assurance</h1>
+                            </div>
+
+                        </div>
+
+                        <div class="response">
+                            <div class="instant">
+                                <img
+                                    src="{{ url_for('static', filename='img/emergency.svg') }}"
+                                    alt="emergency">
+                            </div>
+                            <div class="quick">
+                                <h1>We offer Instant quick response to
+                                    emergencies</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Safety Services -->
+        <div class="container3">
+            <div class="safety">
+                <div class="help">
+                    <img src="{{ url_for('static', filename='img/help.jpg') }}"
+                        alt="help">
+                </div>
+                <div class="services">
+                    <div class="group1">
+                        <div class="alarm" onclick="openModal('alarm')">
+                            <div class="alarmicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/siren-rounded-bold.svg') }}"
+                                    alt="siren">
+                            </div>
+                            <p>ALARM</p>
+                        </div>
+                        <div class="ambulance" onclick="openModal('ambulance')">
+                            <div class="ambicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/ambulance (1).svg') }}"
+                                    alt="ambulance">
+                            </div>
+                            <p>AMBULANCE</p>
+                        </div>
+                        <div class="fire" onclick="openModal('fire')">
+                            <div class="fireicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/fire.svg') }}"
+                                    alt="fire">
+                            </div>
+                            <p>FIRE</p>
+                        </div>
+                    </div>
+                    <div class="group2">
+                        <div class="location" onclick="openModal('location')">
+                            <div class="licon">
+                                <img
+                                    src="{{ url_for('static', filename='img/googlemaps.svg') }}"
+                                    alt="location">
+                            </div>
+                            <p>MY LOCATION</p>
+                        </div>
+                        <div class="police" onclick="openModal('police')">
+                            <div class="policon">
+                                <img
+                                    src="{{ url_for('static', filename='img/user-police.svg') }}"
+                                    alt="police">
+                            </div>
+                            <p>POLICE</p>
+                        </div>
+                        <div class="panic" onclick="openModal('panic')">
+                            <div class="panicicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/sos-help-emergency-sign.svg') }}"
+                                    alt="panic">
+                            </div>
+                            <p>PANIC BUTTON</p>
+                        </div>
+                    </div>
+                    <div class="group3">
+                        <div class="emergencycontacts"
+                            onclick="openModal('emergencycontacts')">
+                            <div class="emicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/baseline-contacts.svg') }}"
+                                    alt="emergencycontacts">
+                            </div>
+                            <p>EMERGENCY CONTACTS</p>
+                        </div>
+                        <div class="healthprofile"
+                            onclick="openModal('healthprofile')">
+                            <div class="hicon">
+                                <img
+                                    src="{{ url_for('static', filename='img/health-care-2-solid.svg') }}"
+                                    alt="healthprofile">
+                            </div>
+                            <p>MY HEALTH PROFILE</p>
+                        </div>
+                        <div class="report" onclick="openModal('report')">
+                            <div class="ricon">
+                                <img
+                                    src="{{ url_for('static', filename='img/report-16.svg') }}"
+                                    alt="report">
+                            </div>
+                            <p>REPORT</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container1">
-        <!-- Navigation Section -->
 
-        <nav class="navbar">
-            <div class="menu-toggle" onclick="toggleNav()">
-                <!-- Custom hamburger icon -->
-                <i class="fas fa-bars"></i>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-heading">Modal Heading</h2>
+                <div id="modal-content" class="modal-column">
+                    <select id="number-select" class="modal-select">
+                        <!-- Options will be dynamically populated here -->
+                    </select>
+                    <button onclick="displayNumber()" class="modal-button">Display
+                        Number</button>
+                    <textarea id="number-display" rows="4" cols="50" readonly
+                        class="modal-textarea"></textarea>
+                </div>
             </div>
-            <ul class="nav-list" id="navList">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Alerts&#9660;</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ url_for('general') }}">General Alerts</a></li>
+        </div>
+
+        <div class="acc">
+            <div class="accessibility">
+                <div class="rectangle"></div>
+                <h1>ACCESSIBILITY</h1>
+                <p>Swift-Response offers a centralized hub for <span
+                        style="color:hsla(348, 83%, 47%, 1);">vital emergency
+                        services,</span> ensuring quick access to essential
+                    resources in critical situations</p>
+            </div>
+        </div>
+
+        <!-- what sets us apart -->
+        <!-- Offer Section -->
+        <div class="offer">
+            <div class="best">
+                <h1>WE PROVIDE THE BEST INSTANT EMERGENCY SERVICES</h1>
+                <p>From medical assistance to fire emergencies and law
+                    enforcement, our comprehensive services cover a spectrum of
+                    critical situations. With cutting-edge technology and a
+                    commitment to excellence, Swift-Response stands as your
+                    reliable partner
+                    in times of need.</p>
+            </div>
+            <div class="images">
+                <div class="medical">
+                    <img class="modal-img"
+                        src="{{ url_for('static', filename='img/medical.jpg') }}"
+                        alt="medical">
+                </div>
+                <div class="firefight">
+                    <img class="modal-img"
+                        src="{{ url_for('static', filename='img/firefighter-2679283_640.jpg') }}"
+                        alt="firefight">
+                </div>
+                <div class="law">
+                    <img class="modal-img"
+                        src="{{ url_for('static', filename='img/enforcement.jpg') }}"
+                        alt="law">
+                </div>
+            </div>
+        </div>
+
+        <!-- container4:our services -->
+        <div class="container4">
+            <div class="ourservices">
+                <div class="cluster1">
+                    <div class="med">
+                        <div class="emt">
+                            <div class="img1">
+                                <img
+                                    src="{{ url_for('static', filename='img/emt.jpg') }}"
+                                    alt="medical">
+                            </div>
+                            <h1>Medical Assistance Team</h1>
+                            <p>Rapid response medical teams equipped with
+                                state-of-the-art equipment, ensuring immediate
+                                and expert medical aid.</p>
+
+                        </div>
+                    </div>
+                    <div class="lawenforcement">
+                        <div class="img2">
+                            <img
+                                src="{{ url_for('static', filename='img/police.jpg') }}"
+                                alt="police">
+                        </div>
+                        <h1>Law Enforcement</h1>
+                        <p>Swift-Response provides a direct line to law
+                            enforcement, ensuring quick response to security
+                            threats and emergencies.
+                        </p>
+                    </div>
+                    <div class="firefighter">
+                        <div class="img3">
+                            <img
+                                src="{{ url_for('static', filename='img/fighter.jpg') }}"
+                                alt="fire">
+                        </div>
+                        <h1>Firefighter Response</h1>
+                        <p>Immediate dispatch of fire crews equipped with
+                            advanced extinguishing technology, swiftly
+                            minimizing damage.</p>
+                    </div>
+                </div>
+                <div class="cluster2">
+                    <div class="accidentresponse">
+                        <div class="img4">
+                            <img
+                                src="{{ url_for('static', filename='img/car-crash-wreck-accident (1).jpg') }}"
+                                alt="accidents">
+                        </div>
+
+                        <h1>Accident Response</h1>
+                        <p>Swift-Response provides a direct line to accidents
+                            response teams, ensuring quick response to accidents
+                            and emergencies.
+                        </p>
+                    </div>
+                    <div class="university">
+                        <div class="img5">
+                            <img
+                                src="{{ url_for('static', filename='img/universityyy.jpg') }}"
+                                alt="university">
+                        </div>
+                        <h1>Intergrating with universities</h1>
+                        <p>Swift-Response allows universities and colleges to
+                            provide emergency services to students and staff,
+                            essential for alerts</p>
+                    </div>
+                    <div class="searchandrescue">
+                        <div class="img6">
+                            <img
+                                src="{{ url_for('static', filename='img/serach.jpg') }}"
+                                alt="search">
+                        </div>
+                        <h1>Search and Rescue</h1>
+                        <p>Specialized search and rescue teams deployed swiftly
+                            to locate and assist individuals in challenging
+                            terrains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- container5:professionals and technologies -->
+        <div class="container5">
+
+            <div class="professionals">
+                <div class="rectangle"></div>
+                <h1>We are Professionals</h1>
+                <p>Our dedicated teams, comprised of highly trained experts,
+                    stand ready to seamlessly navigate the complexities of any
+                    crisis.</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="facts">
+                <div class="twenty">
+                    <h1>200,000+</h1>
+                    <p>lives saved</p>
+                </div>
+                <div class="ten">
+                    <h1>10,000+</h1>
+                    <p>Property saved</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- container6:technologies -->
+        <div class="container6">
+            <h1>OUR TECHNOLOGIES AND UNIQUENESS</h1>
+            <div class="technologies">
+
+                <div class="part1">
+                    <div class="innovative">
+                        <div class="tech">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/technology.svg') }}"
+                                alt="innovative">
+                        </div>
+                        <h2>1.Innovative Technology Integration</h2>
+                        <p>The ERCS incorporates cutting-edge technologies to
+                            revolutionize emergency response efforts.</p>
+                    </div>
+                    <div class="real">
+                        <div class="realtime">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/time.svg') }}"
+                                alt="real">
+                        </div>
+                        <h2>2.Real-time Communication Hub</h2>
+                        <p>Experience seamless real-time communication,
+                            fostering collaboration among stakeholders during
+                            crises.</p>
+                    </div>
+                    <div class="centralize">
+                        <h2>3.Centralized Resource Management</h2>
+                        <div class="resource">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/set-center.svg') }}"
+                                alt="centralize">
+                        </div>
+                        <p>ERCS provides a centralized platform for streamlined
+                            information sharing, resource allocation, and
+                            communication.</p>
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="predictive">
+                        <div class="prediction">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/model-alt.svg') }}"
+                                alt="predictive">
+                        </div>
+                        <h2>4.Predictive Modeling for Proactive Decisions</h2>
+                        <p>Anticipate potential challenges with ERCS's
+                            predictive modeling, enabling proactive
+                            decision-making.</p>
+                    </div>
+                    <div class="user">
+                        <div class="use">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/hold-interface.svg') }}"
+                                alt="user">
+                        </div>
+                        <h2>5.User-Friendly Interface</h2>
+                        <p>Enjoy an intuitive and user-friendly interface,
+                            ensuring ease of use for all stakeholders.</p>
+                    </div>
+                    <div class="scalable">
+                        <div class="scale">
+                            <img
+                                src="{{ url_for('static', filename='img/professionals/scalable.svg') }}"
+                                alt="scalable">
+                        </div>
+                        <h2>6.Scalable Architecture</h2>
+                        <p>ERCS features a scalable architecture, adapting to
+                            the evolving needs of emergency response systems.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-overlay"></div>
+            <div class="social-icons">
+                <a href="#"><img
+                        src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}"
+                        alt="Facebook"></a>
+                <a href="#"><img
+                        src="{{ url_for('static', filename='img/socials/twitter.svg') }}"
+                        alt="Twitter"></a>
+                <a href="#"><img
+                        src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}"
+                        alt="Instagram"></a>
+            </div>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>NAVIGATION</h3>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
                     </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Emergency &#9660;</a>
-                    <ul class="dropdown-menu" id="emergencyDropdown">
+                </div>
+                <div class="footer-column">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="{{ url_for('general') }}">General Alerts</a></li>
                         <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
-                        <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
-                        <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
-                        <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
+                        <li><a href="{{ url_for('medical') }}">Medical
+                                Emergencies</a></li>
+                        <li><a href="{{ url_for('accident') }}">Accident
+                                Emergencies</a></li>
+                        <li><a href="{{ url_for('security') }}">Security
+                                Emergencies</a></li>
                         <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
                     </ul>
-                </li>
-                <li class="nav-item"><a href="{{ url_for('report') }}">Report</a></li>
-                <li class="nav-item"><a href="{{url_for('about')}}">About</a></li>
-                <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- HOME SECTION using the section tag -->
-    <section class="home">
-        <div class="home-content">
-            <h1 style="color: crimson;">SwiftResponse ERCS</h1>
-            <h2>SAVED OVER 2000+ LIVES</h2>
-            <p>SwiftResponse ERCS is a platform that <span style="color: rgb(29, 91, 226);font-weight: 700;">allows users to report emergencies and receive alerts.</span></p>
-            <div class="button">
-                <button class="btn">Learn More</button>
-                <button class="btn2">Call Now</button>
-            </div>
-        </div>
-    </section>
-
-
-
-
-   <!-- why us -->
-
-<div class="container2">
-    <section>
-        <div class="trust">
-            <div class="swift">
-                <h1>Swift-Response: Where Trust Meets Emergency</h1>
-                <p>Swift-Response is a leading emergency response and crisis management platform, providing a centralized hub for vital emergency services. With cutting-edge technology and a commitment to excellence, Swift-Response stands as your reliable
-                    partner in times of need.</p>
-            </div>
-            <div class="advantage">
-                <div class="daily">
-                    <div class="hours">
-                        <img src="{{ url_for('static', filename='img/hours-24.svg') }}" alt="24hours">
-                    </div>
-                    <div class="anytime">
-                        <h1>24/7 Emergency Response, Anytime, Anywhere.</h1>
-                    </div>
-
                 </div>
-                <div class="satisfaction">
-                    <div class="satisfied">
-                        <img src="{{ url_for('static', filename='img/icons/mdi--verified.svg') }}" alt="satisfied">
-                    </div>
-                    <div class="satisfy">
-                        <h1>Satisfaction Guaranteed Your Peace of Mind, Our Assurance</h1>
-                    </div>
-
-                </div>
-
-                <div class="response">
-                    <div class="instant">
-                        <img src="{{ url_for('static', filename='img/emergency.svg') }}" alt="emergency">
-                    </div>
-                    <div class="quick">
-                        <h1>We offer Instant quick response to emergencies</h1>
-                    </div>
+                <div class="footer-column">
+                    <h3>CONTACT</h3>
+                    <ul>
+                        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
-<!-- Safety Services -->
-<div class="container3">
-    <div class="safety">
-        <div class="help">
-            <img src="{{ url_for('static', filename='img/help.jpg') }}" alt="help">
-        </div>
-        <div class="services">
-            <div class="group1">
-                <div class="alarm" onclick="openModal('alarm')">
-                    <div class="alarmicon">
-                        <img src="{{ url_for('static', filename='img/siren-rounded-bold.svg') }}" alt="siren">
-                    </div>
-                    <p>ALARM</p>
+            <div class="footer-message">
+                <div class="email">
+                    <input type="email" placeholder="Enter your email address">
                 </div>
-                <div class="ambulance" onclick="openModal('ambulance')">
-                    <div class="ambicon">
-                        <img src="{{ url_for('static', filename='img/ambulance (1).svg') }}" alt="ambulance">
-                    </div>
-                    <p>AMBULANCE</p>
-                </div>
-                <div class="fire" onclick="openModal('fire')">
-                    <div class="fireicon">
-                        <img src="{{ url_for('static', filename='img/fire.svg') }}" alt="fire">
-                    </div>
-                    <p>FIRE</p>
+                <div class="send">
+                    <button onclick="sendMessage()">Send</button>
                 </div>
             </div>
-            <div class="group2">
-                <div class="location" onclick="openModal('location')">
-                    <div class="licon">
-                        <img src="{{ url_for('static', filename='img/googlemaps.svg') }}" alt="location">
-                    </div>
-                    <p>MY LOCATION</p>
-                </div>
-                <div class="police" onclick="openModal('police')">
-                    <div class="policon">
-                        <img src="{{ url_for('static', filename='img/user-police.svg') }}" alt="police">
-                    </div>
-                    <p>POLICE</p>
-                </div>
-                <div class="panic" onclick="openModal('panic')">
-                    <div class="panicicon">
-                        <img src="{{ url_for('static', filename='img/sos-help-emergency-sign.svg') }}" alt="panic">
-                    </div>
-                    <p>PANIC BUTTON</p>
-                </div>
-            </div>
-            <div class="group3">
-                <div class="emergencycontacts" onclick="openModal('emergencycontacts')">
-                    <div class="emicon">
-                        <img src="{{ url_for('static', filename='img/baseline-contacts.svg') }}" alt="emergencycontacts">
-                    </div>
-                    <p>EMERGENCY CONTACTS</p>
-                </div>
-                <div class="healthprofile" onclick="openModal('healthprofile')">
-                    <div class="hicon">
-                        <img src="{{ url_for('static', filename='img/health-care-2-solid.svg') }}" alt="healthprofile">
-                    </div>
-                    <p>MY HEALTH PROFILE</p>
-                </div>
-                <div class="report" onclick="openModal('report')">
-                    <div class="ricon">
-                        <img src="{{ url_for('static', filename='img/report-16.svg') }}" alt="report">
-                    </div>
-                    <p>REPORT</p>
-                </div>
-            </div>
+            <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
+        </footer>
+        <!-- Scroll to top button -->
+        <div class="scroll-to-top">
+            <a href="#top"><img
+                    src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}"
+                    alt="Scroll to Top"></a>
         </div>
-    </div>
-</div>
 
-<!-- Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modal-heading">Modal Heading</h2>
-      <div id="modal-content" class="modal-column">
-        <select id="number-select" class="modal-select">
-          <!-- Options will be dynamically populated here -->
-        </select>
-        <button onclick="displayNumber()" class="modal-button">Display Number</button>
-        <textarea id="number-display" rows="4" cols="50" readonly class="modal-textarea"></textarea>
-      </div>
-    </div>
-</div>
-
-  <div class="acc">
-        <div class="accessibility">
-            <div class="rectangle"></div>
-            <h1>ACCESSIBILITY</h1>
-            <p>Swift-Response offers a centralized hub for <span style="color:hsla(348, 83%, 47%, 1);">vital emergency
-                    services,</span> ensuring quick access to essential resources in critical situations</p>
-        </div>
-  </div>
-        
-
-
-
-
-<!-- what sets us apart -->
-<!-- Offer Section -->
-<div class="offer">
-    <div class="best">
-        <h1>WE PROVIDE THE BEST INSTANT EMERGENCY SERVICES</h1>
-        <p>From medical assistance to fire emergencies and law enforcement, our comprehensive services cover a spectrum of critical situations. With cutting-edge technology and a commitment to excellence, Swift-Response stands as your reliable partner
-            in times of need.</p>
-    </div>
-    <div class="images">
-        <div class="medical">
-            <img class="modal-img" src="{{ url_for('static', filename='img/medical.jpg') }}" alt="medical">
-        </div>
-        <div class="firefight">
-            <img class="modal-img" src="{{ url_for('static', filename='img/firefighter-2679283_640.jpg') }}" alt="firefight">
-        </div>
-        <div class="law">
-            <img class="modal-img" src="{{ url_for('static', filename='img/enforcement.jpg') }}" alt="law">
-        </div>
-    </div>
-</div>
-
-<!-- container4:our services -->
-<div class="container4">
-    <div class="ourservices">
-        <div class="cluster1">
-            <div class="med">
-                <div class="emt">
-                    <div class="img1">
-                        <img src="{{ url_for('static', filename='img/emt.jpg') }}" alt="medical">
-                    </div>
-                    <h1>Medical Assistance Team</h1>
-                    <p>Rapid response medical teams equipped with state-of-the-art equipment, ensuring immediate and expert medical aid.</p>
-
-                </div>
-            </div>
-            <div class="lawenforcement">
-                <div class="img2">
-                    <img src="{{ url_for('static', filename='img/police.jpg') }}" alt="police">
-                </div>
-                <h1>Law Enforcement</h1>
-                <p>Swift-Response provides a direct line to law enforcement, ensuring quick response to security threats and emergencies.
-                </p>
-            </div>
-            <div class="firefighter">
-                <div class="img3">
-                    <img src="{{ url_for('static', filename='img/fighter.jpg') }}" alt="fire">
-                </div>
-                <h1>Firefighter Response</h1>
-                <p>Immediate dispatch of fire crews equipped with advanced extinguishing technology, swiftly minimizing damage.</p>
-            </div>
-        </div>
-        <div class="cluster2">
-            <div class="accidentresponse">
-                <div class="img4">
-                    <img src="{{ url_for('static', filename='img/car-crash-wreck-accident (1).jpg') }}" alt="accidents">
-                </div>
-
-                <h1>Accident Response</h1>
-                <p>Swift-Response provides a direct line to accidents response teams, ensuring quick response to accidents and emergencies.
-                </p>
-            </div>
-            <div class="university">
-                <div class="img5">
-                    <img src="{{ url_for('static', filename='img/universityyy.jpg') }}" alt="university">
-                </div>
-                <h1>Intergrating with universities</h1>
-                <p>Swift-Response allows universities and colleges to provide emergency services to students and staff, essential for alerts</p>
-            </div>
-            <div class="searchandrescue">
-                <div class="img6">
-                    <img src="{{ url_for('static', filename='img/serach.jpg') }}" alt="search">
-                </div>
-                <h1>Search and Rescue</h1>
-                <p>Specialized search and rescue teams deployed swiftly to locate and assist individuals in challenging terrains.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- container5:professionals and technologies -->
-<div class="container5">
-
-    <div class="professionals">
-        <div class="rectangle"></div>
-        <h1>We are Professionals</h1>
-        <p>Our dedicated teams, comprised of highly trained experts, stand ready to seamlessly navigate the complexities of any crisis.</p>
-        <button class="btn">Learn More</button>
-    </div>
-    <div class="facts">
-        <div class="twenty">
-            <h1>200,000+</h1>
-            <p>lives saved</p>
-        </div>
-        <div class="ten">
-            <h1>10,000+</h1>
-            <p>Property saved</p>
-        </div>
-    </div>
-</div>
-
-
-   <!-- container6:technologies -->
-<div class="container6">
-    <h1>OUR TECHNOLOGIES AND UNIQUENESS</h1>
-    <div class="technologies">
-
-        <div class="part1">
-            <div class="innovative">
-                <div class="tech">
-                    <img src="{{ url_for('static', filename='img/professionals/technology.svg') }}" alt="innovative">
-                </div>
-                <h2>1.Innovative Technology Integration</h2>
-                <p>The ERCS incorporates cutting-edge technologies to revolutionize emergency response efforts.</p>
-            </div>
-            <div class="real">
-                <div class="realtime">
-                    <img src="{{ url_for('static', filename='img/professionals/time.svg') }}" alt="real">
-                </div>
-                <h2>2.Real-time Communication Hub</h2>
-                <p>Experience seamless real-time communication, fostering collaboration among stakeholders during crises.</p>
-            </div>
-            <div class="centralize">
-                <h2>3.Centralized Resource Management</h2>
-                <div class="resource">
-                    <img src="{{ url_for('static', filename='img/professionals/set-center.svg') }}" alt="centralize">
-                </div>
-                <p>ERCS provides a centralized platform for streamlined information sharing, resource allocation, and communication.</p>
-            </div>
-        </div>
-        <div class="part2">
-            <div class="predictive">
-                <div class="prediction">
-                    <img src="{{ url_for('static', filename='img/professionals/model-alt.svg') }}" alt="predictive">
-                </div>
-                <h2>4.Predictive Modeling for Proactive Decisions</h2>
-                <p>Anticipate potential challenges with ERCS's predictive modeling, enabling proactive decision-making.</p>
-            </div>
-            <div class="user">
-                <div class="use">
-                    <img src="{{ url_for('static', filename='img/professionals/hold-interface.svg') }}" alt="user">
-                </div>
-                <h2>5.User-Friendly Interface</h2>
-                <p>Enjoy an intuitive and user-friendly interface, ensuring ease of use for all stakeholders.</p>
-            </div>
-            <div class="scalable">
-                <div class="scale">
-                    <img src="{{ url_for('static', filename='img/professionals/scalable.svg') }}" alt="scalable">
-                </div>
-                <h2>6.Scalable Architecture</h2>
-                <p>ERCS features a scalable architecture, adapting to the evolving needs of emergency response systems.</p>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<footer class="footer">
-    <div class="footer-overlay"></div>
-    <div class="social-icons">
-        <a href="#"><img src="{{ url_for('static', filename='img/socials/facebook-outline.svg') }}" alt="Facebook"></a>
-        <a href="#"><img src="{{ url_for('static', filename='img/socials/twitter.svg') }}" alt="Twitter"></a>
-        <a href="#"><img src="{{ url_for('static', filename='img/socials/instagram (1).svg') }}" alt="Instagram"></a>
-    </div>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>NAVIGATION</h3>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>QUICK LINKS</h3>
-            <ul>
-                <li><a href="{{ url_for('general') }}">General Alerts</a></li>
-                <li><a href="{{ url_for('fire') }}">Fire Emergencies</a></li>
-                <li><a href="{{ url_for('medical') }}">Medical Emergencies</a></li>
-                <li><a href="{{ url_for('accident') }}">Accident Emergencies</a></li>
-                <li><a href="{{ url_for('security') }}">Security Emergencies</a></li>
-                <li><a href="{{ url_for('report') }}">Report Emergency</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>CONTACT</h3>
-            <ul>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-message">
-        <div class="email">
-            <input type="email" placeholder="Enter your email address">
-        </div>
-        <div class="send">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
-</footer>
-<!-- Scroll to top button -->
-<div class="scroll-to-top">
-    <a href="#top"><img src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}" alt="Scroll to Top"></a>
-</div>
-
-<!-- JavaScript -->
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<!-- Modal -->
-<div id="myModal" class="modal">
-    <!-- Modal content -->
-    <!-- <div class="modal-content">
+        <!-- JavaScript -->
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <!-- <div class="modal-content">
     <span class="close">&times;</span>
     <p>This is a modal. You can add your modal content here.</p>
   </div>
 </div> -->
 
-</body>
+        </body>
 
-</html>
+    </html>

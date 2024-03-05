@@ -303,5 +303,39 @@ function displayNumber() {
       selectElement.appendChild(optionElement);
     });
   }
-  
-  
+  // Get the buttons by their IDs
+const learnMoreBtn = document.getElementById("learnMoreBtn");
+const callNowBtn = document.getElementById("callNowBtn");
+
+// Add event listener to the Learn More button
+learnMoreBtn.addEventListener("click", function() {
+    // Redirect to the About Us page
+    window.location.href = "about.html"; 
+});
+
+// Add event listener to the Call Now button
+callNowBtn.addEventListener("click", function() {
+    // Display the emergency number in a modal
+    const modal = document.getElementById("myModal");
+    const span = document.getElementsByClassName("close")[0];
+    const emergencyNumber = document.getElementById("emergencyNumber");
+
+    // Set the emergency number
+    const number = "911"; // Replace "911" with your actual emergency number
+    emergencyNumber.textContent = "Emergency Number: " + number;
+
+    // Display the modal
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
