@@ -673,6 +673,37 @@ label {
     font-weight: 700;
     margin-top: 10px;
 }
+/* Styles for the chatbot container */
+.chatbot {
+    position: relative;
+  }
+  
+  /* Styles for the custom chatbot icon */
+  .custom-icon {
+    position: fixed; /* Ensure the icon stays in a fixed position */
+    bottom: 20px; /* Adjust the distance from the bottom of the viewport */
+    right: 20px; /* Adjust the distance from the right of the viewport */
+    z-index: 9999; /* Ensure the icon appears above other elements */
+    cursor: pointer; /* Add cursor pointer for interaction */
+    animation: bounce 1s infinite alternate; /* Add bounce animation */
+  }
+  .chatbot img{
+    width: 50px;
+    height: 50px;
+  
+  }
+  .chatbot{
+    margin-left: -10px;
+  }
+  /* Define bounce animation */
+  @keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+  }
 
 /* Hover effect on the report button */
 .report-button {

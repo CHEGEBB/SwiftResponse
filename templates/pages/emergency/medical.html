@@ -82,22 +82,16 @@
 </div>
 
 <div class="hospitals-near-me">
-    <div class="live-location-form">
-        <form class="location-form">
-            <input type="text" id="location-input" placeholder="Enter your location">
-            <input type="text" id="nearest-landmark" placeholder="Nearest Landmark">
-            <button type="submit" id="location-button">Find Hospitals Near Me</button>
-        </form>
-    </div>
     <div class="content2">
+        <div class="two">
         <h1>Hospitals Near Me</h1>
         <p>Immediate Access to Critical Care Facilities. Our Real-time Location Services Seamlessly Pinpoint Nearby Hospitals, Ensuring Swift Responses to Emergencies for Various Medical Situations.</p>
+        </div>
         <!-- Search bar -->
         <form class="hospital-search-form">
             <input type="text" id="hospital-search-input" placeholder="Enter hospital name">
             <button type="submit" id="hospital-search-button">Search</button>
         </form>
-        <div id="map"></div>
     </div>
 </div>
 
@@ -395,7 +389,9 @@
             </div>
         </div>
         <!-- Submit Button -->
+        <div class="sub">
         <button type="submit">Request Assistance</button>
+        </div>
     </form>
 </div>
 
@@ -703,6 +699,16 @@
         </div>
     </div>
 </div>
+<div class="chatbot">
+    <div id="webchat"></div>
+    <div class="custom-icon">
+        <!-- Your custom chatbot icon -->
+        <img src="{{ url_for('static', filename='img/chatbot/chatbot.png') }}" alt="Chatbot Icon">
+    </div>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/663e9096-373f-4151-8072-62537dfaf8b9/webchat/config.js" defer></script>
+</div>
+
 
 <footer class="footer">
     <div class="container">

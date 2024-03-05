@@ -21,6 +21,13 @@
           .fas.fa-bars {
             display: inline; /* Display the icon when screen width is at most 768px */
           }
+          .chatbot {
+        position: fixed; /* Ensure the chatbot container stays in a fixed position */
+        bottom: 60px; /* Adjust the distance from the bottom of the viewport */
+        right: 20px; /* Adjust the distance from the right of the viewport */
+        z-index: 9999; /* Ensure the chatbot container appears above other elements */
+        margin-top: -20px;
+    }
         }
       </style>
     </head>
@@ -505,7 +512,16 @@
             </div>
 
         </div>
-
+        <div class="chatbot">
+            <div id="webchat"></div>
+            <div class="custom-icon">
+                <!-- Your custom chatbot icon -->
+                <img src="{{ url_for('static', filename='img/chatbot/chatbot.png') }}" alt="Chatbot Icon">
+            </div>
+            <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+            <script src="https://mediafiles.botpress.cloud/663e9096-373f-4151-8072-62537dfaf8b9/webchat/config.js" defer></script>
+        </div>
+        
         <footer class="footer">
             <div class="footer-overlay"></div>
             <div class="social-icons">
@@ -558,12 +574,6 @@
             </div>
             <p>&copy; 2024 SwiftResponse ERCS. All rights reserved.</p>
         </footer>
-        <!-- Scroll to top button -->
-        <div class="scroll-to-top">
-            <a href="#top"><img
-                    src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}"
-                    alt="Scroll to Top"></a>
-        </div>
 
         <!-- JavaScript -->
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>

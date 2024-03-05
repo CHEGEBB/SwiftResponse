@@ -629,6 +629,16 @@
                     </div>
                 </div>
             </div>
+            <div class="chatbot">
+                <div id="webchat"></div>
+                <div class="custom-icon">
+                    <!-- Your custom chatbot icon -->
+                    <img src="{{ url_for('static', filename='img/chatbot/chatbot.png') }}" alt="Chatbot Icon">
+                </div>
+                <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+                <script src="https://mediafiles.botpress.cloud/663e9096-373f-4151-8072-62537dfaf8b9/webchat/config.js" defer></script>
+            </div>
+            
         
         
             <footer class="footer">
@@ -672,10 +682,6 @@
                     </div>
                 </div>
             </footer>
-            <div class="scroll-to-top">
-                <a href="#top"><img src="{{ url_for('static', filename='img/back-to-top-icon-png-7.jpg') }}"
-                        alt="Scroll to Top"></a>
-            </div>
             <script src="{{ url_for('static', filename='js/firem.js') }}"></script>
         </body>
         
