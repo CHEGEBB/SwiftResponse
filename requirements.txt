@@ -1,2 +1,4 @@
-Flask
-Flask-SQLAlchemy
+Flask==2.1.4
+Flask-SQLAlchemy==3.0.0
+twilio==6.64.0
+

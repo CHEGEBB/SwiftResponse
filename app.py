@@ -1,8 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
+from twilio.rest import Client
+from twilio.twiml.messaging_response import MessagingResponse
 import os
+from dotenv import load_dotenv
 
+
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
+twilio_phone_number = os.getenv('TWILIO_PHONE_NUMBER')
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'your_secret_key')
@@ -104,7 +111,12 @@ class GeneralAlert(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     alert_type = db.Column(db.String(50), nullable=False)
     alert_message = db.Column(db.Text, nullable=False)
-
+    emergency_type = db.Column(db.String(50), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    sms = db.Column(db.Boolean, default=False)
+    email = db.Column(db.Boolean, default=False)
+    push_notifications = db.Column(db.Boolean, default=False)
+    phone_number = db.Column(db.String(20))
 
 # Create tables if they don't exist
 with app.app_context():
@@ -425,14 +437,43 @@ def admin_login():
     #     flash('Invalid username or password!', 'error')
     #     return redirect('/admin_login')
     # return render_template('admin_login.html')
+
 @app.route('/submit_general_alert', methods=['POST'])
 def submit_general_alert():
     if request.method == 'POST':
         alert_type = request.form['alert_type']
         alert_message = request.form['alert_message']
+        emergency_type = request.form['emergency_type']
+        location = request.form['location']
+        sms = 'sms' in request.form  # Check if SMS checkbox is checked
+        user_phone_number = request.form.get('phone_number')  # Retrieve the phone number from the form
 
-        # Perform any other action as needed with the form data
-        flash('Alert submitted successfully!', 'success')
+        # Initialize Twilio Client
+        client = Client(account_sid, auth_token)
+
+        if sms and user_phone_number:  # Check if SMS is selected and a phone number is provided
+            try:
+                # Send SMS alert
+                message = client.messages.create(
+                    body=f'{alert_type}: {alert_message}',
+                    from_=twilio_phone_number,
+                    to=user_phone_number
+                )
+                flash('SMS alert sent successfully!', 'success')
+            except Exception as e:
+                flash(f'Failed to send SMS alert: {str(e)}', 'error')
+
+        # Send email alert if selected
+        if 'email' in request.form:
+            # Code to send email alerts
+            pass
+
+        # Send push notification if selected
+        if 'push_notifications' in request.form:
+            # Code to send push notifications
+            pass
+
+        # Redirect to the general alerts page
         return redirect(url_for('general'))
     else:
         flash('Failed to submit alert. Please try again.', 'error')

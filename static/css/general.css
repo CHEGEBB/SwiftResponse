@@ -402,7 +402,7 @@ header {
 }
 .outside{
   background-color: #333;
-  height: 450px;
+  height: 850px;
   padding-top: 30px;
 }
 .container9 {
@@ -444,10 +444,16 @@ textarea {
 textarea {
   resize: vertical;
 }
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
 
 button[type="submit"] {
   display: block;
-  width: 100%;
+  width: 200px;
   padding: 10px;
   background-color: #007bff;
   color: #fff;

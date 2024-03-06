@@ -79,3 +79,33 @@ document.addEventListener("DOMContentLoaded", function() {
       hideNav(); // Restart the hideNav functionality
   }
 });
+// Function to show/hide input fields based on selected communication channels
+function toggleFields() {
+    var smsCheckbox = document.querySelector('input[name="sms"]');
+    var emailCheckbox = document.querySelector('input[name="email"]');
+    var phoneNumberField = document.getElementById('phoneNumberField');
+    var emailAddressField = document.getElementById('emailAddressField');
+
+    // Show/hide phone number field based on SMS selection
+    if (smsCheckbox.checked) {
+        phoneNumberField.classList.remove('hidden');
+    } else {
+        phoneNumberField.classList.add('hidden');
+    }
+
+    // Show/hide email address field based on email selection
+    if (emailCheckbox.checked) {
+        emailAddressField.classList.remove('hidden');
+    } else {
+        emailAddressField.classList.add('hidden');
+    }
+}
+
+// Add event listener to checkboxes
+var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', toggleFields);
+});
+
+// Initial invocation to ensure correct initial state
+toggleFields();
